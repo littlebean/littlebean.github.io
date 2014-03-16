@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>引用和指针的区别 | 聆听</title>
+  <meta name="author" content="聆听">
+  
+  <meta name="description" content="聆听的博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <meta property="og:title" content="引用和指针的区别"/>
+  <meta property="og:site_name" content="聆听"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="聆听" type="application/atom+xml">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41590217-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</head>
+
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li>
+            <div>
+                <ol class="breadcrumb">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/archives">Archives</a></li>
+                    
+                    <li><a href="/about">About</a></li>
+                    
+                    <li> <a href="/atom.xml">Rss</a></li>
+                </ol>
+            </div>
+        </li>
+    </ul>
+
+    <h2>
+        <a href="/">聆听</a> 
+    </h2>
+    <h5 class="text-muted"> 水滴石穿  </h5>
+</div>
+
+    </div>
+
+    <hr> 
+
+    <div class="row">
+         <!--Body content-->
+         <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <div class="header">
+      
+  
+    <h3 class="title">引用和指针的区别
+        <small>
+            <time datetime="2014-03-04T08:04:20.000Z">3月 4 2014</time>
+        </small>
+    </h3>
+  
+
+
+    </div>
+
+    <div class="entry">
+      
+        <h2 id="-">引言</h2>
+<p>这几天复习看了一下c++ primer的一些基础语法，发现引用和指针在C++中有很多相似之处，所以想写一篇文章对这两个东西来理一下。</p>
+<h2 id="-">什么是引用</h2>
+<p><strong>引用</strong>就是对象的另一个名字，引用主要用于函数的形式参数，引用是一种<strong>复合类型</strong>（通过其他类型定义的类型），通过在变量名前添加<code>&amp;</code>符号来定义。
+<a id="more"></a></p>
+<ol>
+<li>每一种引用类型都“关联到”某以其他类型，但不能定义引用类型的引用。</li>
+<li><p>引用必须与该引用同类型的对象初始化。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">int</span> ival = <span class="number">1024</span>;
+<span class="keyword">int</span> &refVal = ival; <span class="comment">//ok,refVal refers to ival</span>
+<span class="keyword">int</span> &refVal2; <span class="comment">//error: a reference must be initialized</span>
+<span class="keyword">int</span> &refVal3 = <span class="number">10</span>; <span class="comment">//error:initializer must be an object</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>因为引用只是它绑定的对象的另一个名字，作用在引用上的所有操作事实上都是作用在该引用绑定的对象上。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>cout&lt;&lt;ival&lt;&lt;endl; //<span class="keyword">now</span>,ival <span class="keyword">is</span> 1024 
+refVal = 5;
+cout&lt;&lt;ival&lt;&lt;endl; //<span class="keyword">now</span>,ival <span class="keyword">is</span> 5
+</pre></td></tr></table></figure>
+</li>
+<li><p>引用一旦初始化后，只要该引用存在，它就保持绑定到初始化时指向的对象，<strong>不可将其变更</strong>绑定到其它的对象上。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">int</span> ival2 = <span class="number">5</span>;
+refVal = ival2; <span class="comment">//error:refVal already be initialized,can’t be changed</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>非const引用只能绑定到与该引用同类型的对象上，const引用则可以绑定到<strong>不同但相关的类型的对象</strong>上或者绑定到<strong>右值</strong>上。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="keyword">const</span> <span class="keyword">int</span> ival3 = <span class="number">1024</span>;
+<span class="keyword">int</span> ival4 = <span class="number">5</span>;
+<span class="keyword">double</span> dval = <span class="number">3.14</span>;
+<span class="keyword">const</span> <span class="keyword">int</span> &refVal4 = ival3; <span class="comment">//ok:both reference and object are const</span>
+<span class="keyword">int</span> &refVal5 = ival3; <span class="comment">//error:noneconst reference to a const object</span>
+refVal4 = <span class="number">1024</span>; <span class="comment">// ok:const reference be initialized by rvalue ;</span>
+refVal4 = ival4; <span class="comment">//ok:const reference be initialized by different but related value;</span>
+refVal4 = dval; <span class="comment">//ok</span>
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>观察第5点看到</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">double</span> dval = <span class="number">3.14</span>;
+refVal4 = dval; <span class="comment">//ok</span>
+</pre></td></tr></table></figure>
+
+<p>是正确的，其原因很微妙，编译器会把以上代码转换成如下形式的编码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="attribute">int temp </span>=<span class="string"> dval;
+refVal4 = temp;</span>
+</pre></td></tr></table></figure>
+
+<p>如果refVal4是非const的，那么可以给refVal4赋一新值，这样做不会修改dval.</p>
+<h2 id="-">什么是指针</h2>
+<p>指针，它也是一种复合类型，是用于指向对象，与迭代器一样，指针提供对其所指对象的间接访问，只是指针结构更通用一点。与迭代器不同的是，指针用于指向单个对象，而迭代器只能用于访问容器内的元素。具体的讲，指针保存了另一个对象的地址而已。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="typename">string</span> s(<span class="string">"hello world"</span>);
+<span class="typename">string</span> *sp = &s;//get the address <span class="keyword">of</span> <span class="typename">string</span> s
+</pre></td></tr></table></figure>
+
+<p><strong>取地址操作符</strong>（<code>&amp;</code>）：当此操作符用于一个对象上时，返回的是该对象的存储地址。取值操作只能用于左值，因为只有当变量用作左值时，才能取其地址。同样地，由于用于vector类型、string类型或者内置数组的下标操作和解引操作生成的左值，因此可对这两种操作的结果做取地址操作。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">cout</span>&lt;&lt;*sp&lt;&lt;endl; <span class="comment">//prints hello world</span>
+</pre></td></tr></table></figure>
+
+<p><strong>解引用操作符</strong>（<code>*</code>）：与取地址操作符相对应，对指针进行解引用可访问指针所指的对象。</p>
+<ol>
+<li>每个指针都有一个与之关联的数据类型。</li>
+<li><p>若指针为0值，表明它不指向任何对象,但只能赋值常量0值或者在编译时可获得0值的const变量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>int zero = <span class="number">0</span>;
+const int c_zero = <span class="number">0</span>; 
+int pi = zero; //error:pi assigned int value <span class="keyword">of</span> zero
+pi = c_zero;//ok:c_zero <span class="keyword">is</span> a const <span class="keyword">with</span> compile-<span class="typename">time</span> value <span class="keyword">of</span> <span class="number">0</span>
+pi = <span class="number">0</span>; //ok:directly initialize <span class="keyword">to</span> <span class="keyword">literal</span> <span class="keyword">constant</span> <span class="number">0</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>C++语言无法检测指针是否未被初始化，也无法区分有效地址和由指针分配到的存储空间中存放的二进制地址，所以在使用指针的时候，避免指针未初始化，可以初始化为0值，因为编译器识别0值的指针。</p>
+</li>
+<li><p>void*指针是C++提供的一种特殊的指针，它可以保存任何类型对象的地址.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">double</span> obj = <span class="number">3.14</span>;
+<span class="keyword">int</span> obj2 = <span class="number">1024</span>;
+<span class="keyword">void</span> *pv = &obj; <span class="comment">//ok:void* can hold the address value of any data pointer type</span>
+pv = &obj2; <span class="comment">//ok</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>指针与const限定符，分为两种，一种是指向const对象的指针；另一种是const指针。前者是限定这个指针指向的对象是const，但指针本身不是const，所以这个指针可以修改指向别的同类型对象。后者限定的是指针本身就是const型的值，所以跟普通的const变量具有相同的性质，指针的内容（即地址值）不能修改。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">const</span> <span class="keyword">double</span> *cptr; <span class="comment">//cptr may point to a double that is const;</span>
+<span class="keyword">double</span> *<span class="keyword">const</span> *cptr2; <span class="comment">// cptr2 is a const pointer</span>
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="-">引用和指针的区别</h2>
+<p>虽然引用和指针都可以间接的访问另一个对象，但他们之间有两个重要的区别：</p>
+<ol>
+<li>引用总是指向某个对象；定义时没有初始化时错误的。</li>
+<li>赋值行为的差别：给引用赋值修改的是该引用所关联的对象的值，并不是使引用与另一个对象关联。<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="keyword">int</span> ival = <span class="number">1024</span>,ival2 = <span class="number">2048</span>;
+<span class="keyword">int</span> *pi = &ival,*pi2 = &ival2;
+pi = pi2;<span class="comment">//pi now points to ival2;</span>
+
+<span class="keyword">int</span> &ri = ival,&ri2 = ival2;
+ri = ri2; <span class="comment">// assign ival2 to ival</span>
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>参考：C++ Primer</p>
+
+      
+    </div>
+
+	
+
+	<hr/>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  
+<section id="comment">
+<!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xuxiaolong"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- Duoshuo Comment END -->
+</section>
+
+  </div>
+</article>
+
+
+
+
+        <!--Sidebar content-->
+        <div class="sidebar">
+        
+<div class="container">
+
+
+	<div class="col-xs-12 col-sm-6 col-md-3">
+  	    
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+      </li>
+    
+      <li>
+        <a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+      </li>
+    
+      <li>
+        <a href="/2014/03/04/引用和指针的区别/">引用和指针的区别</a>
+      </li>
+    
+      <li>
+        <a href="/2014/02/27/b树/">B树</a>
+      </li>
+    
+      <li>
+        <a href="/2014/02/27/数据库的索引/">数据库的索引</a>
+      </li>
+    
+      <li>
+        <a href="/2014/02/23/c和c++头文件一些问题/">C和C++头文件一些问题</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/31/goto-2014-from-2013/">Goto 2014 From 2013</a>
+      </li>
+    
+      <li>
+        <a href="/2013/08/19/win7远程连接全屏/">Win7远程连接全屏</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  	</div>
+
+	<div class="col-xs-12 col-sm-6 col-md-3">
+  	    <div class="widget tag">
+	<h3 class="title">Link</h3>
+	<ul class="entry">
+		<li><a href="http://cih.so" target="_blank" title="MaHuipei">Kingx's Blog</a></li>
+      	<li><a href="http://wtz123.github.io" target="_blank" title="WangTianzhi">wtz's Blog</a></li>
+      	<li><a href="http://xidianpanpei.github.io" target="_blank" title="PanPei">PanPei's Blog</a></li>
+      	<li><a href="http://yanhoulei.cn/" target="_blank">yanhoulei's Blog</a></li>
+		<li><a href="http://www.searchtb.com/" target="_blank">搜索技术博客－淘宝</a></li>
+		<li><a href="http://www.spinics.net/linux/" target="_blank">Rick's Linux Resources</a></li>
+		
+	</ul>
+</div>
+
+  	</div>
+
+	<div class="col-xs-12 col-sm-6 col-md-3">
+  	    
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
+  
+    <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
+  
+    <li><a href="/categories/数据结构/">数据结构</a><small>2</small></li>
+  
+    <li><a href="/categories/碎碎念/">碎碎念</a><small>1</small></li>
+  
+    <li><a href="/categories/遇到的小问题/">遇到的小问题</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  	</div>
+
+	<div class="col-xs-12 col-sm-6 col-md-3">
+  	    
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/B树/">B树</a><small>1</small></li>
+  
+    <li><a href="/tags/C/C++/">C/C++</a><small>3</small></li>
+  
+    <li><a href="/tags/STL/">STL</a><small>1</small></li>
+  
+    <li><a href="/tags/技巧/">技巧</a><small>1</small></li>
+  
+    <li><a href="/tags/数据库/">数据库</a><small>1</small></li>
+  
+    <li><a href="/tags/数据结构/">数据结构</a><small>2</small></li>
+  
+    <li><a href="/tags/碎碎念/">碎碎念</a><small>1</small></li>
+  
+    <li><a href="/tags/索引/">索引</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  	</div>
+
+
+</div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="alignleft">
+  
+  &copy; 2014 聆听
+  
+</div>
+<div class="clearfix"></div>
+
+    </div>
+
+</div>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+    (function($){
+        $('.fancybox').fancybox();
+    })(jQuery);
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[聆听]]></title>
+  <subtitle><![CDATA[水滴石穿]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://littlebean.github.io/"/>
+  <updated>2014-03-16T04:31:30.901Z</updated>
+  <id>http://littlebean.github.io/</id>
+  
+  <author>
+    <name><![CDATA[聆听]]></name>
+    
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[对虚函数的一些理解]]></title>
+    <link href="http://littlebean.github.io/2014/03/12/%E5%AF%B9%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"/>
+    <id>http://littlebean.github.io/2014/03/12/对虚函数的一些理解/</id>
+    <published>2014-03-12T08:08:00.000Z</published>
+    <updated>2014-03-12T11:35:30.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>日子过的真快，研究生念的都还没有什么感觉就要找实习了，学校来了第一个找实习的公司---华为。投了中央研究院的一个C++研发岗，今天面试问了一些项目什么的，然后问道C++和JAVA的一些区别，就说了几个比较浅的区别，什么JAVA是纯面向对象的，C++是半结构化半面向对象的，支持多继承的一门语言什么的，面我的那位帅哥感觉还不足提示了一下在面向对象的3个特性（封装，继承，多态）来说一下，然后我就回答了最主要的区别是在多态的实现机制上的不同，JAVA是靠重载，C++是靠虚函数来实现的，然后就紧接着问，虚函数的怎么实现多态的，当时没有说用虚函数表什么的，就大概说了一下是用基类的指针绑定派生类的对象的，然后调用派生类中对基类虚函数实现的调用，感觉回答的好不专业，然后他就说用虚函数表就能简单的说明，下面我来总结一下虚函数和虚函数表的一些东西。
+<a id="more"></a></p>
+<h2 id="-">虚函数</h2>
+<h3 id="-">什么是虚函数</h3>
+<p>在某基类中声明为<code>virtual</code>并在一个或多个派生类中被重新定义的成员函数，C++通过它实现多态性，通过指向派生类的基类指针，访问派生类中同名覆盖成员函数。
+基类的类定义中定义虚函数的一般形式：</p>
+<figure class="highlight C++"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="class"><span class="keyword">class</span>基类名{</span>
+	virtual 返回值类型 将要在派生类中重载的函数名（参数列表）;
+}；
+</pre></td></tr></table></figure>
+
+<h3 id="-">虚函数的作用</h3>
+<p>虚函数的作用是实现<strong>动态联编</strong>，也就是在程序的运行阶段动态地选择合适的成员函数，在定义了虚函数后，可以在基类的派生类中对虚函数重新定义，在派生类中重新定义的函数应与虚函数具有相同的形参个数和形参类型。以实现统一的接口，不同定义过程。如果在派生类中没有对虚函数重新定义，则它继承其基类的虚函数。</p>
+<h3 id="-">纯虚函数和抽象类</h3>
+<p>可以把此函数（方法）设为virtual 函数名（参数列表）= 0 我们把这样的函数（方法）称为纯虚函数。如果一个类包含了纯虚函数，称此类为抽象类。<strong>抽象类不能直接实例化对象</strong>。</p>
+<h3 id="-">例子</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="code"><pre>
+<span class="preprocessor">#include&lt;iostream&gt;</span>
+<span class="keyword">using</span> namespace std;
+class A{
+	<span class="keyword">public</span>:
+		<span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">display</span>(){
+			cout&lt;&lt;<span class="string">"this is A"</span>&lt;&lt;endl;
+		} 
+		
+};
+
+class B:<span class="keyword">public</span> A{
+	
+	<span class="keyword">public</span>:
+		<span class="keyword">void</span> <span class="title">display</span>(){
+			cout&lt;&lt;<span class="string">"this is B"</span>&lt;&lt;endl;
+		}
+
+};
+
+<span class="keyword">int</span> main(){
+	A *a = <span class="keyword">new</span> A();
+	a-&gt;display();
+	a = <span class="keyword">new</span> B();
+	a-&gt;display();
+	
+	<span class="keyword">return</span> <span class="number">0</span>;
+}
+
+output:
+<span class="keyword">this</span> <span class="keyword">is</span> A
+<span class="keyword">this</span> <span class="keyword">is</span> B
+请按任意键继续. . .
+</pre></td></tr></table></figure>
+
+<p>从上面的例子可以看到开始<code>a</code>指向<code>A</code>的对象，当<code>a-&gt;display()</code>时，调用的是A自己的<code>display()</code>,然后将<code>B</code>的对象绑定到<code>a</code>上，则再次调用的时候就执行了<code>B</code>的<code>display()</code>方法。这样也实现了<code>display()</code>方法的推迟绑定，这样也使得编程更加灵活。</p>
+<h2 id="-">虚函数表</h2>
+<h3 id="-">什么是虚函数表</h3>
+<p>对C++ 了解的人都应该知道虚函数（Virtual Function）是通过一张虚函数表（Virtual Table）来实现的。简称为V-Table。在这个表中，主是要一个类的虚函数的地址表，这张表解决了继承、覆盖的问题，保证其容真实反应实际的函数。这样，在有虚函数的类的实例中这个表被分配在了这个实例的内存中，所以，当我们用父类的指针来操作一个子类的时候，这张虚函数表就显得由为重要了，它就像一个地图一样，指明了实际所应该调用的函数。
+这里我们着重看一下这张虚函数表。C++的编译器应该是保证虚函数表的指针存在于对象实例中最前面的位置（这是为了保证取到虚函数表的有最高的性能——如果有多层继承或是多重继承的情况下）。 这意味着我们通过对象实例的地址得到这张虚函数表，然后就可以遍历其中函数指针，并调用相应的函数。</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/12/vTable.jpg" alt="虚函数表与对象的关系"></p>
+<h3 id="-">例子</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre></td><td class="code"><pre>
+<span class="preprocessor">#include&lt;iostream&gt;</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">typedef</span> <span class="keyword">void</span>(*Fun)(<span class="keyword">void</span>);
+
+<span class="keyword">class</span> A{
+	<span class="keyword">public</span>:
+		<span class="keyword">virtual</span> <span class="keyword">void</span> m1(){
+			<span class="built_in">cout</span>&lt;&lt;<span class="string">"m1"</span>&lt;&lt;endl;
+		}
+		<span class="keyword">virtual</span> <span class="keyword">void</span> m2(){
+			<span class="built_in">cout</span>&lt;&lt;<span class="string">"m2"</span>&lt;&lt;endl;	
+		}
+		
+};
+
+
+<span class="keyword">int</span> main(){	
+	Fun pfun;
+	A a;
+	
+	<span class="built_in">cout</span>&lt;&lt;<span class="string">"虚函数表地址："</span>&lt;&lt;(<span class="keyword">int</span>*)&a&lt;&lt;endl;
+	<span class="built_in">cout</span>&lt;&lt;<span class="string">"虚函数表第一个虚函数的地址："</span>&lt;&lt;(<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&a&lt;&lt;endl;
+	
+	pfun = (Fun)*((<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&a); 
+	pfun();<span class="comment">//调用第一个虚函数 </span>
+	pfun = (Fun)*(<span class="number">1</span>+(<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&a);
+	pfun();<span class="comment">//调用第二个虚函数 </span>
+	<span class="keyword">return</span> <span class="number">0</span>;
+}
+
+output:
+虚函数表地址：<span class="number">0x22ff20</span>
+虚函数表第一个虚函数的地址：<span class="number">0x443fe0</span>
+m1
+m2
+</pre></td></tr></table></figure>
+
+<p>参考：</br>
+<a herf="http://baike.baidu.com/link?url=3ahXhj5Xfiqgva5yftcsV-uHkzCdcQmBFDFV6stKVD5uOpTdNN490y4JqxsB3oWK"><a href="http://baike.baidu.com/link?url=3ahXhj5Xfiqgva5yftcsV-uHkzCdcQmBFDFV6stKVD5uOpTdNN490y4JqxsB3oWK">http://baike.baidu.com/link?url=3ahXhj5Xfiqgva5yftcsV-uHkzCdcQmBFDFV6stKVD5uOpTdNN490y4JqxsB3oWK</a></a></br>
+<a href="http://blog.csdn.net/haoel/article/details/1948051/" target="_blank"><a href="http://blog.csdn.net/haoel/article/details/1948051/">http://blog.csdn.net/haoel/article/details/1948051/</a></a></p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>日子过的真快，研究生念的都还没有什么感觉就要找实习了，学校来了第一个找实习的公司---华为。投了中央研究院的一个C++研发岗，今天面试问了一些项目什么的，然后问道C++和JAVA的一些区别，就说了几个比较浅的区别，什么JAVA是纯面向对象的，C++是半结构化半面向对象的，支持多继承的一门语言什么的，面我的那位帅哥感觉还不足提示了一下在面向对象的3个特性（封装，继承，多态）来说一下，然后我就回答了最主要的区别是在多态的实现机制上的不同，JAVA是靠重载，C++是靠虚函数来实现的，然后就紧接着问，虚函数的怎么实现多态的，当时没有说用虚函数表什么的，就大概说了一下是用基类的指针绑定派生类的对象的，然后调用派生类中对基类虚函数实现的调用，感觉回答的好不专业，然后他就说用虚函数表就能简单的说明，下面我来总结一下虚函数和虚函数表的一些东西。
+]]></summary>
+    
+      <category term="C/C++" scheme="http://littlebean.github.io/tags/C/C++/"/>
+    
+      <category term="C/C++" scheme="http://littlebean.github.io/categories/C/C++/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[STL实现的底层数据结构有哪些？]]></title>
+    <link href="http://littlebean.github.io/2014/03/06/stl%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/"/>
+    <id>http://littlebean.github.io/2014/03/06/stl实现的底层数据结构有哪些？/</id>
+    <published>2014-03-06T14:34:55.000Z</published>
+    <updated>2014-03-07T14:16:50.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="c-stl-">C++ STL各个容器底层由哪些数据结构实现的：</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
+<ol>
+<li>vector  底层数据结构为数组 ，支持快速随机访问</li>
+<li>list    底层数据结构为双向链表，支持快速增删</li>
+<li>deque   底层数据结构为一个中央控制器和多个缓冲区,支持首尾（中间不能）快速增删，也支持随机访问</li>
+<li>stack   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
+<li>queue   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
+<li>priority_queue 的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</li>
+</ol>
+<hr>
+<p><a id="more"></a></p>
+<ol>
+<li>set       底层数据结构为红黑树，有序，不重复</li>
+<li>multiset  底层数据结构为红黑树，有序，可重复 </li>
+<li>map      ﻿﻿﻿﻿底层数据结构为红黑树，有序，不重复</li>
+<li>multimap 底层数据结构为红黑树，有序，可重复</li>
+<li>hash_set ﻿﻿﻿﻿底层数据结构为hash表，无序，不重复</li>
+<li>hash_multiset 底层数据结构为hash表，无序，可重复 </li>
+<li>hash_map      ﻿﻿﻿﻿底层数据结构为hash表，无序，不重复</li>
+<li>hash_multimap 底层数据结构为hash表，无序，可重复</li>
+</ol>
+<p>参考：<a href ="http://blog.csdn.net/huangkq1989/article/details/7277282"><a href="http://blog.csdn.net/huangkq1989/article/details/7277282">http://blog.csdn.net/huangkq1989/article/details/7277282</a></a></p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="c-stl-">C++ STL各个容器底层由哪些数据结构实现的：</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
+<ol>
+<li>vector  底层数据结构为数组 ，支持快速随机访问</li>
+<li>list    底层数据结构为双向链表，支持快速增删</li>
+<li>deque   底层数据结构为一个中央控制器和多个缓冲区,支持首尾（中间不能）快速增删，也支持随机访问</li>
+<li>stack   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
+<li>queue   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
+<li>priority_queue 的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</li>
+</ol>
+<hr>
+<p>]]></summary>
+    
+      <category term="STL" scheme="http://littlebean.github.io/tags/STL/"/>
+    
+      <category term="数据结构" scheme="http://littlebean.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="数据结构" scheme="http://littlebean.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[引用和指针的区别]]></title>
+    <link href="http://littlebean.github.io/2014/03/04/%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://littlebean.github.io/2014/03/04/引用和指针的区别/</id>
+    <published>2014-03-04T08:04:20.000Z</published>
+    <updated>2014-03-07T12:24:35.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>这几天复习看了一下c++ primer的一些基础语法，发现引用和指针在C++中有很多相似之处，所以想写一篇文章对这两个东西来理一下。</p>
+<h2 id="-">什么是引用</h2>
+<p><strong>引用</strong>就是对象的另一个名字，引用主要用于函数的形式参数，引用是一种<strong>复合类型</strong>（通过其他类型定义的类型），通过在变量名前添加<code>&amp;</code>符号来定义。
+<a id="more"></a></p>
+<ol>
+<li>每一种引用类型都“关联到”某以其他类型，但不能定义引用类型的引用。</li>
+<li><p>引用必须与该引用同类型的对象初始化。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">int</span> ival = <span class="number">1024</span>;
+<span class="keyword">int</span> &refVal = ival; <span class="comment">//ok,refVal refers to ival</span>
+<span class="keyword">int</span> &refVal2; <span class="comment">//error: a reference must be initialized</span>
+<span class="keyword">int</span> &refVal3 = <span class="number">10</span>; <span class="comment">//error:initializer must be an object</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>因为引用只是它绑定的对象的另一个名字，作用在引用上的所有操作事实上都是作用在该引用绑定的对象上。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>cout&lt;&lt;ival&lt;&lt;endl; //<span class="keyword">now</span>,ival <span class="keyword">is</span> 1024 
+refVal = 5;
+cout&lt;&lt;ival&lt;&lt;endl; //<span class="keyword">now</span>,ival <span class="keyword">is</span> 5
+</pre></td></tr></table></figure>
+</li>
+<li><p>引用一旦初始化后，只要该引用存在，它就保持绑定到初始化时指向的对象，<strong>不可将其变更</strong>绑定到其它的对象上。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">int</span> ival2 = <span class="number">5</span>;
+refVal = ival2; <span class="comment">//error:refVal already be initialized,can’t be changed</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>非const引用只能绑定到与该引用同类型的对象上，const引用则可以绑定到<strong>不同但相关的类型的对象</strong>上或者绑定到<strong>右值</strong>上。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="keyword">const</span> <span class="keyword">int</span> ival3 = <span class="number">1024</span>;
+<span class="keyword">int</span> ival4 = <span class="number">5</span>;
+<span class="keyword">double</span> dval = <span class="number">3.14</span>;
+<span class="keyword">const</span> <span class="keyword">int</span> &refVal4 = ival3; <span class="comment">//ok:both reference and object are const</span>
+<span class="keyword">int</span> &refVal5 = ival3; <span class="comment">//error:noneconst reference to a const object</span>
+refVal4 = <span class="number">1024</span>; <span class="comment">// ok:const reference be initialized by rvalue ;</span>
+refVal4 = ival4; <span class="comment">//ok:const reference be initialized by different but related value;</span>
+refVal4 = dval; <span class="comment">//ok</span>
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>观察第5点看到</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">double</span> dval = <span class="number">3.14</span>;
+refVal4 = dval; <span class="comment">//ok</span>
+</pre></td></tr></table></figure>
+
+<p>是正确的，其原因很微妙，编译器会把以上代码转换成如下形式的编码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="attribute">int temp </span>=<span class="string"> dval;
+refVal4 = temp;</span>
+</pre></td></tr></table></figure>
+
+<p>如果refVal4是非const的，那么可以给refVal4赋一新值，这样做不会修改dval.</p>
+<h2 id="-">什么是指针</h2>
+<p>指针，它也是一种复合类型，是用于指向对象，与迭代器一样，指针提供对其所指对象的间接访问，只是指针结构更通用一点。与迭代器不同的是，指针用于指向单个对象，而迭代器只能用于访问容器内的元素。具体的讲，指针保存了另一个对象的地址而已。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="typename">string</span> s(<span class="string">"hello world"</span>);
+<span class="typename">string</span> *sp = &s;//get the address <span class="keyword">of</span> <span class="typename">string</span> s
+</pre></td></tr></table></figure>
+
+<p><strong>取地址操作符</strong>（<code>&amp;</code>）：当此操作符用于一个对象上时，返回的是该对象的存储地址。取值操作只能用于左值，因为只有当变量用作左值时，才能取其地址。同样地，由于用于vector类型、string类型或者内置数组的下标操作和解引操作生成的左值，因此可对这两种操作的结果做取地址操作。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">cout</span>&lt;&lt;*sp&lt;&lt;endl; <span class="comment">//prints hello world</span>
+</pre></td></tr></table></figure>
+
+<p><strong>解引用操作符</strong>（<code>*</code>）：与取地址操作符相对应，对指针进行解引用可访问指针所指的对象。</p>
+<ol>
+<li>每个指针都有一个与之关联的数据类型。</li>
+<li><p>若指针为0值，表明它不指向任何对象,但只能赋值常量0值或者在编译时可获得0值的const变量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>int zero = <span class="number">0</span>;
+const int c_zero = <span class="number">0</span>; 
+int pi = zero; //error:pi assigned int value <span class="keyword">of</span> zero
+pi = c_zero;//ok:c_zero <span class="keyword">is</span> a const <span class="keyword">with</span> compile-<span class="typename">time</span> value <span class="keyword">of</span> <span class="number">0</span>
+pi = <span class="number">0</span>; //ok:directly initialize <span class="keyword">to</span> <span class="keyword">literal</span> <span class="keyword">constant</span> <span class="number">0</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>C++语言无法检测指针是否未被初始化，也无法区分有效地址和由指针分配到的存储空间中存放的二进制地址，所以在使用指针的时候，避免指针未初始化，可以初始化为0值，因为编译器识别0值的指针。</p>
+</li>
+<li><p>void*指针是C++提供的一种特殊的指针，它可以保存任何类型对象的地址.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">double</span> obj = <span class="number">3.14</span>;
+<span class="keyword">int</span> obj2 = <span class="number">1024</span>;
+<span class="keyword">void</span> *pv = &obj; <span class="comment">//ok:void* can hold the address value of any data pointer type</span>
+pv = &obj2; <span class="comment">//ok</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>指针与const限定符，分为两种，一种是指向const对象的指针；另一种是const指针。前者是限定这个指针指向的对象是const，但指针本身不是const，所以这个指针可以修改指向别的同类型对象。后者限定的是指针本身就是const型的值，所以跟普通的const变量具有相同的性质，指针的内容（即地址值）不能修改。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">const</span> <span class="keyword">double</span> *cptr; <span class="comment">//cptr may point to a double that is const;</span>
+<span class="keyword">double</span> *<span class="keyword">const</span> *cptr2; <span class="comment">// cptr2 is a const pointer</span>
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="-">引用和指针的区别</h2>
+<p>虽然引用和指针都可以间接的访问另一个对象，但他们之间有两个重要的区别：</p>
+<ol>
+<li>引用总是指向某个对象；定义时没有初始化时错误的。</li>
+<li>赋值行为的差别：给引用赋值修改的是该引用所关联的对象的值，并不是使引用与另一个对象关联。<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="keyword">int</span> ival = <span class="number">1024</span>,ival2 = <span class="number">2048</span>;
+<span class="keyword">int</span> *pi = &ival,*pi2 = &ival2;
+pi = pi2;<span class="comment">//pi now points to ival2;</span>
+
+<span class="keyword">int</span> &ri = ival,&ri2 = ival2;
+ri = ri2; <span class="comment">// assign ival2 to ival</span>
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>参考：C++ Primer</p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>这几天复习看了一下c++ primer的一些基础语法，发现引用和指针在C++中有很多相似之处，所以想写一篇文章对这两个东西来理一下。</p>
+<h2 id="-">什么是引用</h2>
+<p><strong>引用</strong>就是对象的另一个名字，引用主要用于函数的形式参数，引用是一种<strong>复合类型</strong>（通过其他类型定义的类型），通过在变量名前添加<code>&amp;</code>符号来定义。
+]]></summary>
+    
+      <category term="C/C++" scheme="http://littlebean.github.io/tags/C/C++/"/>
+    
+      <category term="C/C++" scheme="http://littlebean.github.io/categories/C/C++/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[B树]]></title>
+    <link href="http://littlebean.github.io/2014/02/27/b%E6%A0%91/"/>
+    <id>http://littlebean.github.io/2014/02/27/b树/</id>
+    <published>2014-02-27T04:27:24.000Z</published>
+    <updated>2014-03-07T12:25:55.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>B树（B-tree）是一种树状数据结构，它能够存储数据、对其进行排序并允许以O(log n)的时间复杂度运行进行查找、顺序读取、插入和删除的数据结构。B树，概括来说是一个节点可以拥有多于2个子节点的二叉查找树。与自平衡二叉查找树不同，B-树为系统最优化大块数据的读和写操作。B-tree算法减少定位记录时所经历的中间过程，从而加快存取速度。普遍运用在数据库和文件系统。
+一棵M阶的B-Tree满足以下条件：</p>
+<ol>
+<li>每个结点至多有M个孩子；</li>
+<li>除根结点和叶结点外，其它每个结点至少有M/2个孩子；</li>
+<li>根结点至少有两个孩子（除非该树仅包含一个结点）；</li>
+<li>所有叶结点在同一层，叶结点不包含任何关键字信息；</li>
+<li>有K个关键字的非叶结点恰好包含K+1个孩子；<a id="more"></a>
+
+
+</li>
+</ol>
+<p>另外，对于一个结点，其内部的关键字是从小到大排序的。以下是B-Tree（M=3）的样例:<br/>
+<img src="http://liitlebean.qiniudn.com/2014/2/27/b-.jpg" alt="B树"></p>
+<h2 id="b-">B树的插入和生成</h2>
+<p><strong>B树的插入</strong><br/>
+对高度为H的M阶B树，新结点一般插在H层。通过检索可以确定新添加的关键码应该插在哪个结点位置。然后分为两种情况</p>
+<ol>
+<li>若该结点的关键码个数小于M-1，则直接插入；</li>
+<li>若该结点中关键字等于M-1.则引起分裂，以中间关键码为界将结点一分为二，然后将中间关键码插入到父节点中；</li>
+<li>重复上述工作，最坏的情况是一直分裂到根结点，那么熟整个B树的高度+1；</li>
+</ol>
+<p><strong>B树的生成</strong><br/>
+B树的生成其实就是B树从空的状态下，将结点一个一个插入的过程。</p>
+<p>参考：<br/>
+<a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html" target="_blank"><a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html">http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html</a></a><br/>
+<a href="http://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank"><a href="http://zh.wikipedia.org/wiki/B%E6%A0%91">http://zh.wikipedia.org/wiki/B%E6%A0%91</a></a></p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>B树（B-tree）是一种树状数据结构，它能够存储数据、对其进行排序并允许以O(log n)的时间复杂度运行进行查找、顺序读取、插入和删除的数据结构。B树，概括来说是一个节点可以拥有多于2个子节点的二叉查找树。与自平衡二叉查找树不同，B-树为系统最优化大块数据的读和写操作。B-tree算法减少定位记录时所经历的中间过程，从而加快存取速度。普遍运用在数据库和文件系统。
+一棵M阶的B-Tree满足以下条件：</p>
+<ol>
+<li>每个结点至多有M个孩子；</li>
+<li>除根结点和叶结点外，其它每个结点至少有M/2个孩子；</li>
+<li>根结点至少有两个孩子（除非该树仅包含一个结点）；</li>
+<li>所有叶结点在同一层，叶结点不包含任何关键字信息；</li>
+<li>有K个关键字的非叶结点恰好包含K+1个孩子；]]></summary>
+    
+      <category term="数据结构" scheme="http://littlebean.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="B树" scheme="http://littlebean.github.io/tags/B%E6%A0%91/"/>
+    
+      <category term="数据结构" scheme="http://littlebean.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[数据库的索引]]></title>
+    <link href="http://littlebean.github.io/2014/02/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%B4%A2%E5%BC%95/"/>
+    <id>http://littlebean.github.io/2014/02/27/数据库的索引/</id>
+    <published>2014-02-27T03:33:52.000Z</published>
+    <updated>2014-03-07T12:28:00.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>为了找实习，听到试水同学的热乎乎的面筋后，需要了解数据库的知识，就去图书馆借了本“锋利的SQL”复习一下数据库知识，看到了索引这个东西，感觉需要深入的研究一下，于是在网上找了几片文章看看。</p>
+<h2 id="b-">B树</h2>
+<p>我们常见的数据库系统，其索引使用的数据结构多是B-Tree或者B+Tree。例如，MsSql使用的是B+Tree，Oracle及Sysbase使用的是B-Tree。简单地介绍一下<a href ="http://littlebean.github.io/2014/02/27/b%E6%A0%91/">B-Tree</a>。</p>
+<h2 id="-">数据库的索引</h2>
+<p>如果你的表数据日常更新比较少，应当使用索引技术，因为通过索引可以减少为返回查询结果集必须读取的数据量。如果你的表经常需要执行插入、删除、修改操作，过多的索引则会导致数据维护性能的减弱，因为在维护这些数据的同时，数据引擎还要维护这些索引。
+<a id="more"></a></p>
+<p>索引是一个单独的、物理数据存储结构，其中包含由表或者视图中的一列或者多列生成的键。这些键就像书籍的目录一样，可以通过这些索引来查找与之对应的数据。</p>
+<p><strong>索引的优点</strong>：<br></p>
+<ol>
+<li>索引可以避免全表扫描。多数查询可以仅扫描少量索引页及数据页，而不是遍历所有数据页。</li>
+<li>对于非聚集索引，有些查询甚至可以不访问数据页。</li>
+<li>聚集索引可以避免数据插入操作集中于表的最后一个数据页。</li>
+<li>一些情况下，索引还可用于避免排序操作。</li>
+</ol>
+<p><strong>索引的存储</strong>：<br/>
+一条索引记录中包含的基本信息包括：键值（即你定义索引时指定的所有字段的值）+逻辑指针（指向数据页或者另一索引页）</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/2/27/index_store.png" alt="索引的存储"></p>
+<p>通常状况下，由于索引记录仅包含索引字段值（以及4-9字节的指针），索引实体比真实的数据行要小许多，索引页相较数据页来说要密集许多。一个索引页可以存储数量更多的索引记录，这意味着在索引中查找时在I/O上占很大的优势，理解这一点有助于从本质上了解使用索引的优势。</p>
+<p><strong>索引的类型</strong>：<br/>
+索引大致分为聚集索引、非聚集索引、    全文索引、XML索引和空间索引5种主要类型，下面仅介绍聚集索引和非聚集索引两种。</p>
+<p><em>聚集索引</em>：<br/>
+根据数据行的键值在表或者视图中排序顺序存储这些数据行，即表中的数据行的物理顺序与索引顺序一样，因为每个数据行本省只有一种顺序排序，所以每个表只能有一个聚集索引。如果一个表具有聚集索引，则称这个表为“聚集表”。</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/2/27/jujisuoyin.png" alt="聚集索引"></p>
+<p><em>非聚集索引</em>：<br/>
+非聚集索引与聚集索引相比：<br/></p>
+<ol>
+<li>叶子结点并非数据结点</li>
+<li>叶子结点为每一真正的数据行存储一个“键-指针”对</li>
+<li>叶子结点中还存储了一个指针偏移量，根据页指针及指针偏移量可以定位到具体的数据行。</li>
+<li>类似的，在除叶结点外的其它索引结点，存储的也是类似的内容，只不过它是指向下一级的索引页的</li>
+</ol>
+<p>聚集索引是一种稀疏索引，数据页上一级的索引页存储的是页指针，而不是行指针。而对于非聚集索引，则是密集索引，在数据页的上一级索引页它为每一个数据行存储一条索引记录。</p>
+<p>对于根与中间级的索引记录，它的结构包括：<br/></p>
+<ol>
+<li>索引字段值</li>
+<li>RowId（即对应数据页的页指针+指针偏移量）。在高层的索引页中包含RowId是为了当索引允许重复值时，当更改数据时精确定位数据行。</li>
+<li>下一级索引页的指针</li>
+</ol>
+<p>对于叶子层的索引对象，它的结构包括：<br/></p>
+<ol>
+<li>索引字段值</li>
+<li>RowId</li>
+</ol>
+<p><img src="http://liitlebean.qiniudn.com/2014/2/27/feijujisuoyin.png" alt="非聚集索引"></p>
+<p>参考：<br/>
+<a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html" target="_blank"><a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html">http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html</a></a></p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>为了找实习，听到试水同学的热乎乎的面筋后，需要了解数据库的知识，就去图书馆借了本“锋利的SQL”复习一下数据库知识，看到了索引这个东西，感觉需要深入的研究一下，于是在网上找了几片文章看看。</p>
+<h2 id="b-">B树</h2>
+<p>我们常见的数据库系统，其索引使用的数据结构多是B-Tree或者B+Tree。例如，MsSql使用的是B+Tree，Oracle及Sysbase使用的是B-Tree。简单地介绍一下<a href ="http://littlebean.github.io/2014/02/27/b%E6%A0%91/">B-Tree</a>。</p>
+<h2 id="-">数据库的索引</h2>
+<p>如果你的表数据日常更新比较少，应当使用索引技术，因为通过索引可以减少为返回查询结果集必须读取的数据量。如果你的表经常需要执行插入、删除、修改操作，过多的索引则会导致数据维护性能的减弱，因为在维护这些数据的同时，数据引擎还要维护这些索引。
+]]></summary>
+    
+      <category term="数据库" scheme="http://littlebean.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="索引" scheme="http://littlebean.github.io/tags/%E7%B4%A2%E5%BC%95/"/>
+    
+      <category term="数据库" scheme="http://littlebean.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[C和C++头文件一些问题]]></title>
+    <link href="http://littlebean.github.io/2014/02/23/c%E5%92%8Cc++%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
+    <id>http://littlebean.github.io/2014/02/23/c和c++头文件一些问题/</id>
+    <published>2014-02-23T06:07:36.000Z</published>
+    <updated>2014-03-07T12:31:10.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="c-c-">C和C++的一些区别</h2>
+<p>在讲C和C++头文件的一些问题之前，我们先看下C和C++的一些区别：</p>
+<ul>
+<li>C语言是一个结构化语言，它的重点在于<strong>算法和数据结构</strong>。</li>
+<li>C++则是首要考虑的是如何构造一个对象模型，让这个模型能够处理对应的问题域。
+所以它们最大区别是解决问题的思想不一样，所以说C++比C更加先进，因为C++融入了<strong>设计</strong>这个概念。</li>
+</ul>
+<p>对语言本身而言，C是C++的子集，那么是什么样的一个子集？从上文可以看出， C实现了C++中过程化控制及其它相关功能，而在C++中的C（我称它为“C+”），相对于原来的C还有所加强：</p>
+<ul>
+<li>引入了重载、内联函数、异常处理等等。</li>
+<li>C++更是拓展了面向对象设计的内容，如类、继承、虚函数、模板和包容器类等等。 </li>
+<li>在C++中，数据封装、类型这些东东已不是什么新鲜事了，需要考虑的是诸如：对象粒度的选择、对象接口的设计和继承、组合与继承的使用等等问题。</li>
+</ul>
+<p>所以相对于C，C++包含了更丰富的“设计”的概念，但<strong>C是C++的一个自洽子集</strong>，也具有强大的功能，同样值得学习。</p>
+<p><a id="more"></a></p>
+<h2 id="c-c-">C和C++头文件的一些区别</h2>
+<p>在C++中，<code>&lt;iostream&gt;</code>与<code>&lt;iostream.h&gt;</code>的区别，前者要使用更新的编译器（其实大部分编译器多比较前卫了，出了有些搞嵌入式的用变态的编译器）.原来<code>&lt;iostream&gt;</code>是C++的头文件，<code>&lt;iostream.h&gt;</code>是C的头文件，标准的C++头文件没有.h扩展名，将以前的C的头文件转化为C++的头文件后，有时加上c的前缀表示来自于c,<code>&lt;cmath&gt;</code>就是由<code>&lt;math.h&gt;</code>变来的。</br></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> <span class="comment">//使用名字空间（使用所有）</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::<span class="built_in">cout</span><span class="comment">//只使用cout</span>
+</pre></td></tr></table></figure>
+
+<p>如不用using，则在代码前可以用sdt::cout表示使用的是std中的cout。</br></p>
+<p>例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="preprocessor">#include&lt;iostream.h&gt;<span class="comment">//必须要加上.h </span></span>
+<span class="keyword">void</span> main() 
+{ 
+	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Right?"</span>&lt;&lt;endl; 
+} 
+
+<span class="preprocessor">#include&lt;string&gt; </span>
+<span class="preprocessor">#include&lt;iostream&gt;<span class="comment">//此处必须去掉.h </span></span>
+usingnamespace <span class="built_in">std</span> ; 
+<span class="keyword">void</span> main() 
+{ 
+	<span class="built_in">string</span> s; 
+	getline(<span class="built_in">cin</span>,s); 
+	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Right?"</span>&lt;&lt;endl; 
+}
+</pre></td></tr></table></figure>
+
+<p>相关解析：
+<code>&lt;iostream.h&gt;</code>里面定义的所有类以及对象都是在全局空间里，所以你可以直接用<code>cout</code>但在<code>&lt;iostream&gt;</code>里面，它所定义的东西都在名字空间std里面，所以你必须加上<code>using namespace std</code>才能使用<code>cout</code>一般一个C++的老的带“.h”扩展名的库文件，比如<code>&lt;iostream.h&gt;</code>，在新标准后的标准库中都有一个不带“.h”扩展名的相对应，区别除了后者的好多改进之外，还有一点就是后者的东东都塞进了<code>std</code>名字空间中。</br></p>
+<p>但<code>string</code>特别,问题在于C++要兼容C的标准库，而C的标准库里碰巧也已经有一个名字叫做<code>&lt;string.h&gt;</code>的头文件，包含一些常用的C字符串处理函数，比如楼主提到的<code>strcmp</code>。这个头文件跟C++的<code>string</code>类半点关系也没有，所以<code>&lt;string&gt;</code>并非<code>&lt;string.h&gt;</code>的“升级版本”，他们是毫无关系的两个头文件。要达到楼主的目的，比如同时：</br></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="preprocessor">#include &lt;string.h&gt; </span>
+<span class="preprocessor">#include &lt;string&gt; </span>
+<span class="keyword">using</span> name space <span class="built_in">std</span>; 
+或者 
+<span class="preprocessor">#include &lt;cstring&gt; </span>
+<span class="preprocessor">#include &lt;string&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>其中<code>&lt;cstring&gt;</code>是与C标准库的<code>&lt;string.h&gt;</code>相对应，但裹有std名字空间的版本。</br></p>
+<ul>
+<li><code>&lt;string&gt;</code>是c++ 的头文件，其内包含了一个<code>string</code>类，<code>string s1</code>就是建立一个<code>string</code>类的对象 </li>
+<li><code>&lt;string.h&gt;</code>的c语言的东西 并无类，所以不能 <code>string s1</code> </li>
+<li><code>&lt;cstring&gt;</code>文件实际上只是在一个命名空间<code>std</code>中<code>include</code>了 <code>&lt;string.h&gt;</code></li>
+</ul>
+<p>参考：<a href="http://www.cnblogs.com/Cmpl/archive/2012/01/01/2309710.html" target="_blank"><a href="http://www.cnblogs.com/Cmpl/archive/2012/01/01/2309710.html">http://www.cnblogs.com/Cmpl/archive/2012/01/01/2309710.html</a></a></p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="c-c-">C和C++的一些区别</h2>
+<p>在讲C和C++头文件的一些问题之前，我们先看下C和C++的一些区别：</p>
+<ul>
+<li>C语言是一个结构化语言，它的重点在于<strong>算法和数据结构</strong>。</li>
+<li>C++则是首要考虑的是如何构造一个对象模型，让这个模型能够处理对应的问题域。
+所以它们最大区别是解决问题的思想不一样，所以说C++比C更加先进，因为C++融入了<strong>设计</strong>这个概念。</li>
+</ul>
+<p>对语言本身而言，C是C++的子集，那么是什么样的一个子集？从上文可以看出， C实现了C++中过程化控制及其它相关功能，而在C++中的C（我称它为“C+”），相对于原来的C还有所加强：</p>
+<ul>
+<li>引入了重载、内联函数、异常处理等等。</li>
+<li>C++更是拓展了面向对象设计的内容，如类、继承、虚函数、模板和包容器类等等。 </li>
+<li>在C++中，数据封装、类型这些东东已不是什么新鲜事了，需要考虑的是诸如：对象粒度的选择、对象接口的设计和继承、组合与继承的使用等等问题。</li>
+</ul>
+<p>所以相对于C，C++包含了更丰富的“设计”的概念，但<strong>C是C++的一个自洽子集</strong>，也具有强大的功能，同样值得学习。</p>
+<p>]]></summary>
+    
+      <category term="C/C++" scheme="http://littlebean.github.io/tags/C/C++/"/>
+    
+      <category term="C/C++" scheme="http://littlebean.github.io/categories/C/C++/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Goto 2014 From 2013]]></title>
+    <link href="http://littlebean.github.io/2014/01/31/goto-2014-from-2013/"/>
+    <id>http://littlebean.github.io/2014/01/31/goto-2014-from-2013/</id>
+    <published>2014-01-31T15:35:16.000Z</published>
+    <updated>2014-03-04T11:32:19.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-2013">回顾2013</h2>
+<p>辞去的2013年中，1月初，经过了让我上升一个战斗值的--考研，考完到出分的时候肯定都是潇洒阶段，出分后，由于一直拖后腿的英语，差两分调剂到了浙大软件学院，但是还是要准备复试和浙大的PAT机试。由于总分稍微高点，复试和机试都是水过，现在成为了一名名义上的浙大人。在这里非常感谢那些陪我一起走完考研这条路的松妞妞、王大锤同学和本科班上的各位美女和帅哥们。<br/>
+就这样有浑浑噩噩的耍了几个月，7月份就去学校报到了，直到9月份，在这两个月期间，学习传说中的SSH框架，做了一个个人理财平台，也算是真正意义上的第一次项目经验。9月份正式开学，也在开学不久跟一位舍友<a href="http://xidianpanpei.github.io" target="_blank">P大神</a>进入了一个高大上的领域-云计算。我们研究的是目前比较火的OpenStack,开始的我听老师的安排，一个人负责了用Puppet自动部署的OpenStack平台。从无到自己慢慢摸索搞清楚了Puppet的一些大概机制。倒是缺乏OpenStack的部署实践经验，后来放了，接着为了学习OpenStack的更深入的东西，就进入OpenStack的网络组，开始了OpenStack的真正学习，由于基础不扎实，在其间碰到了好多问题，但也学到了好多东西。<br/></p>
+<h2 id="-2014">展望2014</h2>
+<p>经过了一个学期的研究生生涯，发现了自己的许多不足，有好多东西要学，那么这一年的目标很明确就是找一份理想的实习工作，在这里我要感谢我的父母对我的学业支持、我身边的好兄弟们和大金融的小伙伴们的帮助，希望大家在新的一年能够身体健康、万事如意、找到自己心仪的实习工作。<br/>
+<a id="more"></a>
+<img src="/img/2014/01/31/xueba.jpg" alt="我要当学霸"></p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="-2013">回顾2013</h2>
+<p>辞去的2013年中，1月初，经过了让我上升一个战斗值的--考研，考完到出分的时候肯定都是潇洒阶段，出分后，由于一直拖后腿的英语，差两分调剂到了浙大软件学院，但是还是要准备复试和浙大的PAT机试。由于总分稍微高点，复试和机试都是水过，现在成为了一名名义上的浙大人。在这里非常感谢那些陪我一起走完考研这条路的松妞妞、王大锤同学和本科班上的各位美女和帅哥们。<br/>
+就这样有浑浑噩噩的耍了几个月，7月份就去学校报到了，直到9月份，在这两个月期间，学习传说中的SSH框架，做了一个个人理财平台，也算是真正意义上的第一次项目经验。9月份正式开学，也在开学不久跟一位舍友<a href="http://xidianpanpei.github.io" target="_blank">P大神</a>进入了一个高大上的领域-云计算。我们研究的是目前比较火的OpenStack,开始的我听老师的安排，一个人负责了用Puppet自动部署的OpenStack平台。从无到自己慢慢摸索搞清楚了Puppet的一些大概机制。倒是缺乏OpenStack的部署实践经验，后来放了，接着为了学习OpenStack的更深入的东西，就进入OpenStack的网络组，开始了OpenStack的真正学习，由于基础不扎实，在其间碰到了好多问题，但也学到了好多东西。<br/></p>
+<h2 id="-2014">展望2014</h2>
+<p>经过了一个学期的研究生生涯，发现了自己的许多不足，有好多东西要学，那么这一年的目标很明确就是找一份理想的实习工作，在这里我要感谢我的父母对我的学业支持、我身边的好兄弟们和大金融的小伙伴们的帮助，希望大家在新的一年能够身体健康、万事如意、找到自己心仪的实习工作。<br/>
+]]></summary>
+    
+      <category term="碎碎念" scheme="http://littlebean.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="碎碎念" scheme="http://littlebean.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Win7远程连接全屏]]></title>
+    <link href="http://littlebean.github.io/2013/08/19/win7%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%85%A8%E5%B1%8F/"/>
+    <id>http://littlebean.github.io/2013/08/19/win7远程连接全屏/</id>
+    <published>2013-08-18T18:58:49.000Z</published>
+    <updated>2014-02-20T10:23:51.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-">问题：</h2>
+<p><br/>
+Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与远程桌面一样大小或者比桌面小【最大化之后还是没有全屏】，而不是全屏；但“最大化”按钮显示窗口已处于最大化状态。如果您单击“最大化”按钮，窗口不能正常进入全屏模式，而是还原为比远程桌面略小。  </p>
+<h2 id="-">解决办法：</h2>
+<p><br/>
+<strong>打开mstsc--选项--显示--显示配置--把滑动按钮滑动到最右边即全屏。</strong>
+<a id="more"></a></p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="-">问题：</h2>
+<p><br/>
+Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与远程桌面一样大小或者比桌面小【最大化之后还是没有全屏】，而不是全屏；但“最大化”按钮显示窗口已处于最大化状态。如果您单击“最大化”按钮，窗口不能正常进入全屏模式，而是还原为比远程桌面略小。  </p>
+<h2 id="-">解决办法：</h2>
+<p><br/>
+<strong>打开mstsc--选项--显示--显示配置--把滑动按钮滑动到最右边即全屏。</strong>
+]]></summary>
+    
+      <category term="技巧" scheme="http://littlebean.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+      <category term="遇到的小问题" scheme="http://littlebean.github.io/categories/%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>归档：2014/3 | 聆听</title>
+  <meta name="author" content="聆听">
+  
+  <meta name="description" content="聆听的博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  
+  <meta property="og:site_name" content="聆听"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="聆听" type="application/atom+xml">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41590217-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</head>
+
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li>
+            <div>
+                <ol class="breadcrumb">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/archives">Archives</a></li>
+                    
+                    <li><a href="/about">About</a></li>
+                    
+                    <li> <a href="/atom.xml">Rss</a></li>
+                </ol>
+            </div>
+        </li>
+    </ul>
+
+    <h2>
+        <a href="/">聆听</a> 
+    </h2>
+    <h5 class="text-muted"> 水滴石穿  </h5>
+</div>
+
+    </div>
+
+    <hr> 
+
+    <div class="row">
+         <!--Body content-->
+         
+
+<div class="archive-title" >
+  <h2 class="archive-icon">2014/3</h2>
+  
+  <div class="archiveslist archive-float clearfix">
+   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">二月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">八月 2013</a><span class="archive-list-count">1</span></li></ul>
+ </div>
+  
+</div>
+<div id="main" class="archive-part clearfix">
+  <div id="archive-page">
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <div class="header">
+      
+  
+    <h3 class="title"><a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+        <small>
+            <time datetime="2014-03-12T08:08:00.000Z">3月 12 2014</time>
+        </small>
+    </h3>
+  
+
+
+    </div>
+
+    <div class="entry">
+      
+        <h2 id="-">引言</h2>
+<p>日子过的真快，研究生念的都还没有什么感觉就要找实习了，学校来了第一个找实习的公司---华为。投了中央研究院的一个C++研发岗，今天面试问了一些项目什么的，然后问道C++和JAVA的一些区别，就说了几个比较浅的区别，什么JAVA是纯面向对象的，C++是半结构化半面向对象的，支持多继承的一门语言什么的，面我的那位帅哥感觉还不足提示了一下在面向对象的3个特性（封装，继承，多态）来说一下，然后我就回答了最主要的区别是在多态的实现机制上的不同，JAVA是靠重载，C++是靠虚函数来实现的，然后就紧接着问，虚函数的怎么实现多态的，当时没有说用虚函数表什么的，就大概说了一下是用基类的指针绑定派生类的对象的，然后调用派生类中对基类虚函数实现的调用，感觉回答的好不专业，然后他就说用虚函数表就能简单的说明，下面我来总结一下虚函数和虚函数表的一些东西。
+
+      
+    </div>
+
+	
+		
+			<a href="/2014/03/12/对虚函数的一些理解/#more" class="more-link">More..</a>
+		
+	
+
+	<hr/>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <div class="header">
+      
+  
+    <h3 class="title"><a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+        <small>
+            <time datetime="2014-03-06T14:34:55.000Z">3月 6 2014</time>
+        </small>
+    </h3>
+  
+
+
+    </div>
+
+    <div class="entry">
+      
+        <h2 id="c-stl-">C++ STL各个容器底层由哪些数据结构实现的：</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
+<ol>
+<li>vector  底层数据结构为数组 ，支持快速随机访问</li>
+<li>list    底层数据结构为双向链表，支持快速增删</li>
+<li>deque   底层数据结构为一个中央控制器和多个缓冲区,支持首尾（中间不能）快速增删，也支持随机访问</li>
+<li>stack   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
+<li>queue   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
+<li>priority_queue 的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</li>
+</ol>
+<hr>
+<p>
+      
+    </div>
+
+	
+		
+			<a href="/2014/03/06/stl实现的底层数据结构有哪些？/#more" class="more-link">More..</a>
+		
+	
+
+	<hr/>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <div class="header">
+      
+  
+    <h3 class="title"><a href="/2014/03/04/引用和指针的区别/">引用和指针的区别</a>
+        <small>
+            <time datetime="2014-03-04T08:04:20.000Z">3月 4 2014</time>
+        </small>
+    </h3>
+  
+
+
+    </div>
+
+    <div class="entry">
+      
+        <h2 id="-">引言</h2>
+<p>这几天复习看了一下c++ primer的一些基础语法，发现引用和指针在C++中有很多相似之处，所以想写一篇文章对这两个东西来理一下。</p>
+<h2 id="-">什么是引用</h2>
+<p><strong>引用</strong>就是对象的另一个名字，引用主要用于函数的形式参数，引用是一种<strong>复合类型</strong>（通过其他类型定义的类型），通过在变量名前添加<code>&amp;</code>符号来定义。
+
+      
+    </div>
+
+	
+		
+			<a href="/2014/03/04/引用和指针的区别/#more" class="more-link">More..</a>
+		
+	
+
+	<hr/>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  
+  </div>
+</article>
+
+
+
+
+
+  </div>
+</div>
+
+
+        <!--Sidebar content-->
+        <div class="sidebar">
+        
+<div class="container">
+
+
+	<div class="col-xs-12 col-sm-6 col-md-3">
+  	    
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+      </li>
+    
+      <li>
+        <a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+      </li>
+    
+      <li>
+        <a href="/2014/03/04/引用和指针的区别/">引用和指针的区别</a>
+      </li>
+    
+      <li>
+        <a href="/2014/02/27/b树/">B树</a>
+      </li>
+    
+      <li>
+        <a href="/2014/02/27/数据库的索引/">数据库的索引</a>
+      </li>
+    
+      <li>
+        <a href="/2014/02/23/c和c++头文件一些问题/">C和C++头文件一些问题</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/31/goto-2014-from-2013/">Goto 2014 From 2013</a>
+      </li>
+    
+      <li>
+        <a href="/2013/08/19/win7远程连接全屏/">Win7远程连接全屏</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  	</div>
+
+	<div class="col-xs-12 col-sm-6 col-md-3">
+  	    <div class="widget tag">
+	<h3 class="title">Link</h3>
+	<ul class="entry">
+		<li><a href="http://cih.so" target="_blank" title="MaHuipei">Kingx's Blog</a></li>
+      	<li><a href="http://wtz123.github.io" target="_blank" title="WangTianzhi">wtz's Blog</a></li>
+      	<li><a href="http://xidianpanpei.github.io" target="_blank" title="PanPei">PanPei's Blog</a></li>
+      	<li><a href="http://yanhoulei.cn/" target="_blank">yanhoulei's Blog</a></li>
+		<li><a href="http://www.searchtb.com/" target="_blank">搜索技术博客－淘宝</a></li>
+		<li><a href="http://www.spinics.net/linux/" target="_blank">Rick's Linux Resources</a></li>
+		
+	</ul>
+</div>
+
+  	</div>
+
+	<div class="col-xs-12 col-sm-6 col-md-3">
+  	    
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
+  
+    <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
+  
+    <li><a href="/categories/数据结构/">数据结构</a><small>2</small></li>
+  
+    <li><a href="/categories/碎碎念/">碎碎念</a><small>1</small></li>
+  
+    <li><a href="/categories/遇到的小问题/">遇到的小问题</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  	</div>
+
+	<div class="col-xs-12 col-sm-6 col-md-3">
+  	    
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/B树/">B树</a><small>1</small></li>
+  
+    <li><a href="/tags/C/C++/">C/C++</a><small>3</small></li>
+  
+    <li><a href="/tags/STL/">STL</a><small>1</small></li>
+  
+    <li><a href="/tags/技巧/">技巧</a><small>1</small></li>
+  
+    <li><a href="/tags/数据库/">数据库</a><small>1</small></li>
+  
+    <li><a href="/tags/数据结构/">数据结构</a><small>2</small></li>
+  
+    <li><a href="/tags/碎碎念/">碎碎念</a><small>1</small></li>
+  
+    <li><a href="/tags/索引/">索引</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  	</div>
+
+
+</div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="alignleft">
+  
+  &copy; 2014 聆听
+  
+</div>
+<div class="clearfix"></div>
+
+    </div>
+
+</div>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+    (function($){
+        $('.fancybox').fancybox();
+    })(jQuery);
+</script>
+
+
+
+
+</body>
+</html>
