@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>数据库 | 聆听</title>
+  <title>STL概述 | 聆听</title>
   <meta name="author" content="聆听">
   
   <meta name="description" content="聆听的博客">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  
+  <meta property="og:title" content="STL概述"/>
   <meta property="og:site_name" content="聆听"/>
 
   
@@ -76,16 +76,7 @@
 
     <div class="row">
          <!--Body content-->
-         
-
-<div class="archive-title" >
-  <h2 class="category-icon">数据库</h2>
-  
-</div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <article class="post">
+         <article class="post">
   
     <div class="gallery">
   <div class="photoset">
@@ -103,9 +94,9 @@
     <div class="header">
       
   
-    <h3 class="title"><a href="/2014/02/27/数据库的索引/">数据库的索引</a>
+    <h3 class="title">STL概述
         <small>
-            <time datetime="2014-02-27T03:33:52.000Z">2月 27 2014</time>
+            <time datetime="2014-03-16T12:09:37.000Z">3月 16 2014</time>
         </small>
     </h3>
   
@@ -116,34 +107,70 @@
     <div class="entry">
       
         <h2 id="-">引言</h2>
-<p>为了找实习，听到试水同学的热乎乎的面筋后，需要了解数据库的知识，就去图书馆借了本“锋利的SQL”复习一下数据库知识，看到了索引这个东西，感觉需要深入的研究一下，于是在网上找了几片文章看看。</p>
-<h2 id="b-">B树</h2>
-<p>我们常见的数据库系统，其索引使用的数据结构多是B-Tree或者B+Tree。例如，MsSql使用的是B+Tree，Oracle及Sysbase使用的是B-Tree。简单地介绍一下<a href ="http://littlebean.github.io/2014/02/27/b%E6%A0%91/">B-Tree</a>。</p>
-<h2 id="-">数据库的索引</h2>
-<p>如果你的表数据日常更新比较少，应当使用索引技术，因为通过索引可以减少为返回查询结果集必须读取的数据量。如果你的表经常需要执行插入、删除、修改操作，过多的索引则会导致数据维护性能的减弱，因为在维护这些数据的同时，数据引擎还要维护这些索引。
+<p>在早期的时候，对于程序员最希望的是能够拥有一种重复运用的东西，然后自己所花了好多精力做出的东西不会因为时间的推移然后失去了价值。尤其程序设计的最基础的数据结构和算法也没有统一的标准，致使大部分的程序员从事大量的重复工作，既浪费人力资源也是编程过程中错误的主要来源。为了建立数据结构和算法的一套标准，提升各自的独立性、弹性和互操作性，STL就这样在C++社区里。在侯捷的《STL源码剖析》一书中说明了STL的价值。</p>
+<pre><code>STL的价值在于两方面，就底层而言，STL带给我们一套极具实用价值的零部件，以及一个整合的组织。这种价值就像MFC或者VCL之于Windows软件开发过程所带来的价值一样，直接而明确，令大多数有最立即明显的感受。除此之外，STL还带给我们一个高档次、以**泛型思维**为基础的、系统化的、条理分明的“软件组件分类学”。从这个角度看，STL是一个抽象概念库。
+</code></pre><a id="more"></a>
+
+<h2 id="stl-">STL历史</h2>
+<p>STL由<strong>Alexander Stepanov</strong>创造于1979年前后，这也是<strong>Bjarne Stroustrup</strong>创造C++年代。
+然而泛型程序设计的思想早在1971年在计算机几何领域产生。第一个支持泛型概念的语言是Ada,然而Ada在美国国防工业以外并未被广泛实用，但当时C++在程序设计领域迅速发展。C++在那时候没有采用<code>template</code>性质，但是Alexander意识到C++允许程序员通过指针以极佳弹性的方式处理内存。这一点正是泛型能在C++中应用的重要关键且不失效能。</p>
+<h2 id="stl-">STL的六大组件</h2>
+<ol>
+<li><strong>容器（containers）</strong>:各种数据结构，如<code>vector</code>,<code>list</code>,<code>deque</code>,<code>set</code>,<code>map</code>等用来存放数据，容器是一种<code>class template</code>。</li>
+<li><strong>算法(algorithms)</strong>:各种常用的算法，如<code>sort</code>,<code>search</code>,<code>copy</code>,<code>erase</code>等，算法是一种<code>function template</code>。</li>
+<li><strong>迭代器（iterators）</strong>:容器和算法之间的一种粘合剂，有5种类型，如:</br><code>Input iterator</code>,<code>Output iterator</code>,<code>Forward iterator</code>,<code>Bidirectional iterator</code>,<code>Random Access iterator</code>。迭代器也是一种重载<code>operator*</code>,<code>operator-&gt;</code>,<code>operator++</code>,<code>operator--</code>等操作符的<code>class template</code>,原生指针也算是一种迭代器。</li>
+<li><strong>仿函数（functors）</strong>:行为类似函数，可作为函数的某种策略，仿函数是一种重载了<code>operator()</code>的一种<code>class template</code>，普通的函数也可以说是狭义的仿函数。</li>
+<li><strong>配接器（adapters）</strong>:一种用来修饰容器、仿函数或者迭代器借口的东西。配置器的实现很难一言蔽之，以后再分析。</li>
+<li><strong>配置器（allocators）</strong>:负责空间的配置和管理，配置器是一个实现了空间动态配置、空间管理、空间释放的<code>class template</code>。</li>
+</ol>
+<h2 id="-">组件之间的关系</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-components.jpg" alt="SGI组件关系">
+<code>Container</code>通过<code>Allocator</code>取得数据存储空间，<code>Algorithm</code>通过<code>Iterator</code>存取<code>Container</code>数据，<code>Functor</code>可以协助<code>Algorithm</code>完成不同的策略变化，<code>Adapter</code>可以修饰或者套接<code>Functor</code>。</p>
+<h2 id="stl-">STL常见版本</h2>
+<h3 id="hp-stl">HP STL</h3>
+<pre><code>HP版本是所有STL版本的始祖。每个HP STL头文件都有一份声明，允许任何人使用、拷贝、修改、传播、贩卖这份软件及其说明，唯一要遵守的是，必须在所有文件加上HP版本说明和运行权限声明，这种授权属于open source范畴，不属于GNU GPL范畴。
+</code></pre><h3 id="p-j-plauger-pj-stl">P.J.Plauger实现版本--PJ STL</h3>
+<pre><code>该版本是继承HP版本的，每个文件也有HP版本声明，但不属于open source范畴也不属于GNU GPL。该版本被Visual C++采用，可以在Visual C++的include的子目录（如C：\msdev\VC98\Include）找到STL的头文件，不能公开修改和贩卖，这个版本的可读性非常低。
+</code></pre><h3 id="rouge-ware-rw-stl">Rouge Ware实现版本-- RW STL</h3>
+<pre><code>和PJ STL一样是继承HP STL,也不属于open source和GNU GPL,这个版本被C++ Builder采用，同样可以在include子目录中找到STL的头文件（如：C:\Inprise\CBuilder4\Include）,可读性比PJ STL好些。
+</code></pre><h3 id="sgi-stl">SGI STL</h3>
+<pre><code>SGI版本由（Silicon Graphics Computer System,Inc）公司发展的，同样是继承HP版本的，与PJ STL和RW STL不同是它属于open source的一员，但不属于GNU GPL，SGI STL被GCC采用，也可以在include子目录下找到STL头文件（如：C:\Cygnus\cygwin-b20\include\g++），可读性比前面的三个版本都好。
+</code></pre><h2 id="sgi-stl-">SGI STL文件分布</h2>
+<p><strong>SGI STL V3.3</strong>源码：</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-overview.jpg" alt="SGI源码"></p>
+<h2 id="-">参考</h2>
+<p>The Annotated STL Sources(using SGI STL)</p>
 
       
     </div>
 
-	
-		
-			<a href="/2014/02/27/数据库的索引/#more" class="more-link">More..</a>
-		
 	
 
 	<hr/>
   <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
   
+<section id="comment">
+<!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xuxiaolong"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- Duoshuo Comment END -->
+</section>
+
   </div>
 </article>
 
 
-
-
-
-  </div>
-</div>
 
 
         <!--Sidebar content-->

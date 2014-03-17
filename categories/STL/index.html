@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>技巧 | 聆听</title>
+  <title>STL | 聆听</title>
   <meta name="author" content="聆听">
   
   <meta name="description" content="聆听的博客">
@@ -79,7 +79,7 @@
          
 
 <div class="archive-title" >
-  <h2 class="tag-icon">技巧</h2>
+  <h2 class="category-icon">STL</h2>
   
 </div>
 <div id="main" class="archive-part clearfix">
@@ -103,9 +103,9 @@
     <div class="header">
       
   
-    <h3 class="title"><a href="/2013/08/19/win7远程连接全屏/">Win7远程连接全屏</a>
+    <h3 class="title"><a href="/2014/03/16/stl概述/">STL概述</a>
         <small>
-            <time datetime="2013-08-18T18:58:49.000Z">8月 19 2013</time>
+            <time datetime="2014-03-16T12:09:37.000Z">3月 16 2014</time>
         </small>
     </h3>
   
@@ -115,19 +115,77 @@
 
     <div class="entry">
       
-        <h2 id="-">问题：</h2>
-<p><br/>
-Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与远程桌面一样大小或者比桌面小【最大化之后还是没有全屏】，而不是全屏；但“最大化”按钮显示窗口已处于最大化状态。如果您单击“最大化”按钮，窗口不能正常进入全屏模式，而是还原为比远程桌面略小。  </p>
-<h2 id="-">解决办法：</h2>
-<p><br/>
-<strong>打开mstsc--选项--显示--显示配置--把滑动按钮滑动到最右边即全屏。</strong>
-
+        <h2 id="-">引言</h2>
+<p>在早期的时候，对于程序员最希望的是能够拥有一种重复运用的东西，然后自己所花了好多精力做出的东西不会因为时间的推移然后失去了价值。尤其程序设计的最基础的数据结构和算法也没有统一的标准，致使大部分的程序员从事大量的重复工作，既浪费人力资源也是编程过程中错误的主要来源。为了建立数据结构和算法的一套标准，提升各自的独立性、弹性和互操作性，STL就这样在C++社区里。在侯捷的《STL源码剖析》一书中说明了STL的价值。</p>
+<pre><code>STL的价值在于两方面，就底层而言，STL带给我们一套极具实用价值的零部件，以及一个整合的组织。这种价值就像MFC或者VCL之于Windows软件开发过程所带来的价值一样，直接而明确，令大多数有最立即明显的感受。除此之外，STL还带给我们一个高档次、以**泛型思维**为基础的、系统化的、条理分明的“软件组件分类学”。从这个角度看，STL是一个抽象概念库。
+</code></pre>
       
     </div>
 
 	
 		
-			<a href="/2013/08/19/win7远程连接全屏/#more" class="more-link">More..</a>
+			<a href="/2014/03/16/stl概述/#more" class="more-link">More..</a>
+		
+	
+
+	<hr/>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <div class="header">
+      
+  
+    <h3 class="title"><a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+        <small>
+            <time datetime="2014-03-06T14:34:55.000Z">3月 6 2014</time>
+        </small>
+    </h3>
+  
+
+
+    </div>
+
+    <div class="entry">
+      
+        <h2 id="c-stl-">C++ STL各个容器底层由哪些数据结构实现的：</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
+<ol>
+<li>vector  底层数据结构为数组 ，支持快速随机访问</li>
+<li>list    底层数据结构为双向链表，支持快速增删</li>
+<li>deque   底层数据结构为一个中央控制器和多个缓冲区,支持首尾（中间不能）快速增删，也支持随机访问</li>
+<li>stack   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
+<li>queue   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
+<li>priority_queue 的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</li>
+</ol>
+<hr>
+<p>
+      
+    </div>
+
+	
+		
+			<a href="/2014/03/06/stl实现的底层数据结构有哪些？/#more" class="more-link">More..</a>
 		
 	
 
@@ -157,6 +215,10 @@ Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与�
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2014/03/16/stl概述/">STL概述</a>
+      </li>
     
       <li>
         <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
@@ -220,13 +282,17 @@ Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与�
   
     <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
   
+    <li><a href="/categories/STL/">STL</a><small>2</small></li>
+  
+    <li><a href="/categories/总结/">总结</a><small>1</small></li>
+  
     <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
   
-    <li><a href="/categories/数据结构/">数据结构</a><small>2</small></li>
+    <li><a href="/categories/STL/数据结构/">数据结构</a><small>1</small></li>
   
-    <li><a href="/categories/碎碎念/">碎碎念</a><small>1</small></li>
+    <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
   
-    <li><a href="/categories/遇到的小问题/">遇到的小问题</a><small>1</small></li>
+    <li><a href="/categories/电脑常识/">电脑常识</a><small>1</small></li>
   
   </ul>
 </div>
@@ -240,21 +306,13 @@ Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与�
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/B树/">B树</a><small>1</small></li>
+    <li><a href="/tags/C/C++/">C/C++</a><small>1</small></li>
   
-    <li><a href="/tags/C/C++/">C/C++</a><small>3</small></li>
+    <li><a href="/tags/日常问题/">日常问题</a><small>1</small></li>
   
-    <li><a href="/tags/STL/">STL</a><small>1</small></li>
+    <li><a href="/tags/生活点滴/">生活点滴</a><small>1</small></li>
   
-    <li><a href="/tags/技巧/">技巧</a><small>1</small></li>
-  
-    <li><a href="/tags/数据库/">数据库</a><small>1</small></li>
-  
-    <li><a href="/tags/数据结构/">数据结构</a><small>2</small></li>
-  
-    <li><a href="/tags/碎碎念/">碎碎念</a><small>1</small></li>
-  
-    <li><a href="/tags/索引/">索引</a><small>1</small></li>
+    <li><a href="/tags/编程技术/">编程技术</a><small>6</small></li>
   
   </ul>
 </div>

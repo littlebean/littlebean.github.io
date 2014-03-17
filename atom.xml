@@ -4,7 +4,7 @@
   <subtitle><![CDATA[水滴石穿]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://littlebean.github.io/"/>
-  <updated>2014-03-16T04:31:30.901Z</updated>
+  <updated>2014-03-17T07:25:30.965Z</updated>
   <id>http://littlebean.github.io/</id>
   
   <author>
@@ -15,11 +15,63 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[STL概述]]></title>
+    <link href="http://littlebean.github.io/2014/03/16/stl%E6%A6%82%E8%BF%B0/"/>
+    <id>http://littlebean.github.io/2014/03/16/stl概述/</id>
+    <published>2014-03-16T12:09:37.000Z</published>
+    <updated>2014-03-17T07:20:34.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>在早期的时候，对于程序员最希望的是能够拥有一种重复运用的东西，然后自己所花了好多精力做出的东西不会因为时间的推移然后失去了价值。尤其程序设计的最基础的数据结构和算法也没有统一的标准，致使大部分的程序员从事大量的重复工作，既浪费人力资源也是编程过程中错误的主要来源。为了建立数据结构和算法的一套标准，提升各自的独立性、弹性和互操作性，STL就这样在C++社区里。在侯捷的《STL源码剖析》一书中说明了STL的价值。</p>
+<pre><code>STL的价值在于两方面，就底层而言，STL带给我们一套极具实用价值的零部件，以及一个整合的组织。这种价值就像MFC或者VCL之于Windows软件开发过程所带来的价值一样，直接而明确，令大多数有最立即明显的感受。除此之外，STL还带给我们一个高档次、以**泛型思维**为基础的、系统化的、条理分明的“软件组件分类学”。从这个角度看，STL是一个抽象概念库。
+</code></pre><a id="more"></a>
+
+<h2 id="stl-">STL历史</h2>
+<p>STL由<strong>Alexander Stepanov</strong>创造于1979年前后，这也是<strong>Bjarne Stroustrup</strong>创造C++年代。
+然而泛型程序设计的思想早在1971年在计算机几何领域产生。第一个支持泛型概念的语言是Ada,然而Ada在美国国防工业以外并未被广泛实用，但当时C++在程序设计领域迅速发展。C++在那时候没有采用<code>template</code>性质，但是Alexander意识到C++允许程序员通过指针以极佳弹性的方式处理内存。这一点正是泛型能在C++中应用的重要关键且不失效能。</p>
+<h2 id="stl-">STL的六大组件</h2>
+<ol>
+<li><strong>容器（containers）</strong>:各种数据结构，如<code>vector</code>,<code>list</code>,<code>deque</code>,<code>set</code>,<code>map</code>等用来存放数据，容器是一种<code>class template</code>。</li>
+<li><strong>算法(algorithms)</strong>:各种常用的算法，如<code>sort</code>,<code>search</code>,<code>copy</code>,<code>erase</code>等，算法是一种<code>function template</code>。</li>
+<li><strong>迭代器（iterators）</strong>:容器和算法之间的一种粘合剂，有5种类型，如:</br><code>Input iterator</code>,<code>Output iterator</code>,<code>Forward iterator</code>,<code>Bidirectional iterator</code>,<code>Random Access iterator</code>。迭代器也是一种重载<code>operator*</code>,<code>operator-&gt;</code>,<code>operator++</code>,<code>operator--</code>等操作符的<code>class template</code>,原生指针也算是一种迭代器。</li>
+<li><strong>仿函数（functors）</strong>:行为类似函数，可作为函数的某种策略，仿函数是一种重载了<code>operator()</code>的一种<code>class template</code>，普通的函数也可以说是狭义的仿函数。</li>
+<li><strong>配接器（adapters）</strong>:一种用来修饰容器、仿函数或者迭代器借口的东西。配置器的实现很难一言蔽之，以后再分析。</li>
+<li><strong>配置器（allocators）</strong>:负责空间的配置和管理，配置器是一个实现了空间动态配置、空间管理、空间释放的<code>class template</code>。</li>
+</ol>
+<h2 id="-">组件之间的关系</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-components.jpg" alt="SGI组件关系">
+<code>Container</code>通过<code>Allocator</code>取得数据存储空间，<code>Algorithm</code>通过<code>Iterator</code>存取<code>Container</code>数据，<code>Functor</code>可以协助<code>Algorithm</code>完成不同的策略变化，<code>Adapter</code>可以修饰或者套接<code>Functor</code>。</p>
+<h2 id="stl-">STL常见版本</h2>
+<h3 id="hp-stl">HP STL</h3>
+<pre><code>HP版本是所有STL版本的始祖。每个HP STL头文件都有一份声明，允许任何人使用、拷贝、修改、传播、贩卖这份软件及其说明，唯一要遵守的是，必须在所有文件加上HP版本说明和运行权限声明，这种授权属于open source范畴，不属于GNU GPL范畴。
+</code></pre><h3 id="p-j-plauger-pj-stl">P.J.Plauger实现版本--PJ STL</h3>
+<pre><code>该版本是继承HP版本的，每个文件也有HP版本声明，但不属于open source范畴也不属于GNU GPL。该版本被Visual C++采用，可以在Visual C++的include的子目录（如C：\msdev\VC98\Include）找到STL的头文件，不能公开修改和贩卖，这个版本的可读性非常低。
+</code></pre><h3 id="rouge-ware-rw-stl">Rouge Ware实现版本-- RW STL</h3>
+<pre><code>和PJ STL一样是继承HP STL,也不属于open source和GNU GPL,这个版本被C++ Builder采用，同样可以在include子目录中找到STL的头文件（如：C:\Inprise\CBuilder4\Include）,可读性比PJ STL好些。
+</code></pre><h3 id="sgi-stl">SGI STL</h3>
+<pre><code>SGI版本由（Silicon Graphics Computer System,Inc）公司发展的，同样是继承HP版本的，与PJ STL和RW STL不同是它属于open source的一员，但不属于GNU GPL，SGI STL被GCC采用，也可以在include子目录下找到STL头文件（如：C:\Cygnus\cygwin-b20\include\g++），可读性比前面的三个版本都好。
+</code></pre><h2 id="sgi-stl-">SGI STL文件分布</h2>
+<p><strong>SGI STL V3.3</strong>源码：</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-overview.jpg" alt="SGI源码"></p>
+<h2 id="-">参考</h2>
+<p>The Annotated STL Sources(using SGI STL)</p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
+<p>在早期的时候，对于程序员最希望的是能够拥有一种重复运用的东西，然后自己所花了好多精力做出的东西不会因为时间的推移然后失去了价值。尤其程序设计的最基础的数据结构和算法也没有统一的标准，致使大部分的程序员从事大量的重复工作，既浪费人力资源也是编程过程中错误的主要来源。为了建立数据结构和算法的一套标准，提升各自的独立性、弹性和互操作性，STL就这样在C++社区里。在侯捷的《STL源码剖析》一书中说明了STL的价值。</p>
+<pre><code>STL的价值在于两方面，就底层而言，STL带给我们一套极具实用价值的零部件，以及一个整合的组织。这种价值就像MFC或者VCL之于Windows软件开发过程所带来的价值一样，直接而明确，令大多数有最立即明显的感受。除此之外，STL还带给我们一个高档次、以**泛型思维**为基础的、系统化的、条理分明的“软件组件分类学”。从这个角度看，STL是一个抽象概念库。
+</code></pre>]]></summary>
+    
+      <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="STL" scheme="http://littlebean.github.io/categories/STL/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[对虚函数的一些理解]]></title>
     <link href="http://littlebean.github.io/2014/03/12/%E5%AF%B9%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"/>
     <id>http://littlebean.github.io/2014/03/12/对虚函数的一些理解/</id>
     <published>2014-03-12T08:08:00.000Z</published>
-    <updated>2014-03-12T11:35:30.000Z</updated>
+    <updated>2014-03-17T07:25:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-">引言</h2>
 <p>日子过的真快，研究生念的都还没有什么感觉就要找实习了，学校来了第一个找实习的公司---华为。投了中央研究院的一个C++研发岗，今天面试问了一些项目什么的，然后问道C++和JAVA的一些区别，就说了几个比较浅的区别，什么JAVA是纯面向对象的，C++是半结构化半面向对象的，支持多继承的一门语言什么的，面我的那位帅哥感觉还不足提示了一下在面向对象的3个特性（封装，继承，多态）来说一下，然后我就回答了最主要的区别是在多态的实现机制上的不同，JAVA是靠重载，C++是靠虚函数来实现的，然后就紧接着问，虚函数的怎么实现多态的，当时没有说用虚函数表什么的，就大概说了一下是用基类的指针绑定派生类的对象的，然后调用派生类中对基类虚函数实现的调用，感觉回答的好不专业，然后他就说用虚函数表就能简单的说明，下面我来总结一下虚函数和虚函数表的一些东西。
 <a id="more"></a></p>
@@ -199,7 +251,7 @@ m2
 <p>日子过的真快，研究生念的都还没有什么感觉就要找实习了，学校来了第一个找实习的公司---华为。投了中央研究院的一个C++研发岗，今天面试问了一些项目什么的，然后问道C++和JAVA的一些区别，就说了几个比较浅的区别，什么JAVA是纯面向对象的，C++是半结构化半面向对象的，支持多继承的一门语言什么的，面我的那位帅哥感觉还不足提示了一下在面向对象的3个特性（封装，继承，多态）来说一下，然后我就回答了最主要的区别是在多态的实现机制上的不同，JAVA是靠重载，C++是靠虚函数来实现的，然后就紧接着问，虚函数的怎么实现多态的，当时没有说用虚函数表什么的，就大概说了一下是用基类的指针绑定派生类的对象的，然后调用派生类中对基类虚函数实现的调用，感觉回答的好不专业，然后他就说用虚函数表就能简单的说明，下面我来总结一下虚函数和虚函数表的一些东西。
 ]]></summary>
     
-      <category term="C/C++" scheme="http://littlebean.github.io/tags/C/C++/"/>
+      <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
       <category term="C/C++" scheme="http://littlebean.github.io/categories/C/C++/"/>
     
@@ -210,7 +262,7 @@ m2
     <link href="http://littlebean.github.io/2014/03/06/stl%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/"/>
     <id>http://littlebean.github.io/2014/03/06/stl实现的底层数据结构有哪些？/</id>
     <published>2014-03-06T14:34:55.000Z</published>
-    <updated>2014-03-07T14:16:50.000Z</updated>
+    <updated>2014-03-17T07:20:01.000Z</updated>
     <content type="html"><![CDATA[<h2 id="c-stl-">C++ STL各个容器底层由哪些数据结构实现的：</h2>
 <p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
 <ol>
@@ -248,11 +300,11 @@ m2
 <hr>
 <p>]]></summary>
     
-      <category term="STL" scheme="http://littlebean.github.io/tags/STL/"/>
+      <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="数据结构" scheme="http://littlebean.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="STL" scheme="http://littlebean.github.io/categories/STL/"/>
     
-      <category term="数据结构" scheme="http://littlebean.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="http://littlebean.github.io/categories/STL/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -422,7 +474,7 @@ ri = ri2; <span class="comment">// assign ival2 to ival</span>
     <link href="http://littlebean.github.io/2014/02/27/b%E6%A0%91/"/>
     <id>http://littlebean.github.io/2014/02/27/b树/</id>
     <published>2014-02-27T04:27:24.000Z</published>
-    <updated>2014-03-07T12:25:55.000Z</updated>
+    <updated>2014-03-17T07:23:53.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-">引言</h2>
 <p>B树（B-tree）是一种树状数据结构，它能够存储数据、对其进行排序并允许以O(log n)的时间复杂度运行进行查找、顺序读取、插入和删除的数据结构。B树，概括来说是一个节点可以拥有多于2个子节点的二叉查找树。与自平衡二叉查找树不同，B-树为系统最优化大块数据的读和写操作。B-tree算法减少定位记录时所经历的中间过程，从而加快存取速度。普遍运用在数据库和文件系统。
 一棵M阶的B-Tree满足以下条件：</p>
@@ -462,9 +514,7 @@ B树的生成其实就是B树从空的状态下，将结点一个一个插入的
 <li>所有叶结点在同一层，叶结点不包含任何关键字信息；</li>
 <li>有K个关键字的非叶结点恰好包含K+1个孩子；]]></summary>
     
-      <category term="数据结构" scheme="http://littlebean.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="B树" scheme="http://littlebean.github.io/tags/B%E6%A0%91/"/>
+      <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
       <category term="数据结构" scheme="http://littlebean.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
@@ -475,7 +525,7 @@ B树的生成其实就是B树从空的状态下，将结点一个一个插入的
     <link href="http://littlebean.github.io/2014/02/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%B4%A2%E5%BC%95/"/>
     <id>http://littlebean.github.io/2014/02/27/数据库的索引/</id>
     <published>2014-02-27T03:33:52.000Z</published>
-    <updated>2014-03-07T12:28:00.000Z</updated>
+    <updated>2014-03-17T07:24:39.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-">引言</h2>
 <p>为了找实习，听到试水同学的热乎乎的面筋后，需要了解数据库的知识，就去图书馆借了本“锋利的SQL”复习一下数据库知识，看到了索引这个东西，感觉需要深入的研究一下，于是在网上找了几片文章看看。</p>
 <h2 id="b-">B树</h2>
@@ -532,9 +582,7 @@ B树的生成其实就是B树从空的状态下，将结点一个一个插入的
 <p>如果你的表数据日常更新比较少，应当使用索引技术，因为通过索引可以减少为返回查询结果集必须读取的数据量。如果你的表经常需要执行插入、删除、修改操作，过多的索引则会导致数据维护性能的减弱，因为在维护这些数据的同时，数据引擎还要维护这些索引。
 ]]></summary>
     
-      <category term="数据库" scheme="http://littlebean.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="索引" scheme="http://littlebean.github.io/tags/%E7%B4%A2%E5%BC%95/"/>
+      <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
       <category term="数据库" scheme="http://littlebean.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
@@ -545,7 +593,7 @@ B树的生成其实就是B树从空的状态下，将结点一个一个插入的
     <link href="http://littlebean.github.io/2014/02/23/c%E5%92%8Cc++%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
     <id>http://littlebean.github.io/2014/02/23/c和c++头文件一些问题/</id>
     <published>2014-02-23T06:07:36.000Z</published>
-    <updated>2014-03-07T12:31:10.000Z</updated>
+    <updated>2014-03-17T07:24:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="c-c-">C和C++的一些区别</h2>
 <p>在讲C和C++头文件的一些问题之前，我们先看下C和C++的一些区别：</p>
 <ul>
@@ -644,7 +692,7 @@ usingnamespace <span class="built_in">std</span> ;
 <p>所以相对于C，C++包含了更丰富的“设计”的概念，但<strong>C是C++的一个自洽子集</strong>，也具有强大的功能，同样值得学习。</p>
 <p>]]></summary>
     
-      <category term="C/C++" scheme="http://littlebean.github.io/tags/C/C++/"/>
+      <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
       <category term="C/C++" scheme="http://littlebean.github.io/categories/C/C++/"/>
     
@@ -655,7 +703,7 @@ usingnamespace <span class="built_in">std</span> ;
     <link href="http://littlebean.github.io/2014/01/31/goto-2014-from-2013/"/>
     <id>http://littlebean.github.io/2014/01/31/goto-2014-from-2013/</id>
     <published>2014-01-31T15:35:16.000Z</published>
-    <updated>2014-03-04T11:32:19.000Z</updated>
+    <updated>2014-03-17T07:23:04.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-2013">回顾2013</h2>
 <p>辞去的2013年中，1月初，经过了让我上升一个战斗值的--考研，考完到出分的时候肯定都是潇洒阶段，出分后，由于一直拖后腿的英语，差两分调剂到了浙大软件学院，但是还是要准备复试和浙大的PAT机试。由于总分稍微高点，复试和机试都是水过，现在成为了一名名义上的浙大人。在这里非常感谢那些陪我一起走完考研这条路的松妞妞、王大锤同学和本科班上的各位美女和帅哥们。<br/>
 就这样有浑浑噩噩的耍了几个月，7月份就去学校报到了，直到9月份，在这两个月期间，学习传说中的SSH框架，做了一个个人理财平台，也算是真正意义上的第一次项目经验。9月份正式开学，也在开学不久跟一位舍友<a href="http://xidianpanpei.github.io" target="_blank">P大神</a>进入了一个高大上的领域-云计算。我们研究的是目前比较火的OpenStack,开始的我听老师的安排，一个人负责了用Puppet自动部署的OpenStack平台。从无到自己慢慢摸索搞清楚了Puppet的一些大概机制。倒是缺乏OpenStack的部署实践经验，后来放了，接着为了学习OpenStack的更深入的东西，就进入OpenStack的网络组，开始了OpenStack的真正学习，由于基础不扎实，在其间碰到了好多问题，但也学到了好多东西。<br/></p>
@@ -671,9 +719,9 @@ usingnamespace <span class="built_in">std</span> ;
 <p>经过了一个学期的研究生生涯，发现了自己的许多不足，有好多东西要学，那么这一年的目标很明确就是找一份理想的实习工作，在这里我要感谢我的父母对我的学业支持、我身边的好兄弟们和大金融的小伙伴们的帮助，希望大家在新的一年能够身体健康、万事如意、找到自己心仪的实习工作。<br/>
 ]]></summary>
     
-      <category term="碎碎念" scheme="http://littlebean.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+      <category term="生活点滴" scheme="http://littlebean.github.io/tags/%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/"/>
     
-      <category term="碎碎念" scheme="http://littlebean.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+      <category term="总结" scheme="http://littlebean.github.io/categories/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -682,7 +730,7 @@ usingnamespace <span class="built_in">std</span> ;
     <link href="http://littlebean.github.io/2013/08/19/win7%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%85%A8%E5%B1%8F/"/>
     <id>http://littlebean.github.io/2013/08/19/win7远程连接全屏/</id>
     <published>2013-08-18T18:58:49.000Z</published>
-    <updated>2014-02-20T10:23:51.000Z</updated>
+    <updated>2014-03-17T07:22:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-">问题：</h2>
 <p><br/>
 Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与远程桌面一样大小或者比桌面小【最大化之后还是没有全屏】，而不是全屏；但“最大化”按钮显示窗口已处于最大化状态。如果您单击“最大化”按钮，窗口不能正常进入全屏模式，而是还原为比远程桌面略小。  </p>
@@ -699,9 +747,9 @@ Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与�
 <strong>打开mstsc--选项--显示--显示配置--把滑动按钮滑动到最右边即全屏。</strong>
 ]]></summary>
     
-      <category term="技巧" scheme="http://littlebean.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+      <category term="日常问题" scheme="http://littlebean.github.io/tags/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/"/>
     
-      <category term="遇到的小问题" scheme="http://littlebean.github.io/categories/%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+      <category term="电脑常识" scheme="http://littlebean.github.io/categories/%E7%94%B5%E8%84%91%E5%B8%B8%E8%AF%86/"/>
     
   </entry>
   

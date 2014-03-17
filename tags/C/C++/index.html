@@ -103,58 +103,6 @@
     <div class="header">
       
   
-    <h3 class="title"><a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
-        <small>
-            <time datetime="2014-03-12T08:08:00.000Z">3月 12 2014</time>
-        </small>
-    </h3>
-  
-
-
-    </div>
-
-    <div class="entry">
-      
-        <h2 id="-">引言</h2>
-<p>日子过的真快，研究生念的都还没有什么感觉就要找实习了，学校来了第一个找实习的公司---华为。投了中央研究院的一个C++研发岗，今天面试问了一些项目什么的，然后问道C++和JAVA的一些区别，就说了几个比较浅的区别，什么JAVA是纯面向对象的，C++是半结构化半面向对象的，支持多继承的一门语言什么的，面我的那位帅哥感觉还不足提示了一下在面向对象的3个特性（封装，继承，多态）来说一下，然后我就回答了最主要的区别是在多态的实现机制上的不同，JAVA是靠重载，C++是靠虚函数来实现的，然后就紧接着问，虚函数的怎么实现多态的，当时没有说用虚函数表什么的，就大概说了一下是用基类的指针绑定派生类的对象的，然后调用派生类中对基类虚函数实现的调用，感觉回答的好不专业，然后他就说用虚函数表就能简单的说明，下面我来总结一下虚函数和虚函数表的一些东西。
-
-      
-    </div>
-
-	
-		
-			<a href="/2014/03/12/对虚函数的一些理解/#more" class="more-link">More..</a>
-		
-	
-
-	<hr/>
-  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-  
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <div class="header">
-      
-  
     <h3 class="title"><a href="/2014/03/04/引用和指针的区别/">引用和指针的区别</a>
         <small>
             <time datetime="2014-03-04T08:04:20.000Z">3月 4 2014</time>
@@ -191,70 +139,6 @@
 
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <div class="header">
-      
-  
-    <h3 class="title"><a href="/2014/02/23/c和c++头文件一些问题/">C和C++头文件一些问题</a>
-        <small>
-            <time datetime="2014-02-23T06:07:36.000Z">2月 23 2014</time>
-        </small>
-    </h3>
-  
-
-
-    </div>
-
-    <div class="entry">
-      
-        <h2 id="c-c-">C和C++的一些区别</h2>
-<p>在讲C和C++头文件的一些问题之前，我们先看下C和C++的一些区别：</p>
-<ul>
-<li>C语言是一个结构化语言，它的重点在于<strong>算法和数据结构</strong>。</li>
-<li>C++则是首要考虑的是如何构造一个对象模型，让这个模型能够处理对应的问题域。
-所以它们最大区别是解决问题的思想不一样，所以说C++比C更加先进，因为C++融入了<strong>设计</strong>这个概念。</li>
-</ul>
-<p>对语言本身而言，C是C++的子集，那么是什么样的一个子集？从上文可以看出， C实现了C++中过程化控制及其它相关功能，而在C++中的C（我称它为“C+”），相对于原来的C还有所加强：</p>
-<ul>
-<li>引入了重载、内联函数、异常处理等等。</li>
-<li>C++更是拓展了面向对象设计的内容，如类、继承、虚函数、模板和包容器类等等。 </li>
-<li>在C++中，数据封装、类型这些东东已不是什么新鲜事了，需要考虑的是诸如：对象粒度的选择、对象接口的设计和继承、组合与继承的使用等等问题。</li>
-</ul>
-<p>所以相对于C，C++包含了更丰富的“设计”的概念，但<strong>C是C++的一个自洽子集</strong>，也具有强大的功能，同样值得学习。</p>
-<p>
-      
-    </div>
-
-	
-		
-			<a href="/2014/02/23/c和c++头文件一些问题/#more" class="more-link">More..</a>
-		
-	
-
-	<hr/>
-  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-  
-  </div>
-</article>
-
-
-
-
 
   </div>
 </div>
@@ -271,6 +155,10 @@
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2014/03/16/stl概述/">STL概述</a>
+      </li>
     
       <li>
         <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
@@ -334,13 +222,17 @@
   
     <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
   
+    <li><a href="/categories/STL/">STL</a><small>2</small></li>
+  
+    <li><a href="/categories/总结/">总结</a><small>1</small></li>
+  
     <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
   
-    <li><a href="/categories/数据结构/">数据结构</a><small>2</small></li>
+    <li><a href="/categories/STL/数据结构/">数据结构</a><small>1</small></li>
   
-    <li><a href="/categories/碎碎念/">碎碎念</a><small>1</small></li>
+    <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
   
-    <li><a href="/categories/遇到的小问题/">遇到的小问题</a><small>1</small></li>
+    <li><a href="/categories/电脑常识/">电脑常识</a><small>1</small></li>
   
   </ul>
 </div>
@@ -354,21 +246,13 @@
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/B树/">B树</a><small>1</small></li>
+    <li><a href="/tags/C/C++/">C/C++</a><small>1</small></li>
   
-    <li><a href="/tags/C/C++/">C/C++</a><small>3</small></li>
+    <li><a href="/tags/日常问题/">日常问题</a><small>1</small></li>
   
-    <li><a href="/tags/STL/">STL</a><small>1</small></li>
+    <li><a href="/tags/生活点滴/">生活点滴</a><small>1</small></li>
   
-    <li><a href="/tags/技巧/">技巧</a><small>1</small></li>
-  
-    <li><a href="/tags/数据库/">数据库</a><small>1</small></li>
-  
-    <li><a href="/tags/数据结构/">数据结构</a><small>2</small></li>
-  
-    <li><a href="/tags/碎碎念/">碎碎念</a><small>1</small></li>
-  
-    <li><a href="/tags/索引/">索引</a><small>1</small></li>
+    <li><a href="/tags/编程技术/">编程技术</a><small>6</small></li>
   
   </ul>
 </div>
