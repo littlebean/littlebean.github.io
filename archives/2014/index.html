@@ -82,12 +82,201 @@
   <h2 class="archive-icon">2014</h2>
   
   <div class="archiveslist archive-float clearfix">
-   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">二月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">八月 2013</a><span class="archive-list-count">1</span></li></ul>
+   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">二月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">八月 2013</a><span class="archive-list-count">1</span></li></ul>
  </div>
   
 </div>
 <div id="main" class="archive-part clearfix">
   <div id="archive-page">
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <div class="header">
+      
+  
+    <h3 class="title"><a href="/2014/07/24/mysql-HA/"></a>
+        <small>
+            <time datetime="2014-07-24T13:18:28.000Z">7月 24 2014</time>
+        </small>
+    </h3>
+  
+
+
+    </div>
+
+    <div class="entry">
+      
+        <p>title: &#x2018;mysql HA&#x2019;<br>date: 2014-07-24 21:18:28<br>categories:<br>-HA<br>tags:<br>-&#x6570;&#x636E;&#x5E93;</p>
+<h2 id="-HA">-HA</h2>
+<h3 id="&#x4E00;&#x3001;&#x4ECB;&#x7ECD;">&#x4E00;&#x3001;&#x4ECB;&#x7ECD;</h3>
+<p>&#x9AD8;&#x53EF;&#x7528;&#xFF08;High Availability&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x8BA9;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x6301;&#x7EED;&#x66F4;&#x957F;&#x65F6;&#x95F4;&#xFF0C;&#x5C31;&#x7B97;&#x5B95;&#x673A;&#x4E5F;&#x80FD;&#x7ACB;&#x5373;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x53F0;&#x4ECE;&#x673A;&#x5668;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7684;&#x4E00;&#x9879;&#x6280;&#x672F;&#xFF0C;&#x672C;&#x6587;&#x4EE5;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;mysql&#x7684;&#x4E00;&#x79CD;&#x9AD8;&#x53EF;&#x7528;&#x65B9;&#x6848;&#x3002;</p>
+<h3 id="&#x4E8C;&#x3001;&#x65B9;&#x6848;">&#x4E8C;&#x3001;&#x65B9;&#x6848;</h3>
+<p>&#x91C7;&#x7528;mysql&#x7684;master+slave&#x3001;ha+heartbeat&#x7684;&#x65B9;&#x6848;,&#x7528;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5206;&#x522B;&#x4E3A;mysql,mysql-slave&#x4E0A;&#x9762;&#x90FD;&#x5B89;&#x88C5;&#x4E86;mysql&#x670D;&#x52A1;&#x6846;&#x67B6;&#x4FE1;&#x606F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4E3B;&#xFF09;</th>
+<th>&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4ECE;&#xFF09;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP&#x5730;&#x5740;</td>
+<td>eth0:10.0.0.9</td>
+<td>eth0:10.0.0.10</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>mysql</td>
+<td>mysql-slave</td>
+</tr>
+<tr>
+<td>&#x865A;&#x62DF;&#x6D6E;&#x52A8;IP</td>
+<td>10.0.0.5</td>
+<td>10.0.0.5</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4E3B;&#xFF09;&#x4EE5;10.0.0.5&#x662F;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;mysql&#x670D;&#x52A1;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E3B;&#x8282;&#x70B9;&#x5B95;&#x673A;&#x7684;&#x8BDD;&#xFF0C;&#x6D6E;&#x52A8;IP&#x4F1A;&#x81EA;&#x52A8;&#x6F02;&#x79FB;&#x5230;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4ECE;&#xFF09;&#x4E0A;&#xFF0C;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x8FBE;&#x5230;&#x4E86;&#x9AD8;&#x53EF;&#x7528;&#x3002;</p>
+<h3 id="&#x4E09;&#x3001;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;">&#x4E09;&#x3001;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;</h3>
+<p>(1) &#x914D;&#x7F6E;mysql&#x4E3B;&#x4ECE;</p>
+<ol>
+<li>&#x66F4;&#x65B0;&#x6E90;(&#x4E3B;&#x3001;&#x4ECE;)<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>apt-<span class="keyword">get</span> update
+</pre></td></tr></table></figure></li>
+<li>&#x5B89;&#x88C5;<code>mysql</code>&#xFF08;&#x4E3B;&#x3001;&#x4ECE;&#xFF09;<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>apt<span class="attribute">-get</span> install mysql<span class="attribute">-server</span> mysql<span class="attribute">-client</span>
+</pre></td></tr></table></figure></li>
+<li>&#x521B;&#x5EFA;slave&#x7528;&#x6237;,&#x5E76;&#x8BBE;&#x7F6E;&#x6743;&#x9650;&#xFF08;&#x4E3B;&#xFF09;<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>mysql -uroot -p;
+mysql&gt;<span class="keyword">create</span> user slave identified <span class="keyword">by</span> <span class="string">&apos;password&apos;</span>;
+mysql&gt;grant replication slave <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">&apos;slave&apos;</span>@<span class="string">&apos;%&apos;</span> identified <span class="keyword">by</span> <span class="string">&apos;password&apos;</span>;
+mysql&gt;<span class="keyword">exit</span>
+</pre></td></tr></table></figure></li>
+<li>&#x4FEE;&#x6539;mysql&#x914D;&#x7F6E;<br><code>/etc/mysql/my.cnf</code>&#x4E2D;&#x6DFB;&#x52A0;&#xFF08;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;&#xFF09;(&#x4E3B;)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>server<span class="attribute">-id</span><span class="subst">=</span><span class="number">1</span>
+log_bin/<span class="built_in">var</span>/<span class="keyword">log</span>/mysql/mysql<span class="attribute">-bin</span><span class="built_in">.</span><span class="keyword">log</span>
+</pre></td></tr></table></figure><br><code>/etc/mysql/my.cnf</code>&#x4E2D;&#x6DFB;&#x52A0;&#xFF08;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x53D6;&#x6D88;&#x6CE8;&#x91CA;&#xFF09;(&#x4ECE;)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="attribute">server-id</span>=<span class="string">2</span>
+</pre></td></tr></table></figure><br>&#x6CE8;&#x91CA;&#x6389;<code>/etc/mysql/my.cnf</code>&#x4E2D;<code>bind=127.0.0.1</code>(&#x4E3B;&#x3001;&#x4ECE;)</li>
+<li>&#x5BFC;&#x51FA;&#x6570;&#x636E;,&#x5E76;&#x4F20;&#x7ED9;&#x4ECE;&#x8282;&#x70B9;&#xFF08;&#x4E3B;&#xFF09;<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>mysqldump <span class="attribute">-uroot</span> <span class="attribute">-p</span> <span class="subst">--</span><span class="literal">all</span><span class="attribute">-databases</span> <span class="subst">--</span>lock<span class="attribute">-all</span><span class="attribute">-tables</span> <span class="subst">&gt;</span> initialDump<span class="built_in">.</span>sql;
+scp <span class="built_in">.</span>/initialDump<span class="built_in">.</span>sql root@mysql<span class="attribute">-slave</span>:~<span class="subst">/</span>
+</pre></td></tr></table></figure></li>
+<li>&#x5BFC;&#x5165;&#x6570;&#x636E;&#xFF08;&#x4ECE;&#xFF09;<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>mysql <span class="attribute">-uroot</span> <span class="attribute">-p</span><span class="subst">&lt;</span><span class="built_in">.</span>/initialDump<span class="built_in">.</span>sql
+</pre></td></tr></table></figure></li>
+<li>&#x67E5;&#x770B;master&#x72B6;&#x6001;&#xFF08;&#x4E3B;&#xFF09;<br><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="xml"><span class="tag"><span class="attribute">mysql</span> &gt;</span> show master status;</span>
+</pre></td></tr></table></figure><br>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5982;&#x4E0B;&#x683C;&#x5F0F;&#xFF1A;<br>+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;+&#x2014;&#x2014;&#x2014;-+&#x2014;&#x2014;&#x2014;&#x2014;&#x2013;+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;+<br>| File | Position | Binlog_Do_DB | Binlog_Ignore_DB |<br>+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;+&#x2014;&#x2014;&#x2014;-+&#x2014;&#x2014;&#x2014;&#x2014;&#x2013;+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;+<br>| mysql-bin.000001 | 106 | | |<br>+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;+&#x2014;&#x2014;&#x2014;-+&#x2014;&#x2014;&#x2014;&#x2014;&#x2013;+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;+<br>1 row in set (0.00 sec)<br>&#x5176;&#x4E2D; <code>mysql-bin.000001</code>&#x4E3A;bin_log&#x6587;&#x4EF6;&#x540D;&#xFF0C;<code>106</code>&#x4E3A;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;&#x3002;</li>
+<li>&#x8BBE;&#x7F6E;master&#x4FE1;&#x606F;&#xFF08;&#x4ECE;&#xFF09;<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>mysql &gt; change master <span class="keyword">to</span> master_host=<span class="string">&apos;10.0.0.9&apos;</span>,master_user=<span class="string">&apos;slave&apos;</span>,master_password=<span class="string">&apos;password&apos;</span>,master_log_file=<span class="string">&apos;mysql-bin.000001&apos;</span>,master_log_pos=<span class="number">106</span>;
+</pre></td></tr></table></figure></li>
+<li>&#x5F00;&#x542F;slave(&#x4ECE;)<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>mysql &gt; start slave;
+</pre></td></tr></table></figure></li>
+<li>&#x91CD;&#x542F;mysql(&#x4E3B;&#x3001;&#x4ECE;)<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>service mysql restart
+</pre></td></tr></table></figure></li>
+<li>&#x6D4B;&#x8BD5;&#x4ECE;&#x8282;&#x70B9;&#x662F;&#x5426;&#x80FD;&#x591F;&#x540C;&#x6B65;<br>&#x4E3B;&#x8282;&#x70B9;&#xFF1A;<br><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>mysql &gt; <span class="keyword">create</span> database test_ha;
+</pre></td></tr></table></figure><br>&#x4ECE;&#x8282;&#x70B9;&#xFF1A;<br><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>mysql &gt; show databases;
+</pre></td></tr></table></figure><br>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x5E93;<code>test_ha</code></li>
+</ol>
+<p>(2) &#x5B89;&#x88C5;<code>heatbeat+ha</code></p>
+<ol>
+<li>&#x914D;&#x7F6E;hostname(&#x4E3B;)<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="built_in">echo</span> <span class="string">&quot;mysql&quot;</span> &gt; /etc/hostname
+hostname mysql
+</pre></td></tr></table></figure></li>
+<li>&#x914D;&#x7F6E;hostname(&#x4ECE;)<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="built_in">echo</span> <span class="string">&quot;mysql-slave&quot;</span> &gt; /etc/hostname
+hostname mysql-slave
+</pre></td></tr></table></figure></li>
+<li>&#x914D;&#x7F6E;hosts(&#x4E3B;&#x3001;&#x4ECE;)<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="built_in">echo</span> <span class="string">&quot;10.0.0.9 mysql&quot;</span> &gt;&gt; /etc/hosts
+<span class="built_in">echo</span> <span class="string">&quot;10.0.0.10 mysql-slave&quot;</span> &gt;&gt; /etc/hosts
+</pre></td></tr></table></figure></li>
+<li>&#x5B89;&#x88C5;<code>ha+heartbeat</code>&#xFF08;&#x4E3B;&#x3001;&#x4ECE;&#xFF09;<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>apt-<span class="keyword">get</span> install ha
+apt-<span class="keyword">get</span> install heartbeat
+</pre></td></tr></table></figure></li>
+<li>&#x914D;&#x7F6E;<code>ha</code>,&#x5728;<code>/etc/ha.d/</code>&#x4E0B;&#x65B0;&#x5EFA;3&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;authkeys&#x3001;haresources&#x3001;ha.cf.(&#x4E3B;&#x3001;&#x4ECE;)<br>&#x914D;&#x7F6E;<code>/etc/ha.d/ha.cf</code><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="title">debugfile</span> /var/log/ha-<span class="built_in">debug</span>
+keepalive <span class="number">3</span>
+deadtime <span class="number">10</span>
+warntime <span class="number">6</span>
+initdead <span class="number">120</span>
+udpport <span class="number">694</span>
+ucast eth0 <span class="number">10.0.0.9</span>       <span class="comment">#&#x914D;&#x7F6E;&#x4E3A;&#x5BF9;&#x65B9;IP&#xFF0C; &#x4ECE;&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;&#x4E3A;10.0.0.10</span>
+node mysql
+node mysql-slave
+auto_failback <span class="built_in">off</span>
+respawn hacluster /usr/lib/heartbeat/ipfail
+</pre></td></tr></table></figure><br>&#x914D;&#x7F6E;<code>/etc/ha.d/authkeys</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>auth 1
+1 crc
+</pre></td></tr></table></figure><br>&#x8BBE;&#x7F6E;&#x6743;&#x9650;<br><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword">chmod</span> <span class="number">600</span> /etc/ha.d/authkeys
+</pre></td></tr></table></figure><br>&#x914D;&#x7F6E;<code>/etc/ha.d/haresources</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="label">mysql IPaddr::</span><span class="number">10.0</span>.<span class="number">0.5</span>/<span class="number">24</span>/eth0
+</pre></td></tr></table></figure></li>
+<li>&#x542F;&#x52A8;heartbeat&#xFF08;&#x5148;&#x4E3B;&#x540E;&#x4ECE;&#xFF09;<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>service heartbeat <span class="operator"><span class="keyword">start</span></span>
+</pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+	
+		
+	
+
+	<hr/>
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  
+  </div>
+</article>
+
+
+
 
   <article class="post">
   
@@ -558,6 +747,10 @@
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2014/07/24/mysql-HA/"></a>
+      </li>
     
       <li>
         <a href="/2014/03/16/stl概述/">STL概述</a>
