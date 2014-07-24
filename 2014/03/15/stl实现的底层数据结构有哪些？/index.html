@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>C/C++ | 聆听</title>
+  <title>聆听</title>
   <meta name="author" content="聆听">
   
   <meta name="description" content="聆听的博客">
@@ -76,16 +76,7 @@
 
     <div class="row">
          <!--Body content-->
-         
-
-<div class="archive-title" >
-  <h2 class="tag-icon">C/C++</h2>
-  
-</div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <article class="post">
+         <article class="post">
   
     <div class="gallery">
   <div class="photoset">
@@ -103,9 +94,9 @@
     <div class="header">
       
   
-    <h3 class="title"><a href="/2014/03/04/引用和指针的区别/">引用和指针的区别</a>
+    <h3 class="title">
         <small>
-            <time datetime="2014-03-04T08:04:20.000Z">3月 4 2014</time>
+            <time datetime="2014-03-15T02:08:55.000Z">3月 15 2014</time>
         </small>
     </h3>
   
@@ -115,33 +106,67 @@
 
     <div class="entry">
       
-        <h2 id="-">引言</h2>
-<p>这几天复习看了一下c++ primer的一些基础语法，发现引用和指针在C++中有很多相似之处，所以想写一篇文章对这两个东西来理一下。</p>
-<h2 id="-">什么是引用</h2>
-<p><strong>引用</strong>就是对象的另一个名字，引用主要用于函数的形式参数，引用是一种<strong>复合类型</strong>（通过其他类型定义的类型），通过在变量名前添加<code>&amp;</code>符号来定义。
+        <p>title: STL&#x5B9E;&#x73B0;&#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;<br>date: 2014-03-06 22:34:55<br>tags:</p>
+<ul>
+<li>&#x7F16;&#x7A0B;&#x6280;&#x672F;<br>categories:</li>
+<li>STL</li>
+<li>&#x6570;&#x636E;&#x7ED3;&#x6784;</li>
+</ul>
+<hr>
+<h2 id="C++_STL&#x5404;&#x4E2A;&#x5BB9;&#x5668;&#x5E95;&#x5C42;&#x7531;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;">C++ STL&#x5404;&#x4E2A;&#x5BB9;&#x5668;&#x5E95;&#x5C42;&#x7531;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
+<ol>
+<li>vector  &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x6570;&#x7EC4; &#xFF0C;&#x652F;&#x6301;&#x5FEB;&#x901F;&#x968F;&#x673A;&#x8BBF;&#x95EE;</li>
+<li>list    &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x652F;&#x6301;&#x5FEB;&#x901F;&#x589E;&#x5220;</li>
+<li>deque   &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x4E00;&#x4E2A;&#x4E2D;&#x592E;&#x63A7;&#x5236;&#x5668;&#x548C;&#x591A;&#x4E2A;&#x7F13;&#x51B2;&#x533A;,&#x652F;&#x6301;&#x9996;&#x5C3E;&#xFF08;&#x4E2D;&#x95F4;&#x4E0D;&#x80FD;&#xFF09;&#x5FEB;&#x901F;&#x589E;&#x5220;&#xFF0C;&#x4E5F;&#x652F;&#x6301;&#x968F;&#x673A;&#x8BBF;&#x95EE;</li>
+<li>stack   &#x5E95;&#x5C42;&#x4E00;&#x822C;&#x7528;23&#x5B9E;&#x73B0;&#xFF0C;&#x5C01;&#x95ED;&#x5934;&#x90E8;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x7528;vector&#x7684;&#x539F;&#x56E0;&#x5E94;&#x8BE5;&#x662F;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x6269;&#x5BB9;&#x8017;&#x65F6;</li>
+<li>queue   &#x5E95;&#x5C42;&#x4E00;&#x822C;&#x7528;23&#x5B9E;&#x73B0;&#xFF0C;&#x5C01;&#x95ED;&#x5934;&#x90E8;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x7528;vector&#x7684;&#x539F;&#x56E0;&#x5E94;&#x8BE5;&#x662F;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x6269;&#x5BB9;&#x8017;&#x65F6;</li>
+<li>priority_queue &#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E00;&#x822C;&#x4E3A;vector&#x4E3A;&#x5E95;&#x5C42;&#x5BB9;&#x5668;&#xFF0C;&#x5806;heap&#x4E3A;&#x5904;&#x7406;&#x89C4;&#x5219;&#x6765;&#x7BA1;&#x7406;&#x5E95;&#x5C42;&#x5BB9;&#x5668;&#x5B9E;&#x73B0;</li>
+</ol>
+<hr>
+<p><a id="more"></a></p>
+<ol>
+<li>set       &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x6709;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>multiset  &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x6709;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D; </li>
+<li>map      &#xFEFF;&#xFEFF;&#xFEFF;&#xFEFF;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x6709;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>multimap &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x6709;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D;</li>
+<li>hash_set &#xFEFF;&#xFEFF;&#xFEFF;&#xFEFF;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;hash&#x8868;&#xFF0C;&#x65E0;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>hash_multiset &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;hash&#x8868;&#xFF0C;&#x65E0;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D; </li>
+<li>hash_map      &#xFEFF;&#xFEFF;&#xFEFF;&#xFEFF;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;hash&#x8868;&#xFF0C;&#x65E0;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>hash_multimap &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;hash&#x8868;&#xFF0C;&#x65E0;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D;</li>
+</ol>
+<p>&#x53C2;&#x8003;&#xFF1A;<a href="http://blog.csdn.net/huangkq1989/article/details/7277282" target="_blank" rel="external">http://blog.csdn.net/huangkq1989/article/details/7277282</a></p>
 
       
     </div>
 
-	
-		
-			<a href="/2014/03/04/引用和指针的区别/#more" class="more-link">More..</a>
-		
 	
 
 	<hr/>
   <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
   
+<section id="comment">
+<!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xuxiaolong"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- Duoshuo Comment END -->
+</section>
+
   </div>
 </article>
 
 
-
-
-
-  </div>
-</div>
 
 
         <!--Sidebar content-->
@@ -161,11 +186,11 @@
       </li>
     
       <li>
-        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+        <a href="/2014/03/15/stl实现的底层数据结构有哪些？/"></a>
       </li>
     
       <li>
-        <a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
       </li>
     
       <li>
@@ -220,17 +245,15 @@
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
+    <li><a href="/categories/CC++/">C/C++</a><small>3</small></li>
   
-    <li><a href="/categories/STL/">STL</a><small>2</small></li>
+    <li><a href="/categories/STL/">STL</a><small>1</small></li>
   
     <li><a href="/categories/总结/">总结</a><small>1</small></li>
   
     <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
   
     <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
-  
-    <li><a href="/categories/STL/数据结构/">数据结构</a><small>1</small></li>
   
     <li><a href="/categories/电脑常识/">电脑常识</a><small>1</small></li>
   
@@ -246,13 +269,13 @@
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/C/C++/">C/C++</a><small>1</small></li>
+    <li><a href="/tags/CC++/">C/C++</a><small>1</small></li>
   
     <li><a href="/tags/日常问题/">日常问题</a><small>1</small></li>
   
     <li><a href="/tags/生活点滴/">生活点滴</a><small>1</small></li>
   
-    <li><a href="/tags/编程技术/">编程技术</a><small>6</small></li>
+    <li><a href="/tags/编程技术/">编程技术</a><small>5</small></li>
   
   </ul>
 </div>

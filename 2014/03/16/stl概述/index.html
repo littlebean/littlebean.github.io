@@ -106,39 +106,37 @@
 
     <div class="entry">
       
-        <h2 id="-">引言</h2>
-<p>在早期的时候，对于程序员最希望的是能够拥有一种重复运用的东西，然后自己所花了好多精力做出的东西不会因为时间的推移然后失去了价值。尤其程序设计的最基础的数据结构和算法也没有统一的标准，致使大部分的程序员从事大量的重复工作，既浪费人力资源也是编程过程中错误的主要来源。为了建立数据结构和算法的一套标准，提升各自的独立性、弹性和互操作性，STL就这样在C++社区里。在侯捷的《STL源码剖析》一书中说明了STL的价值。</p>
-<pre><code>STL的价值在于两方面，就底层而言，STL带给我们一套极具实用价值的零部件，以及一个整合的组织。这种价值就像MFC或者VCL之于Windows软件开发过程所带来的价值一样，直接而明确，令大多数有最立即明显的感受。除此之外，STL还带给我们一个高档次、以**泛型思维**为基础的、系统化的、条理分明的“软件组件分类学”。从这个角度看，STL是一个抽象概念库。
+        <h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x5728;&#x65E9;&#x671F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x4E8E;&#x7A0B;&#x5E8F;&#x5458;&#x6700;&#x5E0C;&#x671B;&#x7684;&#x662F;&#x80FD;&#x591F;&#x62E5;&#x6709;&#x4E00;&#x79CD;&#x91CD;&#x590D;&#x8FD0;&#x7528;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x7136;&#x540E;&#x81EA;&#x5DF1;&#x6240;&#x82B1;&#x4E86;&#x597D;&#x591A;&#x7CBE;&#x529B;&#x505A;&#x51FA;&#x7684;&#x4E1C;&#x897F;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x7136;&#x540E;&#x5931;&#x53BB;&#x4E86;&#x4EF7;&#x503C;&#x3002;&#x5C24;&#x5176;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#x6700;&#x57FA;&#x7840;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;&#x4E5F;&#x6CA1;&#x6709;&#x7EDF;&#x4E00;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x81F4;&#x4F7F;&#x5927;&#x90E8;&#x5206;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x4ECE;&#x4E8B;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x590D;&#x5DE5;&#x4F5C;&#xFF0C;&#x65E2;&#x6D6A;&#x8D39;&#x4EBA;&#x529B;&#x8D44;&#x6E90;&#x4E5F;&#x662F;&#x7F16;&#x7A0B;&#x8FC7;&#x7A0B;&#x4E2D;&#x9519;&#x8BEF;&#x7684;&#x4E3B;&#x8981;&#x6765;&#x6E90;&#x3002;&#x4E3A;&#x4E86;&#x5EFA;&#x7ACB;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x5957;&#x6807;&#x51C6;&#xFF0C;&#x63D0;&#x5347;&#x5404;&#x81EA;&#x7684;&#x72EC;&#x7ACB;&#x6027;&#x3001;&#x5F39;&#x6027;&#x548C;&#x4E92;&#x64CD;&#x4F5C;&#x6027;&#xFF0C;STL&#x5C31;&#x8FD9;&#x6837;&#x5728;C++&#x793E;&#x533A;&#x91CC;&#x3002;&#x5728;&#x4FAF;&#x6377;&#x7684;&#x300A;STL&#x6E90;&#x7801;&#x5256;&#x6790;&#x300B;&#x4E00;&#x4E66;&#x4E2D;&#x8BF4;&#x660E;&#x4E86;STL&#x7684;&#x4EF7;&#x503C;&#x3002;</p>
+<pre><code>STL&#x7684;&#x4EF7;&#x503C;&#x5728;&#x4E8E;&#x4E24;&#x65B9;&#x9762;&#xFF0C;&#x5C31;&#x5E95;&#x5C42;&#x800C;&#x8A00;&#xFF0C;STL&#x5E26;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x5957;&#x6781;&#x5177;&#x5B9E;&#x7528;&#x4EF7;&#x503C;&#x7684;&#x96F6;&#x90E8;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x6574;&#x5408;&#x7684;&#x7EC4;&#x7EC7;&#x3002;&#x8FD9;&#x79CD;&#x4EF7;&#x503C;&#x5C31;&#x50CF;MFC&#x6216;&#x8005;VCL&#x4E4B;&#x4E8E;Windows&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x6240;&#x5E26;&#x6765;&#x7684;&#x4EF7;&#x503C;&#x4E00;&#x6837;&#xFF0C;&#x76F4;&#x63A5;&#x800C;&#x660E;&#x786E;&#xFF0C;&#x4EE4;&#x5927;&#x591A;&#x6570;&#x6709;&#x6700;&#x7ACB;&#x5373;&#x660E;&#x663E;&#x7684;&#x611F;&#x53D7;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;STL&#x8FD8;&#x5E26;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x9AD8;&#x6863;&#x6B21;&#x3001;&#x4EE5;<span class="strong">**&#x6CDB;&#x578B;&#x601D;&#x7EF4;**</span>&#x4E3A;&#x57FA;&#x7840;&#x7684;&#x3001;&#x7CFB;&#x7EDF;&#x5316;&#x7684;&#x3001;&#x6761;&#x7406;&#x5206;&#x660E;&#x7684;&#x201C;&#x8F6F;&#x4EF6;&#x7EC4;&#x4EF6;&#x5206;&#x7C7B;&#x5B66;&#x201D;&#x3002;&#x4ECE;&#x8FD9;&#x4E2A;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;STL&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#x5E93;&#x3002;
 </code></pre><a id="more"></a>
 
-<h2 id="stl-">STL历史</h2>
-<p>STL由<strong>Alexander Stepanov</strong>创造于1979年前后，这也是<strong>Bjarne Stroustrup</strong>创造C++年代。
-然而泛型程序设计的思想早在1971年在计算机几何领域产生。第一个支持泛型概念的语言是Ada,然而Ada在美国国防工业以外并未被广泛实用，但当时C++在程序设计领域迅速发展。C++在那时候没有采用<code>template</code>性质，但是Alexander意识到C++允许程序员通过指针以极佳弹性的方式处理内存。这一点正是泛型能在C++中应用的重要关键且不失效能。</p>
-<h2 id="stl-">STL的六大组件</h2>
+<h2 id="STL&#x5386;&#x53F2;">STL&#x5386;&#x53F2;</h2>
+<p>STL&#x7531;<strong>Alexander Stepanov</strong>&#x521B;&#x9020;&#x4E8E;1979&#x5E74;&#x524D;&#x540E;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;<strong>Bjarne Stroustrup</strong>&#x521B;&#x9020;C++&#x5E74;&#x4EE3;&#x3002;<br>&#x7136;&#x800C;&#x6CDB;&#x578B;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#x601D;&#x60F3;&#x65E9;&#x5728;1971&#x5E74;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x51E0;&#x4F55;&#x9886;&#x57DF;&#x4EA7;&#x751F;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x652F;&#x6301;&#x6CDB;&#x578B;&#x6982;&#x5FF5;&#x7684;&#x8BED;&#x8A00;&#x662F;Ada,&#x7136;&#x800C;Ada&#x5728;&#x7F8E;&#x56FD;&#x56FD;&#x9632;&#x5DE5;&#x4E1A;&#x4EE5;&#x5916;&#x5E76;&#x672A;&#x88AB;&#x5E7F;&#x6CDB;&#x5B9E;&#x7528;&#xFF0C;&#x4F46;&#x5F53;&#x65F6;C++&#x5728;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x9886;&#x57DF;&#x8FC5;&#x901F;&#x53D1;&#x5C55;&#x3002;C++&#x5728;&#x90A3;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x91C7;&#x7528;<code>template</code>&#x6027;&#x8D28;&#xFF0C;&#x4F46;&#x662F;Alexander&#x610F;&#x8BC6;&#x5230;C++&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x5458;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x4EE5;&#x6781;&#x4F73;&#x5F39;&#x6027;&#x7684;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x5185;&#x5B58;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x6B63;&#x662F;&#x6CDB;&#x578B;&#x80FD;&#x5728;C++&#x4E2D;&#x5E94;&#x7528;&#x7684;&#x91CD;&#x8981;&#x5173;&#x952E;&#x4E14;&#x4E0D;&#x5931;&#x6548;&#x80FD;&#x3002;</p>
+<h2 id="STL&#x7684;&#x516D;&#x5927;&#x7EC4;&#x4EF6;">STL&#x7684;&#x516D;&#x5927;&#x7EC4;&#x4EF6;</h2>
 <ol>
-<li><strong>容器（containers）</strong>:各种数据结构，如<code>vector</code>,<code>list</code>,<code>deque</code>,<code>set</code>,<code>map</code>等用来存放数据，容器是一种<code>class template</code>。</li>
-<li><strong>算法(algorithms)</strong>:各种常用的算法，如<code>sort</code>,<code>search</code>,<code>copy</code>,<code>erase</code>等，算法是一种<code>function template</code>。</li>
-<li><strong>迭代器（iterators）</strong>:容器和算法之间的一种粘合剂，有5种类型，如:</br><code>Input iterator</code>,<code>Output iterator</code>,<code>Forward iterator</code>,<code>Bidirectional iterator</code>,<code>Random Access iterator</code>。迭代器也是一种重载<code>operator*</code>,<code>operator-&gt;</code>,<code>operator++</code>,<code>operator--</code>等操作符的<code>class template</code>,原生指针也算是一种迭代器。</li>
-<li><strong>仿函数（functors）</strong>:行为类似函数，可作为函数的某种策略，仿函数是一种重载了<code>operator()</code>的一种<code>class template</code>，普通的函数也可以说是狭义的仿函数。</li>
-<li><strong>配接器（adapters）</strong>:一种用来修饰容器、仿函数或者迭代器借口的东西。配置器的实现很难一言蔽之，以后再分析。</li>
-<li><strong>配置器（allocators）</strong>:负责空间的配置和管理，配置器是一个实现了空间动态配置、空间管理、空间释放的<code>class template</code>。</li>
+<li><strong>&#x5BB9;&#x5668;&#xFF08;containers&#xFF09;</strong>:&#x5404;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5982;<code>vector</code>,<code>list</code>,<code>deque</code>,<code>set</code>,<code>map</code>&#x7B49;&#x7528;&#x6765;&#x5B58;&#x653E;&#x6570;&#x636E;&#xFF0C;&#x5BB9;&#x5668;&#x662F;&#x4E00;&#x79CD;<code>class template</code>&#x3002;</li>
+<li><strong>&#x7B97;&#x6CD5;(algorithms)</strong>:&#x5404;&#x79CD;&#x5E38;&#x7528;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x5982;<code>sort</code>,<code>search</code>,<code>copy</code>,<code>erase</code>&#x7B49;&#xFF0C;&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;<code>function template</code>&#x3002;</li>
+<li><strong>&#x8FED;&#x4EE3;&#x5668;&#xFF08;iterators&#xFF09;</strong>:&#x5BB9;&#x5668;&#x548C;&#x7B97;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x79CD;&#x7C98;&#x5408;&#x5242;&#xFF0C;&#x6709;5&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5982;:<br><code>Input iterator</code>,<code>Output iterator</code>,<code>Forward iterator</code>,<code>Bidirectional iterator</code>,<code>Random Access iterator</code>&#x3002;&#x8FED;&#x4EE3;&#x5668;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x91CD;&#x8F7D;<code>operator*</code>,<code>operator-&gt;</code>,<code>operator++</code>,<code>operator--</code>&#x7B49;&#x64CD;&#x4F5C;&#x7B26;&#x7684;<code>class template</code>,&#x539F;&#x751F;&#x6307;&#x9488;&#x4E5F;&#x7B97;&#x662F;&#x4E00;&#x79CD;&#x8FED;&#x4EE3;&#x5668;&#x3002;</li>
+<li><strong>&#x4EFF;&#x51FD;&#x6570;&#xFF08;functors&#xFF09;</strong>:&#x884C;&#x4E3A;&#x7C7B;&#x4F3C;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x7684;&#x67D0;&#x79CD;&#x7B56;&#x7565;&#xFF0C;&#x4EFF;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x79CD;&#x91CD;&#x8F7D;&#x4E86;<code>operator()</code>&#x7684;&#x4E00;&#x79CD;<code>class template</code>&#xFF0C;&#x666E;&#x901A;&#x7684;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x72ED;&#x4E49;&#x7684;&#x4EFF;&#x51FD;&#x6570;&#x3002;</li>
+<li><strong>&#x914D;&#x63A5;&#x5668;&#xFF08;adapters&#xFF09;</strong>:&#x4E00;&#x79CD;&#x7528;&#x6765;&#x4FEE;&#x9970;&#x5BB9;&#x5668;&#x3001;&#x4EFF;&#x51FD;&#x6570;&#x6216;&#x8005;&#x8FED;&#x4EE3;&#x5668;&#x501F;&#x53E3;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x914D;&#x7F6E;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#x5F88;&#x96BE;&#x4E00;&#x8A00;&#x853D;&#x4E4B;&#xFF0C;&#x4EE5;&#x540E;&#x518D;&#x5206;&#x6790;&#x3002;</li>
+<li><strong>&#x914D;&#x7F6E;&#x5668;&#xFF08;allocators&#xFF09;</strong>:&#x8D1F;&#x8D23;&#x7A7A;&#x95F4;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7BA1;&#x7406;&#xFF0C;&#x914D;&#x7F6E;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;&#x7A7A;&#x95F4;&#x52A8;&#x6001;&#x914D;&#x7F6E;&#x3001;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x3001;&#x7A7A;&#x95F4;&#x91CA;&#x653E;&#x7684;<code>class template</code>&#x3002;</li>
 </ol>
-<h2 id="-">组件之间的关系</h2>
-<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-components.jpg" alt="SGI组件关系">
-<code>Container</code>通过<code>Allocator</code>取得数据存储空间，<code>Algorithm</code>通过<code>Iterator</code>存取<code>Container</code>数据，<code>Functor</code>可以协助<code>Algorithm</code>完成不同的策略变化，<code>Adapter</code>可以修饰或者套接<code>Functor</code>。</p>
-<h2 id="stl-">STL常见版本</h2>
-<h3 id="hp-stl">HP STL</h3>
-<pre><code>HP版本是所有STL版本的始祖。每个HP STL头文件都有一份声明，允许任何人使用、拷贝、修改、传播、贩卖这份软件及其说明，唯一要遵守的是，必须在所有文件加上HP版本说明和运行权限声明，这种授权属于open source范畴，不属于GNU GPL范畴。
-</code></pre><h3 id="p-j-plauger-pj-stl">P.J.Plauger实现版本--PJ STL</h3>
-<pre><code>该版本是继承HP版本的，每个文件也有HP版本声明，但不属于open source范畴也不属于GNU GPL。该版本被Visual C++采用，可以在Visual C++的include的子目录（如C：\msdev\VC98\Include）找到STL的头文件，不能公开修改和贩卖，这个版本的可读性非常低。
-</code></pre><h3 id="rouge-ware-rw-stl">Rouge Ware实现版本-- RW STL</h3>
-<pre><code>和PJ STL一样是继承HP STL,也不属于open source和GNU GPL,这个版本被C++ Builder采用，同样可以在include子目录中找到STL的头文件（如：C:\Inprise\CBuilder4\Include）,可读性比PJ STL好些。
-</code></pre><h3 id="sgi-stl">SGI STL</h3>
-<pre><code>SGI版本由（Silicon Graphics Computer System,Inc）公司发展的，同样是继承HP版本的，与PJ STL和RW STL不同是它属于open source的一员，但不属于GNU GPL，SGI STL被GCC采用，也可以在include子目录下找到STL头文件（如：C:\Cygnus\cygwin-b20\include\g++），可读性比前面的三个版本都好。
-</code></pre><h2 id="sgi-stl-">SGI STL文件分布</h2>
-<p><strong>SGI STL V3.3</strong>源码：</p>
-<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-overview.jpg" alt="SGI源码"></p>
-<h2 id="-">参考</h2>
+<h2 id="&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;">&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-components.jpg" alt="SGI&#x7EC4;&#x4EF6;&#x5173;&#x7CFB;"><br><code>Container</code>&#x901A;&#x8FC7;<code>Allocator</code>&#x53D6;&#x5F97;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;<code>Algorithm</code>&#x901A;&#x8FC7;<code>Iterator</code>&#x5B58;&#x53D6;<code>Container</code>&#x6570;&#x636E;&#xFF0C;<code>Functor</code>&#x53EF;&#x4EE5;&#x534F;&#x52A9;<code>Algorithm</code>&#x5B8C;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x7B56;&#x7565;&#x53D8;&#x5316;&#xFF0C;<code>Adapter</code>&#x53EF;&#x4EE5;&#x4FEE;&#x9970;&#x6216;&#x8005;&#x5957;&#x63A5;<code>Functor</code>&#x3002;</p>
+<h2 id="STL&#x5E38;&#x89C1;&#x7248;&#x672C;">STL&#x5E38;&#x89C1;&#x7248;&#x672C;</h2>
+<h3 id="HP_STL">HP STL</h3>
+<pre><code>HP&#x7248;&#x672C;&#x662F;&#x6240;&#x6709;STL&#x7248;&#x672C;&#x7684;&#x59CB;&#x7956;&#x3002;&#x6BCF;&#x4E2A;HP STL&#x5934;&#x6587;&#x4EF6;&#x90FD;&#x6709;&#x4E00;&#x4EFD;&#x58F0;&#x660E;&#xFF0C;&#x5141;&#x8BB8;&#x4EFB;&#x4F55;&#x4EBA;&#x4F7F;&#x7528;&#x3001;&#x62F7;&#x8D1D;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x4F20;&#x64AD;&#x3001;&#x8D29;&#x5356;&#x8FD9;&#x4EFD;&#x8F6F;&#x4EF6;&#x53CA;&#x5176;&#x8BF4;&#x660E;&#xFF0C;&#x552F;&#x4E00;&#x8981;&#x9075;&#x5B88;&#x7684;&#x662F;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x52A0;&#x4E0A;HP&#x7248;&#x672C;&#x8BF4;&#x660E;&#x548C;&#x8FD0;&#x884C;&#x6743;&#x9650;&#x58F0;&#x660E;&#xFF0C;&#x8FD9;&#x79CD;&#x6388;&#x6743;&#x5C5E;&#x4E8E;open <span class="built_in">source</span>&#x8303;&#x7574;&#xFF0C;&#x4E0D;&#x5C5E;&#x4E8E;GNU GPL&#x8303;&#x7574;&#x3002;
+</code></pre><h3 id="P-J-Plauger&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x2014;PJ_STL">P.J.Plauger&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x2014;PJ STL</h3>
+<pre><code>&#x8BE5;&#x7248;&#x672C;&#x662F;&#x7EE7;&#x627F;HP&#x7248;&#x672C;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x4E5F;&#x6709;HP&#x7248;&#x672C;&#x58F0;&#x660E;&#xFF0C;&#x4F46;&#x4E0D;&#x5C5E;&#x4E8E;open source&#x8303;&#x7574;&#x4E5F;&#x4E0D;&#x5C5E;&#x4E8E;GNU GPL&#x3002;&#x8BE5;&#x7248;&#x672C;&#x88AB;Visual <span class="keyword">C</span>++&#x91C7;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;Visual <span class="keyword">C</span>++&#x7684;include&#x7684;&#x5B50;&#x76EE;&#x5F55;&#xFF08;&#x5982;<span class="keyword">C</span>&#xFF1A;\msdev\VC98\Include&#xFF09;&#x627E;&#x5230;STL&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x80FD;&#x516C;&#x5F00;&#x4FEE;&#x6539;&#x548C;&#x8D29;&#x5356;&#xFF0C;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x975E;&#x5E38;&#x4F4E;&#x3002;
+</code></pre><h3 id="Rouge_Ware&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x2014;_RW_STL">Rouge Ware&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x2014; RW STL</h3>
+<pre><code>&#x548C;PJ STL&#x4E00;&#x6837;&#x662F;&#x7EE7;&#x627F;HP STL,&#x4E5F;&#x4E0D;&#x5C5E;&#x4E8E;open source&#x548C;GNU GPL,&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x88AB;C++ Builder&#x91C7;&#x7528;&#xFF0C;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x5728;include&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x627E;&#x5230;STL&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#xFF1A;C:<span class="command">\Inprise</span><span class="command">\CBuilder</span>4<span class="command">\Include</span>&#xFF09;,&#x53EF;&#x8BFB;&#x6027;&#x6BD4;PJ STL&#x597D;&#x4E9B;&#x3002;
+</code></pre><h3 id="SGI_STL">SGI STL</h3>
+<pre><code>SGI&#x7248;&#x672C;&#x7531;&#xFF08;Silicon Graphics Computer System,Inc&#xFF09;&#x516C;&#x53F8;&#x53D1;&#x5C55;&#x7684;&#xFF0C;&#x540C;&#x6837;&#x662F;&#x7EE7;&#x627F;HP&#x7248;&#x672C;&#x7684;&#xFF0C;&#x4E0E;PJ STL&#x548C;RW STL&#x4E0D;&#x540C;&#x662F;&#x5B83;&#x5C5E;&#x4E8E;open source&#x7684;&#x4E00;&#x5458;&#xFF0C;&#x4F46;&#x4E0D;&#x5C5E;&#x4E8E;GNU GPL&#xFF0C;SGI STL&#x88AB;GCC&#x91C7;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;include&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230;STL&#x5934;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#xFF1A;C:<span class="command">\Cygnus</span><span class="command">\cygwin</span>-b20<span class="command">\include</span><span class="command">\g</span>++&#xFF09;&#xFF0C;&#x53EF;&#x8BFB;&#x6027;&#x6BD4;&#x524D;&#x9762;&#x7684;&#x4E09;&#x4E2A;&#x7248;&#x672C;&#x90FD;&#x597D;&#x3002;
+</code></pre><h2 id="SGI_STL&#x6587;&#x4EF6;&#x5206;&#x5E03;">SGI STL&#x6587;&#x4EF6;&#x5206;&#x5E03;</h2>
+<p><strong>SGI STL V3.3</strong>&#x6E90;&#x7801;&#xFF1A;</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-overview.jpg" alt="SGI&#x6E90;&#x7801;"></p>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
 <p>The Annotated STL Sources(using SGI STL)</p>
 
       
@@ -190,11 +188,11 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
       </li>
     
       <li>
-        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+        <a href="/2014/03/15/stl实现的底层数据结构有哪些？/"></a>
       </li>
     
       <li>
-        <a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
       </li>
     
       <li>
@@ -249,17 +247,15 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
+    <li><a href="/categories/CC++/">C/C++</a><small>3</small></li>
   
-    <li><a href="/categories/STL/">STL</a><small>2</small></li>
+    <li><a href="/categories/STL/">STL</a><small>1</small></li>
   
     <li><a href="/categories/总结/">总结</a><small>1</small></li>
   
     <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
   
     <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
-  
-    <li><a href="/categories/STL/数据结构/">数据结构</a><small>1</small></li>
   
     <li><a href="/categories/电脑常识/">电脑常识</a><small>1</small></li>
   
@@ -275,13 +271,13 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/C/C++/">C/C++</a><small>1</small></li>
+    <li><a href="/tags/CC++/">C/C++</a><small>1</small></li>
   
     <li><a href="/tags/日常问题/">日常问题</a><small>1</small></li>
   
     <li><a href="/tags/生活点滴/">生活点滴</a><small>1</small></li>
   
-    <li><a href="/tags/编程技术/">编程技术</a><small>6</small></li>
+    <li><a href="/tags/编程技术/">编程技术</a><small>5</small></li>
   
   </ul>
 </div>

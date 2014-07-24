@@ -115,9 +115,9 @@
 
     <div class="entry">
       
-        <h2 id="-">引言</h2>
-<p>在早期的时候，对于程序员最希望的是能够拥有一种重复运用的东西，然后自己所花了好多精力做出的东西不会因为时间的推移然后失去了价值。尤其程序设计的最基础的数据结构和算法也没有统一的标准，致使大部分的程序员从事大量的重复工作，既浪费人力资源也是编程过程中错误的主要来源。为了建立数据结构和算法的一套标准，提升各自的独立性、弹性和互操作性，STL就这样在C++社区里。在侯捷的《STL源码剖析》一书中说明了STL的价值。</p>
-<pre><code>STL的价值在于两方面，就底层而言，STL带给我们一套极具实用价值的零部件，以及一个整合的组织。这种价值就像MFC或者VCL之于Windows软件开发过程所带来的价值一样，直接而明确，令大多数有最立即明显的感受。除此之外，STL还带给我们一个高档次、以**泛型思维**为基础的、系统化的、条理分明的“软件组件分类学”。从这个角度看，STL是一个抽象概念库。
+        <h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x5728;&#x65E9;&#x671F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x4E8E;&#x7A0B;&#x5E8F;&#x5458;&#x6700;&#x5E0C;&#x671B;&#x7684;&#x662F;&#x80FD;&#x591F;&#x62E5;&#x6709;&#x4E00;&#x79CD;&#x91CD;&#x590D;&#x8FD0;&#x7528;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x7136;&#x540E;&#x81EA;&#x5DF1;&#x6240;&#x82B1;&#x4E86;&#x597D;&#x591A;&#x7CBE;&#x529B;&#x505A;&#x51FA;&#x7684;&#x4E1C;&#x897F;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x7136;&#x540E;&#x5931;&#x53BB;&#x4E86;&#x4EF7;&#x503C;&#x3002;&#x5C24;&#x5176;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#x6700;&#x57FA;&#x7840;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;&#x4E5F;&#x6CA1;&#x6709;&#x7EDF;&#x4E00;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x81F4;&#x4F7F;&#x5927;&#x90E8;&#x5206;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x4ECE;&#x4E8B;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x590D;&#x5DE5;&#x4F5C;&#xFF0C;&#x65E2;&#x6D6A;&#x8D39;&#x4EBA;&#x529B;&#x8D44;&#x6E90;&#x4E5F;&#x662F;&#x7F16;&#x7A0B;&#x8FC7;&#x7A0B;&#x4E2D;&#x9519;&#x8BEF;&#x7684;&#x4E3B;&#x8981;&#x6765;&#x6E90;&#x3002;&#x4E3A;&#x4E86;&#x5EFA;&#x7ACB;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x5957;&#x6807;&#x51C6;&#xFF0C;&#x63D0;&#x5347;&#x5404;&#x81EA;&#x7684;&#x72EC;&#x7ACB;&#x6027;&#x3001;&#x5F39;&#x6027;&#x548C;&#x4E92;&#x64CD;&#x4F5C;&#x6027;&#xFF0C;STL&#x5C31;&#x8FD9;&#x6837;&#x5728;C++&#x793E;&#x533A;&#x91CC;&#x3002;&#x5728;&#x4FAF;&#x6377;&#x7684;&#x300A;STL&#x6E90;&#x7801;&#x5256;&#x6790;&#x300B;&#x4E00;&#x4E66;&#x4E2D;&#x8BF4;&#x660E;&#x4E86;STL&#x7684;&#x4EF7;&#x503C;&#x3002;</p>
+<pre><code>STL&#x7684;&#x4EF7;&#x503C;&#x5728;&#x4E8E;&#x4E24;&#x65B9;&#x9762;&#xFF0C;&#x5C31;&#x5E95;&#x5C42;&#x800C;&#x8A00;&#xFF0C;STL&#x5E26;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x5957;&#x6781;&#x5177;&#x5B9E;&#x7528;&#x4EF7;&#x503C;&#x7684;&#x96F6;&#x90E8;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x6574;&#x5408;&#x7684;&#x7EC4;&#x7EC7;&#x3002;&#x8FD9;&#x79CD;&#x4EF7;&#x503C;&#x5C31;&#x50CF;MFC&#x6216;&#x8005;VCL&#x4E4B;&#x4E8E;Windows&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x6240;&#x5E26;&#x6765;&#x7684;&#x4EF7;&#x503C;&#x4E00;&#x6837;&#xFF0C;&#x76F4;&#x63A5;&#x800C;&#x660E;&#x786E;&#xFF0C;&#x4EE4;&#x5927;&#x591A;&#x6570;&#x6709;&#x6700;&#x7ACB;&#x5373;&#x660E;&#x663E;&#x7684;&#x611F;&#x53D7;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;STL&#x8FD8;&#x5E26;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x9AD8;&#x6863;&#x6B21;&#x3001;&#x4EE5;<span class="strong">**&#x6CDB;&#x578B;&#x601D;&#x7EF4;**</span>&#x4E3A;&#x57FA;&#x7840;&#x7684;&#x3001;&#x7CFB;&#x7EDF;&#x5316;&#x7684;&#x3001;&#x6761;&#x7406;&#x5206;&#x660E;&#x7684;&#x201C;&#x8F6F;&#x4EF6;&#x7EC4;&#x4EF6;&#x5206;&#x7C7B;&#x5B66;&#x201D;&#x3002;&#x4ECE;&#x8FD9;&#x4E2A;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;STL&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#x5E93;&#x3002;
 </code></pre>
       
     </div>
@@ -125,67 +125,6 @@
 	
 		
 			<a href="/2014/03/16/stl概述/#more" class="more-link">More..</a>
-		
-	
-
-	<hr/>
-  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-  
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <div class="header">
-      
-  
-    <h3 class="title"><a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
-        <small>
-            <time datetime="2014-03-06T14:34:55.000Z">3月 6 2014</time>
-        </small>
-    </h3>
-  
-
-
-    </div>
-
-    <div class="entry">
-      
-        <h2 id="c-stl-">C++ STL各个容器底层由哪些数据结构实现的：</h2>
-<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
-<ol>
-<li>vector  底层数据结构为数组 ，支持快速随机访问</li>
-<li>list    底层数据结构为双向链表，支持快速增删</li>
-<li>deque   底层数据结构为一个中央控制器和多个缓冲区,支持首尾（中间不能）快速增删，也支持随机访问</li>
-<li>stack   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
-<li>queue   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
-<li>priority_queue 的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</li>
-</ol>
-<hr>
-<p>
-      
-    </div>
-
-	
-		
-			<a href="/2014/03/06/stl实现的底层数据结构有哪些？/#more" class="more-link">More..</a>
 		
 	
 
@@ -221,11 +160,11 @@
       </li>
     
       <li>
-        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+        <a href="/2014/03/15/stl实现的底层数据结构有哪些？/"></a>
       </li>
     
       <li>
-        <a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
       </li>
     
       <li>
@@ -280,17 +219,15 @@
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
+    <li><a href="/categories/CC++/">C/C++</a><small>3</small></li>
   
-    <li><a href="/categories/STL/">STL</a><small>2</small></li>
+    <li><a href="/categories/STL/">STL</a><small>1</small></li>
   
     <li><a href="/categories/总结/">总结</a><small>1</small></li>
   
     <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
   
     <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
-  
-    <li><a href="/categories/STL/数据结构/">数据结构</a><small>1</small></li>
   
     <li><a href="/categories/电脑常识/">电脑常识</a><small>1</small></li>
   
@@ -306,13 +243,13 @@
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/C/C++/">C/C++</a><small>1</small></li>
+    <li><a href="/tags/CC++/">C/C++</a><small>1</small></li>
   
     <li><a href="/tags/日常问题/">日常问题</a><small>1</small></li>
   
     <li><a href="/tags/生活点滴/">生活点滴</a><small>1</small></li>
   
-    <li><a href="/tags/编程技术/">编程技术</a><small>6</small></li>
+    <li><a href="/tags/编程技术/">编程技术</a><small>5</small></li>
   
   </ul>
 </div>

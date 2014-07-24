@@ -4,7 +4,7 @@
   <subtitle><![CDATA[水滴石穿]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://littlebean.github.io/"/>
-  <updated>2014-03-17T07:34:20.144Z</updated>
+  <updated>2014-06-03T15:41:45.780Z</updated>
   <id>http://littlebean.github.io/</id>
   
   <author>
@@ -20,44 +20,42 @@
     <id>http://littlebean.github.io/2014/03/16/stl概述/</id>
     <published>2014-03-16T12:09:37.000Z</published>
     <updated>2014-03-17T07:20:34.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>在早期的时候，对于程序员最希望的是能够拥有一种重复运用的东西，然后自己所花了好多精力做出的东西不会因为时间的推移然后失去了价值。尤其程序设计的最基础的数据结构和算法也没有统一的标准，致使大部分的程序员从事大量的重复工作，既浪费人力资源也是编程过程中错误的主要来源。为了建立数据结构和算法的一套标准，提升各自的独立性、弹性和互操作性，STL就这样在C++社区里。在侯捷的《STL源码剖析》一书中说明了STL的价值。</p>
-<pre><code>STL的价值在于两方面，就底层而言，STL带给我们一套极具实用价值的零部件，以及一个整合的组织。这种价值就像MFC或者VCL之于Windows软件开发过程所带来的价值一样，直接而明确，令大多数有最立即明显的感受。除此之外，STL还带给我们一个高档次、以**泛型思维**为基础的、系统化的、条理分明的“软件组件分类学”。从这个角度看，STL是一个抽象概念库。
+    <content type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x5728;&#x65E9;&#x671F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x4E8E;&#x7A0B;&#x5E8F;&#x5458;&#x6700;&#x5E0C;&#x671B;&#x7684;&#x662F;&#x80FD;&#x591F;&#x62E5;&#x6709;&#x4E00;&#x79CD;&#x91CD;&#x590D;&#x8FD0;&#x7528;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x7136;&#x540E;&#x81EA;&#x5DF1;&#x6240;&#x82B1;&#x4E86;&#x597D;&#x591A;&#x7CBE;&#x529B;&#x505A;&#x51FA;&#x7684;&#x4E1C;&#x897F;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x7136;&#x540E;&#x5931;&#x53BB;&#x4E86;&#x4EF7;&#x503C;&#x3002;&#x5C24;&#x5176;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#x6700;&#x57FA;&#x7840;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;&#x4E5F;&#x6CA1;&#x6709;&#x7EDF;&#x4E00;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x81F4;&#x4F7F;&#x5927;&#x90E8;&#x5206;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x4ECE;&#x4E8B;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x590D;&#x5DE5;&#x4F5C;&#xFF0C;&#x65E2;&#x6D6A;&#x8D39;&#x4EBA;&#x529B;&#x8D44;&#x6E90;&#x4E5F;&#x662F;&#x7F16;&#x7A0B;&#x8FC7;&#x7A0B;&#x4E2D;&#x9519;&#x8BEF;&#x7684;&#x4E3B;&#x8981;&#x6765;&#x6E90;&#x3002;&#x4E3A;&#x4E86;&#x5EFA;&#x7ACB;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x5957;&#x6807;&#x51C6;&#xFF0C;&#x63D0;&#x5347;&#x5404;&#x81EA;&#x7684;&#x72EC;&#x7ACB;&#x6027;&#x3001;&#x5F39;&#x6027;&#x548C;&#x4E92;&#x64CD;&#x4F5C;&#x6027;&#xFF0C;STL&#x5C31;&#x8FD9;&#x6837;&#x5728;C++&#x793E;&#x533A;&#x91CC;&#x3002;&#x5728;&#x4FAF;&#x6377;&#x7684;&#x300A;STL&#x6E90;&#x7801;&#x5256;&#x6790;&#x300B;&#x4E00;&#x4E66;&#x4E2D;&#x8BF4;&#x660E;&#x4E86;STL&#x7684;&#x4EF7;&#x503C;&#x3002;</p>
+<pre><code>STL&#x7684;&#x4EF7;&#x503C;&#x5728;&#x4E8E;&#x4E24;&#x65B9;&#x9762;&#xFF0C;&#x5C31;&#x5E95;&#x5C42;&#x800C;&#x8A00;&#xFF0C;STL&#x5E26;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x5957;&#x6781;&#x5177;&#x5B9E;&#x7528;&#x4EF7;&#x503C;&#x7684;&#x96F6;&#x90E8;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x6574;&#x5408;&#x7684;&#x7EC4;&#x7EC7;&#x3002;&#x8FD9;&#x79CD;&#x4EF7;&#x503C;&#x5C31;&#x50CF;MFC&#x6216;&#x8005;VCL&#x4E4B;&#x4E8E;Windows&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x6240;&#x5E26;&#x6765;&#x7684;&#x4EF7;&#x503C;&#x4E00;&#x6837;&#xFF0C;&#x76F4;&#x63A5;&#x800C;&#x660E;&#x786E;&#xFF0C;&#x4EE4;&#x5927;&#x591A;&#x6570;&#x6709;&#x6700;&#x7ACB;&#x5373;&#x660E;&#x663E;&#x7684;&#x611F;&#x53D7;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;STL&#x8FD8;&#x5E26;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x9AD8;&#x6863;&#x6B21;&#x3001;&#x4EE5;<span class="strong">**&#x6CDB;&#x578B;&#x601D;&#x7EF4;**</span>&#x4E3A;&#x57FA;&#x7840;&#x7684;&#x3001;&#x7CFB;&#x7EDF;&#x5316;&#x7684;&#x3001;&#x6761;&#x7406;&#x5206;&#x660E;&#x7684;&#x201C;&#x8F6F;&#x4EF6;&#x7EC4;&#x4EF6;&#x5206;&#x7C7B;&#x5B66;&#x201D;&#x3002;&#x4ECE;&#x8FD9;&#x4E2A;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;STL&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#x5E93;&#x3002;
 </code></pre><a id="more"></a>
 
-<h2 id="stl-">STL历史</h2>
-<p>STL由<strong>Alexander Stepanov</strong>创造于1979年前后，这也是<strong>Bjarne Stroustrup</strong>创造C++年代。
-然而泛型程序设计的思想早在1971年在计算机几何领域产生。第一个支持泛型概念的语言是Ada,然而Ada在美国国防工业以外并未被广泛实用，但当时C++在程序设计领域迅速发展。C++在那时候没有采用<code>template</code>性质，但是Alexander意识到C++允许程序员通过指针以极佳弹性的方式处理内存。这一点正是泛型能在C++中应用的重要关键且不失效能。</p>
-<h2 id="stl-">STL的六大组件</h2>
+<h2 id="STL&#x5386;&#x53F2;">STL&#x5386;&#x53F2;</h2>
+<p>STL&#x7531;<strong>Alexander Stepanov</strong>&#x521B;&#x9020;&#x4E8E;1979&#x5E74;&#x524D;&#x540E;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;<strong>Bjarne Stroustrup</strong>&#x521B;&#x9020;C++&#x5E74;&#x4EE3;&#x3002;<br>&#x7136;&#x800C;&#x6CDB;&#x578B;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#x601D;&#x60F3;&#x65E9;&#x5728;1971&#x5E74;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x51E0;&#x4F55;&#x9886;&#x57DF;&#x4EA7;&#x751F;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x652F;&#x6301;&#x6CDB;&#x578B;&#x6982;&#x5FF5;&#x7684;&#x8BED;&#x8A00;&#x662F;Ada,&#x7136;&#x800C;Ada&#x5728;&#x7F8E;&#x56FD;&#x56FD;&#x9632;&#x5DE5;&#x4E1A;&#x4EE5;&#x5916;&#x5E76;&#x672A;&#x88AB;&#x5E7F;&#x6CDB;&#x5B9E;&#x7528;&#xFF0C;&#x4F46;&#x5F53;&#x65F6;C++&#x5728;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x9886;&#x57DF;&#x8FC5;&#x901F;&#x53D1;&#x5C55;&#x3002;C++&#x5728;&#x90A3;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x91C7;&#x7528;<code>template</code>&#x6027;&#x8D28;&#xFF0C;&#x4F46;&#x662F;Alexander&#x610F;&#x8BC6;&#x5230;C++&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x5458;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x4EE5;&#x6781;&#x4F73;&#x5F39;&#x6027;&#x7684;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x5185;&#x5B58;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x6B63;&#x662F;&#x6CDB;&#x578B;&#x80FD;&#x5728;C++&#x4E2D;&#x5E94;&#x7528;&#x7684;&#x91CD;&#x8981;&#x5173;&#x952E;&#x4E14;&#x4E0D;&#x5931;&#x6548;&#x80FD;&#x3002;</p>
+<h2 id="STL&#x7684;&#x516D;&#x5927;&#x7EC4;&#x4EF6;">STL&#x7684;&#x516D;&#x5927;&#x7EC4;&#x4EF6;</h2>
 <ol>
-<li><strong>容器（containers）</strong>:各种数据结构，如<code>vector</code>,<code>list</code>,<code>deque</code>,<code>set</code>,<code>map</code>等用来存放数据，容器是一种<code>class template</code>。</li>
-<li><strong>算法(algorithms)</strong>:各种常用的算法，如<code>sort</code>,<code>search</code>,<code>copy</code>,<code>erase</code>等，算法是一种<code>function template</code>。</li>
-<li><strong>迭代器（iterators）</strong>:容器和算法之间的一种粘合剂，有5种类型，如:</br><code>Input iterator</code>,<code>Output iterator</code>,<code>Forward iterator</code>,<code>Bidirectional iterator</code>,<code>Random Access iterator</code>。迭代器也是一种重载<code>operator*</code>,<code>operator-&gt;</code>,<code>operator++</code>,<code>operator--</code>等操作符的<code>class template</code>,原生指针也算是一种迭代器。</li>
-<li><strong>仿函数（functors）</strong>:行为类似函数，可作为函数的某种策略，仿函数是一种重载了<code>operator()</code>的一种<code>class template</code>，普通的函数也可以说是狭义的仿函数。</li>
-<li><strong>配接器（adapters）</strong>:一种用来修饰容器、仿函数或者迭代器借口的东西。配置器的实现很难一言蔽之，以后再分析。</li>
-<li><strong>配置器（allocators）</strong>:负责空间的配置和管理，配置器是一个实现了空间动态配置、空间管理、空间释放的<code>class template</code>。</li>
+<li><strong>&#x5BB9;&#x5668;&#xFF08;containers&#xFF09;</strong>:&#x5404;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5982;<code>vector</code>,<code>list</code>,<code>deque</code>,<code>set</code>,<code>map</code>&#x7B49;&#x7528;&#x6765;&#x5B58;&#x653E;&#x6570;&#x636E;&#xFF0C;&#x5BB9;&#x5668;&#x662F;&#x4E00;&#x79CD;<code>class template</code>&#x3002;</li>
+<li><strong>&#x7B97;&#x6CD5;(algorithms)</strong>:&#x5404;&#x79CD;&#x5E38;&#x7528;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x5982;<code>sort</code>,<code>search</code>,<code>copy</code>,<code>erase</code>&#x7B49;&#xFF0C;&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;<code>function template</code>&#x3002;</li>
+<li><strong>&#x8FED;&#x4EE3;&#x5668;&#xFF08;iterators&#xFF09;</strong>:&#x5BB9;&#x5668;&#x548C;&#x7B97;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x79CD;&#x7C98;&#x5408;&#x5242;&#xFF0C;&#x6709;5&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5982;:<br><code>Input iterator</code>,<code>Output iterator</code>,<code>Forward iterator</code>,<code>Bidirectional iterator</code>,<code>Random Access iterator</code>&#x3002;&#x8FED;&#x4EE3;&#x5668;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x91CD;&#x8F7D;<code>operator*</code>,<code>operator-&gt;</code>,<code>operator++</code>,<code>operator--</code>&#x7B49;&#x64CD;&#x4F5C;&#x7B26;&#x7684;<code>class template</code>,&#x539F;&#x751F;&#x6307;&#x9488;&#x4E5F;&#x7B97;&#x662F;&#x4E00;&#x79CD;&#x8FED;&#x4EE3;&#x5668;&#x3002;</li>
+<li><strong>&#x4EFF;&#x51FD;&#x6570;&#xFF08;functors&#xFF09;</strong>:&#x884C;&#x4E3A;&#x7C7B;&#x4F3C;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x7684;&#x67D0;&#x79CD;&#x7B56;&#x7565;&#xFF0C;&#x4EFF;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x79CD;&#x91CD;&#x8F7D;&#x4E86;<code>operator()</code>&#x7684;&#x4E00;&#x79CD;<code>class template</code>&#xFF0C;&#x666E;&#x901A;&#x7684;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x72ED;&#x4E49;&#x7684;&#x4EFF;&#x51FD;&#x6570;&#x3002;</li>
+<li><strong>&#x914D;&#x63A5;&#x5668;&#xFF08;adapters&#xFF09;</strong>:&#x4E00;&#x79CD;&#x7528;&#x6765;&#x4FEE;&#x9970;&#x5BB9;&#x5668;&#x3001;&#x4EFF;&#x51FD;&#x6570;&#x6216;&#x8005;&#x8FED;&#x4EE3;&#x5668;&#x501F;&#x53E3;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x914D;&#x7F6E;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#x5F88;&#x96BE;&#x4E00;&#x8A00;&#x853D;&#x4E4B;&#xFF0C;&#x4EE5;&#x540E;&#x518D;&#x5206;&#x6790;&#x3002;</li>
+<li><strong>&#x914D;&#x7F6E;&#x5668;&#xFF08;allocators&#xFF09;</strong>:&#x8D1F;&#x8D23;&#x7A7A;&#x95F4;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7BA1;&#x7406;&#xFF0C;&#x914D;&#x7F6E;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;&#x7A7A;&#x95F4;&#x52A8;&#x6001;&#x914D;&#x7F6E;&#x3001;&#x7A7A;&#x95F4;&#x7BA1;&#x7406;&#x3001;&#x7A7A;&#x95F4;&#x91CA;&#x653E;&#x7684;<code>class template</code>&#x3002;</li>
 </ol>
-<h2 id="-">组件之间的关系</h2>
-<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-components.jpg" alt="SGI组件关系">
-<code>Container</code>通过<code>Allocator</code>取得数据存储空间，<code>Algorithm</code>通过<code>Iterator</code>存取<code>Container</code>数据，<code>Functor</code>可以协助<code>Algorithm</code>完成不同的策略变化，<code>Adapter</code>可以修饰或者套接<code>Functor</code>。</p>
-<h2 id="stl-">STL常见版本</h2>
-<h3 id="hp-stl">HP STL</h3>
-<pre><code>HP版本是所有STL版本的始祖。每个HP STL头文件都有一份声明，允许任何人使用、拷贝、修改、传播、贩卖这份软件及其说明，唯一要遵守的是，必须在所有文件加上HP版本说明和运行权限声明，这种授权属于open source范畴，不属于GNU GPL范畴。
-</code></pre><h3 id="p-j-plauger-pj-stl">P.J.Plauger实现版本--PJ STL</h3>
-<pre><code>该版本是继承HP版本的，每个文件也有HP版本声明，但不属于open source范畴也不属于GNU GPL。该版本被Visual C++采用，可以在Visual C++的include的子目录（如C：\msdev\VC98\Include）找到STL的头文件，不能公开修改和贩卖，这个版本的可读性非常低。
-</code></pre><h3 id="rouge-ware-rw-stl">Rouge Ware实现版本-- RW STL</h3>
-<pre><code>和PJ STL一样是继承HP STL,也不属于open source和GNU GPL,这个版本被C++ Builder采用，同样可以在include子目录中找到STL的头文件（如：C:\Inprise\CBuilder4\Include）,可读性比PJ STL好些。
-</code></pre><h3 id="sgi-stl">SGI STL</h3>
-<pre><code>SGI版本由（Silicon Graphics Computer System,Inc）公司发展的，同样是继承HP版本的，与PJ STL和RW STL不同是它属于open source的一员，但不属于GNU GPL，SGI STL被GCC采用，也可以在include子目录下找到STL头文件（如：C:\Cygnus\cygwin-b20\include\g++），可读性比前面的三个版本都好。
-</code></pre><h2 id="sgi-stl-">SGI STL文件分布</h2>
-<p><strong>SGI STL V3.3</strong>源码：</p>
-<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-overview.jpg" alt="SGI源码"></p>
-<h2 id="-">参考</h2>
+<h2 id="&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;">&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-components.jpg" alt="SGI&#x7EC4;&#x4EF6;&#x5173;&#x7CFB;"><br><code>Container</code>&#x901A;&#x8FC7;<code>Allocator</code>&#x53D6;&#x5F97;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;<code>Algorithm</code>&#x901A;&#x8FC7;<code>Iterator</code>&#x5B58;&#x53D6;<code>Container</code>&#x6570;&#x636E;&#xFF0C;<code>Functor</code>&#x53EF;&#x4EE5;&#x534F;&#x52A9;<code>Algorithm</code>&#x5B8C;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x7B56;&#x7565;&#x53D8;&#x5316;&#xFF0C;<code>Adapter</code>&#x53EF;&#x4EE5;&#x4FEE;&#x9970;&#x6216;&#x8005;&#x5957;&#x63A5;<code>Functor</code>&#x3002;</p>
+<h2 id="STL&#x5E38;&#x89C1;&#x7248;&#x672C;">STL&#x5E38;&#x89C1;&#x7248;&#x672C;</h2>
+<h3 id="HP_STL">HP STL</h3>
+<pre><code>HP&#x7248;&#x672C;&#x662F;&#x6240;&#x6709;STL&#x7248;&#x672C;&#x7684;&#x59CB;&#x7956;&#x3002;&#x6BCF;&#x4E2A;HP STL&#x5934;&#x6587;&#x4EF6;&#x90FD;&#x6709;&#x4E00;&#x4EFD;&#x58F0;&#x660E;&#xFF0C;&#x5141;&#x8BB8;&#x4EFB;&#x4F55;&#x4EBA;&#x4F7F;&#x7528;&#x3001;&#x62F7;&#x8D1D;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x4F20;&#x64AD;&#x3001;&#x8D29;&#x5356;&#x8FD9;&#x4EFD;&#x8F6F;&#x4EF6;&#x53CA;&#x5176;&#x8BF4;&#x660E;&#xFF0C;&#x552F;&#x4E00;&#x8981;&#x9075;&#x5B88;&#x7684;&#x662F;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x52A0;&#x4E0A;HP&#x7248;&#x672C;&#x8BF4;&#x660E;&#x548C;&#x8FD0;&#x884C;&#x6743;&#x9650;&#x58F0;&#x660E;&#xFF0C;&#x8FD9;&#x79CD;&#x6388;&#x6743;&#x5C5E;&#x4E8E;open <span class="built_in">source</span>&#x8303;&#x7574;&#xFF0C;&#x4E0D;&#x5C5E;&#x4E8E;GNU GPL&#x8303;&#x7574;&#x3002;
+</code></pre><h3 id="P-J-Plauger&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x2014;PJ_STL">P.J.Plauger&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x2014;PJ STL</h3>
+<pre><code>&#x8BE5;&#x7248;&#x672C;&#x662F;&#x7EE7;&#x627F;HP&#x7248;&#x672C;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x4E5F;&#x6709;HP&#x7248;&#x672C;&#x58F0;&#x660E;&#xFF0C;&#x4F46;&#x4E0D;&#x5C5E;&#x4E8E;open source&#x8303;&#x7574;&#x4E5F;&#x4E0D;&#x5C5E;&#x4E8E;GNU GPL&#x3002;&#x8BE5;&#x7248;&#x672C;&#x88AB;Visual <span class="keyword">C</span>++&#x91C7;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;Visual <span class="keyword">C</span>++&#x7684;include&#x7684;&#x5B50;&#x76EE;&#x5F55;&#xFF08;&#x5982;<span class="keyword">C</span>&#xFF1A;\msdev\VC98\Include&#xFF09;&#x627E;&#x5230;STL&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x80FD;&#x516C;&#x5F00;&#x4FEE;&#x6539;&#x548C;&#x8D29;&#x5356;&#xFF0C;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x975E;&#x5E38;&#x4F4E;&#x3002;
+</code></pre><h3 id="Rouge_Ware&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x2014;_RW_STL">Rouge Ware&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x2014; RW STL</h3>
+<pre><code>&#x548C;PJ STL&#x4E00;&#x6837;&#x662F;&#x7EE7;&#x627F;HP STL,&#x4E5F;&#x4E0D;&#x5C5E;&#x4E8E;open source&#x548C;GNU GPL,&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x88AB;C++ Builder&#x91C7;&#x7528;&#xFF0C;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x5728;include&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x627E;&#x5230;STL&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#xFF1A;C:<span class="command">\Inprise</span><span class="command">\CBuilder</span>4<span class="command">\Include</span>&#xFF09;,&#x53EF;&#x8BFB;&#x6027;&#x6BD4;PJ STL&#x597D;&#x4E9B;&#x3002;
+</code></pre><h3 id="SGI_STL">SGI STL</h3>
+<pre><code>SGI&#x7248;&#x672C;&#x7531;&#xFF08;Silicon Graphics Computer System,Inc&#xFF09;&#x516C;&#x53F8;&#x53D1;&#x5C55;&#x7684;&#xFF0C;&#x540C;&#x6837;&#x662F;&#x7EE7;&#x627F;HP&#x7248;&#x672C;&#x7684;&#xFF0C;&#x4E0E;PJ STL&#x548C;RW STL&#x4E0D;&#x540C;&#x662F;&#x5B83;&#x5C5E;&#x4E8E;open source&#x7684;&#x4E00;&#x5458;&#xFF0C;&#x4F46;&#x4E0D;&#x5C5E;&#x4E8E;GNU GPL&#xFF0C;SGI STL&#x88AB;GCC&#x91C7;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;include&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230;STL&#x5934;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#xFF1A;C:<span class="command">\Cygnus</span><span class="command">\cygwin</span>-b20<span class="command">\include</span><span class="command">\g</span>++&#xFF09;&#xFF0C;&#x53EF;&#x8BFB;&#x6027;&#x6BD4;&#x524D;&#x9762;&#x7684;&#x4E09;&#x4E2A;&#x7248;&#x672C;&#x90FD;&#x597D;&#x3002;
+</code></pre><h2 id="SGI_STL&#x6587;&#x4EF6;&#x5206;&#x5E03;">SGI STL&#x6587;&#x4EF6;&#x5206;&#x5E03;</h2>
+<p><strong>SGI STL V3.3</strong>&#x6E90;&#x7801;&#xFF1A;</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/17/SGI-overview.jpg" alt="SGI&#x6E90;&#x7801;"></p>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
 <p>The Annotated STL Sources(using SGI STL)</p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>在早期的时候，对于程序员最希望的是能够拥有一种重复运用的东西，然后自己所花了好多精力做出的东西不会因为时间的推移然后失去了价值。尤其程序设计的最基础的数据结构和算法也没有统一的标准，致使大部分的程序员从事大量的重复工作，既浪费人力资源也是编程过程中错误的主要来源。为了建立数据结构和算法的一套标准，提升各自的独立性、弹性和互操作性，STL就这样在C++社区里。在侯捷的《STL源码剖析》一书中说明了STL的价值。</p>
-<pre><code>STL的价值在于两方面，就底层而言，STL带给我们一套极具实用价值的零部件，以及一个整合的组织。这种价值就像MFC或者VCL之于Windows软件开发过程所带来的价值一样，直接而明确，令大多数有最立即明显的感受。除此之外，STL还带给我们一个高档次、以**泛型思维**为基础的、系统化的、条理分明的“软件组件分类学”。从这个角度看，STL是一个抽象概念库。
+    <summary type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x5728;&#x65E9;&#x671F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x4E8E;&#x7A0B;&#x5E8F;&#x5458;&#x6700;&#x5E0C;&#x671B;&#x7684;&#x662F;&#x80FD;&#x591F;&#x62E5;&#x6709;&#x4E00;&#x79CD;&#x91CD;&#x590D;&#x8FD0;&#x7528;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x7136;&#x540E;&#x81EA;&#x5DF1;&#x6240;&#x82B1;&#x4E86;&#x597D;&#x591A;&#x7CBE;&#x529B;&#x505A;&#x51FA;&#x7684;&#x4E1C;&#x897F;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x7136;&#x540E;&#x5931;&#x53BB;&#x4E86;&#x4EF7;&#x503C;&#x3002;&#x5C24;&#x5176;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#x6700;&#x57FA;&#x7840;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;&#x4E5F;&#x6CA1;&#x6709;&#x7EDF;&#x4E00;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x81F4;&#x4F7F;&#x5927;&#x90E8;&#x5206;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x4ECE;&#x4E8B;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x590D;&#x5DE5;&#x4F5C;&#xFF0C;&#x65E2;&#x6D6A;&#x8D39;&#x4EBA;&#x529B;&#x8D44;&#x6E90;&#x4E5F;&#x662F;&#x7F16;&#x7A0B;&#x8FC7;&#x7A0B;&#x4E2D;&#x9519;&#x8BEF;&#x7684;&#x4E3B;&#x8981;&#x6765;&#x6E90;&#x3002;&#x4E3A;&#x4E86;&#x5EFA;&#x7ACB;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x5957;&#x6807;&#x51C6;&#xFF0C;&#x63D0;&#x5347;&#x5404;&#x81EA;&#x7684;&#x72EC;&#x7ACB;&#x6027;&#x3001;&#x5F39;&#x6027;&#x548C;&#x4E92;&#x64CD;&#x4F5C;&#x6027;&#xFF0C;STL&#x5C31;&#x8FD9;&#x6837;&#x5728;C++&#x793E;&#x533A;&#x91CC;&#x3002;&#x5728;&#x4FAF;&#x6377;&#x7684;&#x300A;STL&#x6E90;&#x7801;&#x5256;&#x6790;&#x300B;&#x4E00;&#x4E66;&#x4E2D;&#x8BF4;&#x660E;&#x4E86;STL&#x7684;&#x4EF7;&#x503C;&#x3002;</p>
+<pre><code>STL&#x7684;&#x4EF7;&#x503C;&#x5728;&#x4E8E;&#x4E24;&#x65B9;&#x9762;&#xFF0C;&#x5C31;&#x5E95;&#x5C42;&#x800C;&#x8A00;&#xFF0C;STL&#x5E26;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x5957;&#x6781;&#x5177;&#x5B9E;&#x7528;&#x4EF7;&#x503C;&#x7684;&#x96F6;&#x90E8;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x6574;&#x5408;&#x7684;&#x7EC4;&#x7EC7;&#x3002;&#x8FD9;&#x79CD;&#x4EF7;&#x503C;&#x5C31;&#x50CF;MFC&#x6216;&#x8005;VCL&#x4E4B;&#x4E8E;Windows&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x6240;&#x5E26;&#x6765;&#x7684;&#x4EF7;&#x503C;&#x4E00;&#x6837;&#xFF0C;&#x76F4;&#x63A5;&#x800C;&#x660E;&#x786E;&#xFF0C;&#x4EE4;&#x5927;&#x591A;&#x6570;&#x6709;&#x6700;&#x7ACB;&#x5373;&#x660E;&#x663E;&#x7684;&#x611F;&#x53D7;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;STL&#x8FD8;&#x5E26;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x9AD8;&#x6863;&#x6B21;&#x3001;&#x4EE5;<span class="strong">**&#x6CDB;&#x578B;&#x601D;&#x7EF4;**</span>&#x4E3A;&#x57FA;&#x7840;&#x7684;&#x3001;&#x7CFB;&#x7EDF;&#x5316;&#x7684;&#x3001;&#x6761;&#x7406;&#x5206;&#x660E;&#x7684;&#x201C;&#x8F6F;&#x4EF6;&#x7EC4;&#x4EF6;&#x5206;&#x7C7B;&#x5B66;&#x201D;&#x3002;&#x4ECE;&#x8FD9;&#x4E2A;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;STL&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#x5E93;&#x3002;
 </code></pre>]]></summary>
     
       <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
@@ -67,31 +65,88 @@
   </entry>
   
   <entry>
+    <title><![CDATA[]]></title>
+    <link href="http://littlebean.github.io/2014/03/15/stl%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/"/>
+    <id>http://littlebean.github.io/2014/03/15/stl实现的底层数据结构有哪些？/</id>
+    <published>2014-03-15T02:08:55.000Z</published>
+    <updated>2014-03-17T07:20:01.000Z</updated>
+    <content type="html"><![CDATA[<p>title: STL&#x5B9E;&#x73B0;&#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;<br>date: 2014-03-06 22:34:55<br>tags:</p>
+<ul>
+<li>&#x7F16;&#x7A0B;&#x6280;&#x672F;<br>categories:</li>
+<li>STL</li>
+<li>&#x6570;&#x636E;&#x7ED3;&#x6784;</li>
+</ul>
+<hr>
+<h2 id="C++_STL&#x5404;&#x4E2A;&#x5BB9;&#x5668;&#x5E95;&#x5C42;&#x7531;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;">C++ STL&#x5404;&#x4E2A;&#x5BB9;&#x5668;&#x5E95;&#x5C42;&#x7531;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
+<ol>
+<li>vector  &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x6570;&#x7EC4; &#xFF0C;&#x652F;&#x6301;&#x5FEB;&#x901F;&#x968F;&#x673A;&#x8BBF;&#x95EE;</li>
+<li>list    &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x652F;&#x6301;&#x5FEB;&#x901F;&#x589E;&#x5220;</li>
+<li>deque   &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x4E00;&#x4E2A;&#x4E2D;&#x592E;&#x63A7;&#x5236;&#x5668;&#x548C;&#x591A;&#x4E2A;&#x7F13;&#x51B2;&#x533A;,&#x652F;&#x6301;&#x9996;&#x5C3E;&#xFF08;&#x4E2D;&#x95F4;&#x4E0D;&#x80FD;&#xFF09;&#x5FEB;&#x901F;&#x589E;&#x5220;&#xFF0C;&#x4E5F;&#x652F;&#x6301;&#x968F;&#x673A;&#x8BBF;&#x95EE;</li>
+<li>stack   &#x5E95;&#x5C42;&#x4E00;&#x822C;&#x7528;23&#x5B9E;&#x73B0;&#xFF0C;&#x5C01;&#x95ED;&#x5934;&#x90E8;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x7528;vector&#x7684;&#x539F;&#x56E0;&#x5E94;&#x8BE5;&#x662F;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x6269;&#x5BB9;&#x8017;&#x65F6;</li>
+<li>queue   &#x5E95;&#x5C42;&#x4E00;&#x822C;&#x7528;23&#x5B9E;&#x73B0;&#xFF0C;&#x5C01;&#x95ED;&#x5934;&#x90E8;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x7528;vector&#x7684;&#x539F;&#x56E0;&#x5E94;&#x8BE5;&#x662F;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x6269;&#x5BB9;&#x8017;&#x65F6;</li>
+<li>priority_queue &#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E00;&#x822C;&#x4E3A;vector&#x4E3A;&#x5E95;&#x5C42;&#x5BB9;&#x5668;&#xFF0C;&#x5806;heap&#x4E3A;&#x5904;&#x7406;&#x89C4;&#x5219;&#x6765;&#x7BA1;&#x7406;&#x5E95;&#x5C42;&#x5BB9;&#x5668;&#x5B9E;&#x73B0;</li>
+</ol>
+<hr>
+<p><a id="more"></a></p>
+<ol>
+<li>set       &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x6709;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>multiset  &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x6709;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D; </li>
+<li>map      &#xFEFF;&#xFEFF;&#xFEFF;&#xFEFF;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x6709;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>multimap &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x6709;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D;</li>
+<li>hash_set &#xFEFF;&#xFEFF;&#xFEFF;&#xFEFF;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;hash&#x8868;&#xFF0C;&#x65E0;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>hash_multiset &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;hash&#x8868;&#xFF0C;&#x65E0;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D; </li>
+<li>hash_map      &#xFEFF;&#xFEFF;&#xFEFF;&#xFEFF;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;hash&#x8868;&#xFF0C;&#x65E0;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;</li>
+<li>hash_multimap &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;hash&#x8868;&#xFF0C;&#x65E0;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D;</li>
+</ol>
+<p>&#x53C2;&#x8003;&#xFF1A;<a href="http://blog.csdn.net/huangkq1989/article/details/7277282" target="_blank" rel="external">http://blog.csdn.net/huangkq1989/article/details/7277282</a></p>
+]]></content>
+    <summary type="html"><![CDATA[<p>title: STL&#x5B9E;&#x73B0;&#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;<br>date: 2014-03-06 22:34:55<br>tags:</p>
+<ul>
+<li>&#x7F16;&#x7A0B;&#x6280;&#x672F;<br>categories:</li>
+<li>STL</li>
+<li>&#x6570;&#x636E;&#x7ED3;&#x6784;</li>
+</ul>
+<hr>
+<h2 id="C++_STL&#x5404;&#x4E2A;&#x5BB9;&#x5668;&#x5E95;&#x5C42;&#x7531;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;">C++ STL&#x5404;&#x4E2A;&#x5BB9;&#x5668;&#x5E95;&#x5C42;&#x7531;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</h2>
+<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
+<ol>
+<li>vector  &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x6570;&#x7EC4; &#xFF0C;&#x652F;&#x6301;&#x5FEB;&#x901F;&#x968F;&#x673A;&#x8BBF;&#x95EE;</li>
+<li>list    &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x652F;&#x6301;&#x5FEB;&#x901F;&#x589E;&#x5220;</li>
+<li>deque   &#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x4E00;&#x4E2A;&#x4E2D;&#x592E;&#x63A7;&#x5236;&#x5668;&#x548C;&#x591A;&#x4E2A;&#x7F13;&#x51B2;&#x533A;,&#x652F;&#x6301;&#x9996;&#x5C3E;&#xFF08;&#x4E2D;&#x95F4;&#x4E0D;&#x80FD;&#xFF09;&#x5FEB;&#x901F;&#x589E;&#x5220;&#xFF0C;&#x4E5F;&#x652F;&#x6301;&#x968F;&#x673A;&#x8BBF;&#x95EE;</li>
+<li>stack   &#x5E95;&#x5C42;&#x4E00;&#x822C;&#x7528;23&#x5B9E;&#x73B0;&#xFF0C;&#x5C01;&#x95ED;&#x5934;&#x90E8;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x7528;vector&#x7684;&#x539F;&#x56E0;&#x5E94;&#x8BE5;&#x662F;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x6269;&#x5BB9;&#x8017;&#x65F6;</li>
+<li>queue   &#x5E95;&#x5C42;&#x4E00;&#x822C;&#x7528;23&#x5B9E;&#x73B0;&#xFF0C;&#x5C01;&#x95ED;&#x5934;&#x90E8;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x7528;vector&#x7684;&#x539F;&#x56E0;&#x5E94;&#x8BE5;&#x662F;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x6269;&#x5BB9;&#x8017;&#x65F6;</li>
+<li>priority_queue &#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E00;&#x822C;&#x4E3A;vector&#x4E3A;&#x5E95;&#x5C42;&#x5BB9;&#x5668;&#xFF0C;&#x5806;heap&#x4E3A;&#x5904;&#x7406;&#x89C4;&#x5219;&#x6765;&#x7BA1;&#x7406;&#x5E95;&#x5C42;&#x5BB9;&#x5668;&#x5B9E;&#x73B0;</li>
+</ol>
+<hr>
+<p>]]></summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[对虚函数的一些理解]]></title>
     <link href="http://littlebean.github.io/2014/03/12/%E5%AF%B9%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"/>
     <id>http://littlebean.github.io/2014/03/12/对虚函数的一些理解/</id>
     <published>2014-03-12T08:08:00.000Z</published>
     <updated>2014-03-17T07:25:10.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>日子过的真快，研究生念的都还没有什么感觉就要找实习了，学校来了第一个找实习的公司---华为。投了中央研究院的一个C++研发岗，今天面试问了一些项目什么的，然后问道C++和JAVA的一些区别，就说了几个比较浅的区别，什么JAVA是纯面向对象的，C++是半结构化半面向对象的，支持多继承的一门语言什么的，面我的那位帅哥感觉还不足提示了一下在面向对象的3个特性（封装，继承，多态）来说一下，然后我就回答了最主要的区别是在多态的实现机制上的不同，JAVA是靠重载，C++是靠虚函数来实现的，然后就紧接着问，虚函数的怎么实现多态的，当时没有说用虚函数表什么的，就大概说了一下是用基类的指针绑定派生类的对象的，然后调用派生类中对基类虚函数实现的调用，感觉回答的好不专业，然后他就说用虚函数表就能简单的说明，下面我来总结一下虚函数和虚函数表的一些东西。
-<a id="more"></a></p>
-<h2 id="-">虚函数</h2>
-<h3 id="-">什么是虚函数</h3>
-<p>在某基类中声明为<code>virtual</code>并在一个或多个派生类中被重新定义的成员函数，C++通过它实现多态性，通过指向派生类的基类指针，访问派生类中同名覆盖成员函数。
-基类的类定义中定义虚函数的一般形式：</p>
+    <content type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x65E5;&#x5B50;&#x8FC7;&#x7684;&#x771F;&#x5FEB;&#xFF0C;&#x7814;&#x7A76;&#x751F;&#x5FF5;&#x7684;&#x90FD;&#x8FD8;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x611F;&#x89C9;&#x5C31;&#x8981;&#x627E;&#x5B9E;&#x4E60;&#x4E86;&#xFF0C;&#x5B66;&#x6821;&#x6765;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;&#x627E;&#x5B9E;&#x4E60;&#x7684;&#x516C;&#x53F8;&#x2014;-&#x534E;&#x4E3A;&#x3002;&#x6295;&#x4E86;&#x4E2D;&#x592E;&#x7814;&#x7A76;&#x9662;&#x7684;&#x4E00;&#x4E2A;C++&#x7814;&#x53D1;&#x5C97;&#xFF0C;&#x4ECA;&#x5929;&#x9762;&#x8BD5;&#x95EE;&#x4E86;&#x4E00;&#x4E9B;&#x9879;&#x76EE;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x95EE;&#x9053;C++&#x548C;JAVA&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;&#xFF0C;&#x5C31;&#x8BF4;&#x4E86;&#x51E0;&#x4E2A;&#x6BD4;&#x8F83;&#x6D45;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x4EC0;&#x4E48;JAVA&#x662F;&#x7EAF;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#xFF0C;C++&#x662F;&#x534A;&#x7ED3;&#x6784;&#x5316;&#x534A;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x7EE7;&#x627F;&#x7684;&#x4E00;&#x95E8;&#x8BED;&#x8A00;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x9762;&#x6211;&#x7684;&#x90A3;&#x4F4D;&#x5E05;&#x54E5;&#x611F;&#x89C9;&#x8FD8;&#x4E0D;&#x8DB3;&#x63D0;&#x793A;&#x4E86;&#x4E00;&#x4E0B;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;3&#x4E2A;&#x7279;&#x6027;&#xFF08;&#x5C01;&#x88C5;&#xFF0C;&#x7EE7;&#x627F;&#xFF0C;&#x591A;&#x6001;&#xFF09;&#x6765;&#x8BF4;&#x4E00;&#x4E0B;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x5C31;&#x56DE;&#x7B54;&#x4E86;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x533A;&#x522B;&#x662F;&#x5728;&#x591A;&#x6001;&#x7684;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#x4E0A;&#x7684;&#x4E0D;&#x540C;&#xFF0C;JAVA&#x662F;&#x9760;&#x91CD;&#x8F7D;&#xFF0C;C++&#x662F;&#x9760;&#x865A;&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x7D27;&#x63A5;&#x7740;&#x95EE;&#xFF0C;&#x865A;&#x51FD;&#x6570;&#x7684;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x591A;&#x6001;&#x7684;&#xFF0C;&#x5F53;&#x65F6;&#x6CA1;&#x6709;&#x8BF4;&#x7528;&#x865A;&#x51FD;&#x6570;&#x8868;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x5C31;&#x5927;&#x6982;&#x8BF4;&#x4E86;&#x4E00;&#x4E0B;&#x662F;&#x7528;&#x57FA;&#x7C7B;&#x7684;&#x6307;&#x9488;&#x7ED1;&#x5B9A;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x5BF9;&#x57FA;&#x7C7B;&#x865A;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x611F;&#x89C9;&#x56DE;&#x7B54;&#x7684;&#x597D;&#x4E0D;&#x4E13;&#x4E1A;&#xFF0C;&#x7136;&#x540E;&#x4ED6;&#x5C31;&#x8BF4;&#x7528;&#x865A;&#x51FD;&#x6570;&#x8868;&#x5C31;&#x80FD;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x660E;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x6765;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x865A;&#x51FD;&#x6570;&#x548C;&#x865A;&#x51FD;&#x6570;&#x8868;&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#x3002;<br><a id="more"></a></p>
+<h2 id="&#x865A;&#x51FD;&#x6570;">&#x865A;&#x51FD;&#x6570;</h2>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x865A;&#x51FD;&#x6570;">&#x4EC0;&#x4E48;&#x662F;&#x865A;&#x51FD;&#x6570;</h3>
+<p>&#x5728;&#x67D0;&#x57FA;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#x4E3A;<code>virtual</code>&#x5E76;&#x5728;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x88AB;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;C++&#x901A;&#x8FC7;&#x5B83;&#x5B9E;&#x73B0;&#x591A;&#x6001;&#x6027;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x5411;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x57FA;&#x7C7B;&#x6307;&#x9488;&#xFF0C;&#x8BBF;&#x95EE;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x540C;&#x540D;&#x8986;&#x76D6;&#x6210;&#x5458;&#x51FD;&#x6570;&#x3002;<br>&#x57FA;&#x7C7B;&#x7684;&#x7C7B;&#x5B9A;&#x4E49;&#x4E2D;&#x5B9A;&#x4E49;&#x865A;&#x51FD;&#x6570;&#x7684;&#x4E00;&#x822C;&#x5F62;&#x5F0F;&#xFF1A;</p>
 <figure class="highlight C++"><table><tr><td class="gutter"><pre>1
 2
 3
-</pre></td><td class="code"><pre><span class="class"><span class="keyword">class</span>基类名{</span>
-	virtual 返回值类型 将要在派生类中重载的函数名（参数列表）;
-}；
+</pre></td><td class="code"><pre><span class="class"><span class="keyword">class</span>&#x57FA;&#x7C7B;&#x540D;{</span>
+	virtual &#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B; &#x5C06;&#x8981;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x91CD;&#x8F7D;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF08;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF09;;
+}&#xFF1B;
 </pre></td></tr></table></figure>
 
-<h3 id="-">虚函数的作用</h3>
-<p>虚函数的作用是实现<strong>动态联编</strong>，也就是在程序的运行阶段动态地选择合适的成员函数，在定义了虚函数后，可以在基类的派生类中对虚函数重新定义，在派生类中重新定义的函数应与虚函数具有相同的形参个数和形参类型。以实现统一的接口，不同定义过程。如果在派生类中没有对虚函数重新定义，则它继承其基类的虚函数。</p>
-<h3 id="-">纯虚函数和抽象类</h3>
-<p>可以把此函数（方法）设为virtual 函数名（参数列表）= 0 我们把这样的函数（方法）称为纯虚函数。如果一个类包含了纯虚函数，称此类为抽象类。<strong>抽象类不能直接实例化对象</strong>。</p>
-<h3 id="-">例子</h3>
+<h3 id="&#x865A;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;">&#x865A;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;</h3>
+<p>&#x865A;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5B9E;&#x73B0;<strong>&#x52A8;&#x6001;&#x8054;&#x7F16;</strong>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x7684;&#x8FD0;&#x884C;&#x9636;&#x6BB5;&#x52A8;&#x6001;&#x5730;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x5B9A;&#x4E49;&#x4E86;&#x865A;&#x51FD;&#x6570;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x57FA;&#x7C7B;&#x7684;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x5BF9;&#x865A;&#x51FD;&#x6570;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#xFF0C;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x5E94;&#x4E0E;&#x865A;&#x51FD;&#x6570;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5F62;&#x53C2;&#x4E2A;&#x6570;&#x548C;&#x5F62;&#x53C2;&#x7C7B;&#x578B;&#x3002;&#x4EE5;&#x5B9E;&#x73B0;&#x7EDF;&#x4E00;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4E0D;&#x540C;&#x5B9A;&#x4E49;&#x8FC7;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x6CA1;&#x6709;&#x5BF9;&#x865A;&#x51FD;&#x6570;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#xFF0C;&#x5219;&#x5B83;&#x7EE7;&#x627F;&#x5176;&#x57FA;&#x7C7B;&#x7684;&#x865A;&#x51FD;&#x6570;&#x3002;</p>
+<h3 id="&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x548C;&#x62BD;&#x8C61;&#x7C7B;">&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x548C;&#x62BD;&#x8C61;&#x7C7B;</h3>
+<p>&#x53EF;&#x4EE5;&#x628A;&#x6B64;&#x51FD;&#x6570;&#xFF08;&#x65B9;&#x6CD5;&#xFF09;&#x8BBE;&#x4E3A;virtual &#x51FD;&#x6570;&#x540D;&#xFF08;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF09;= 0 &#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;&#xFF08;&#x65B9;&#x6CD5;&#xFF09;&#x79F0;&#x4E3A;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7C7B;&#x5305;&#x542B;&#x4E86;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#xFF0C;&#x79F0;&#x6B64;&#x7C7B;&#x4E3A;&#x62BD;&#x8C61;&#x7C7B;&#x3002;<strong>&#x62BD;&#x8C61;&#x7C7B;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;</strong>&#x3002;</p>
+<h3 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h3>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -131,7 +186,7 @@
 class A{
 	<span class="keyword">public</span>:
 		<span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">display</span>(){
-			cout&lt;&lt;<span class="string">"this is A"</span>&lt;&lt;endl;
+			cout&lt;&lt;<span class="string">&quot;this is A&quot;</span>&lt;&lt;endl;
 		} 
 		
 };
@@ -140,7 +195,7 @@ class B:<span class="keyword">public</span> A{
 	
 	<span class="keyword">public</span>:
 		<span class="keyword">void</span> <span class="title">display</span>(){
-			cout&lt;&lt;<span class="string">"this is B"</span>&lt;&lt;endl;
+			cout&lt;&lt;<span class="string">&quot;this is B&quot;</span>&lt;&lt;endl;
 		}
 
 };
@@ -157,17 +212,8 @@ class B:<span class="keyword">public</span> A{
 output:
 <span class="keyword">this</span> <span class="keyword">is</span> A
 <span class="keyword">this</span> <span class="keyword">is</span> B
-请按任意键继续. . .
-</pre></td></tr></table></figure>
-
-<p>从上面的例子可以看到开始<code>a</code>指向<code>A</code>的对象，当<code>a-&gt;display()</code>时，调用的是A自己的<code>display()</code>,然后将<code>B</code>的对象绑定到<code>a</code>上，则再次调用的时候就执行了<code>B</code>的<code>display()</code>方法。这样也实现了<code>display()</code>方法的推迟绑定，这样也使得编程更加灵活。</p>
-<h2 id="-">虚函数表</h2>
-<h3 id="-">什么是虚函数表</h3>
-<p>对C++ 了解的人都应该知道虚函数（Virtual Function）是通过一张虚函数表（Virtual Table）来实现的。简称为V-Table。在这个表中，主是要一个类的虚函数的地址表，这张表解决了继承、覆盖的问题，保证其容真实反应实际的函数。这样，在有虚函数的类的实例中这个表被分配在了这个实例的内存中，所以，当我们用父类的指针来操作一个子类的时候，这张虚函数表就显得由为重要了，它就像一个地图一样，指明了实际所应该调用的函数。
-这里我们着重看一下这张虚函数表。C++的编译器应该是保证虚函数表的指针存在于对象实例中最前面的位置（这是为了保证取到虚函数表的有最高的性能——如果有多层继承或是多重继承的情况下）。 这意味着我们通过对象实例的地址得到这张虚函数表，然后就可以遍历其中函数指针，并调用相应的函数。</p>
-<p><img src="http://liitlebean.qiniudn.com/2014/03/12/vTable.jpg" alt="虚函数表与对象的关系"></p>
-<h3 id="-">例子</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+&#x8BF7;&#x6309;&#x4EFB;&#x610F;&#x952E;&#x7EE7;&#x7EED;. . .
+</pre></td></tr></table></figure><br>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5F00;&#x59CB;<code>a</code>&#x6307;&#x5411;<code>A</code>&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;<code>a-&gt;display()</code>&#x65F6;&#xFF0C;&#x8C03;&#x7528;&#x7684;&#x662F;A&#x81EA;&#x5DF1;&#x7684;<code>display()</code>,&#x7136;&#x540E;&#x5C06;<code>B</code>&#x7684;&#x5BF9;&#x8C61;&#x7ED1;&#x5B9A;&#x5230;<code>a</code>&#x4E0A;&#xFF0C;&#x5219;&#x518D;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x6267;&#x884C;&#x4E86;<code>B</code>&#x7684;<code>display()</code>&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x6837;&#x4E5F;&#x5B9E;&#x73B0;&#x4E86;<code>display()</code>&#x65B9;&#x6CD5;&#x7684;&#x63A8;&#x8FDF;&#x7ED1;&#x5B9A;&#xFF0C;&#x8FD9;&#x6837;&#x4E5F;&#x4F7F;&#x5F97;&#x7F16;&#x7A0B;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x3002;<br><br>##&#x865A;&#x51FD;&#x6570;&#x8868;<br>###&#x4EC0;&#x4E48;&#x662F;&#x865A;&#x51FD;&#x6570;&#x8868;<br>&#x5BF9;C++ &#x4E86;&#x89E3;&#x7684;&#x4EBA;&#x90FD;&#x5E94;&#x8BE5;&#x77E5;&#x9053;&#x865A;&#x51FD;&#x6570;&#xFF08;Virtual Function&#xFF09;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x5F20;&#x865A;&#x51FD;&#x6570;&#x8868;&#xFF08;Virtual Table&#xFF09;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x7B80;&#x79F0;&#x4E3A;V-Table&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x8868;&#x4E2D;&#xFF0C;&#x4E3B;&#x662F;&#x8981;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x865A;&#x51FD;&#x6570;&#x7684;&#x5730;&#x5740;&#x8868;&#xFF0C;&#x8FD9;&#x5F20;&#x8868;&#x89E3;&#x51B3;&#x4E86;&#x7EE7;&#x627F;&#x3001;&#x8986;&#x76D6;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4FDD;&#x8BC1;&#x5176;&#x5BB9;&#x771F;&#x5B9E;&#x53CD;&#x5E94;&#x5B9E;&#x9645;&#x7684;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x6709;&#x865A;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x4E2D;&#x8FD9;&#x4E2A;&#x8868;&#x88AB;&#x5206;&#x914D;&#x5728;&#x4E86;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x6307;&#x9488;&#x6765;&#x64CD;&#x4F5C;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x5F20;&#x865A;&#x51FD;&#x6570;&#x8868;&#x5C31;&#x663E;&#x5F97;&#x7531;&#x4E3A;&#x91CD;&#x8981;&#x4E86;&#xFF0C;&#x5B83;&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x5730;&#x56FE;&#x4E00;&#x6837;&#xFF0C;&#x6307;&#x660E;&#x4E86;&#x5B9E;&#x9645;&#x6240;&#x5E94;&#x8BE5;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;<br>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7740;&#x91CD;&#x770B;&#x4E00;&#x4E0B;&#x8FD9;&#x5F20;&#x865A;&#x51FD;&#x6570;&#x8868;&#x3002;C++&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x5E94;&#x8BE5;&#x662F;&#x4FDD;&#x8BC1;&#x865A;&#x51FD;&#x6570;&#x8868;&#x7684;&#x6307;&#x9488;&#x5B58;&#x5728;&#x4E8E;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x4E2D;&#x6700;&#x524D;&#x9762;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x53D6;&#x5230;&#x865A;&#x51FD;&#x6570;&#x8868;&#x7684;&#x6709;&#x6700;&#x9AD8;&#x7684;&#x6027;&#x80FD;&#x2014;&#x2014;&#x5982;&#x679C;&#x6709;&#x591A;&#x5C42;&#x7EE7;&#x627F;&#x6216;&#x662F;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF09;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x7684;&#x5730;&#x5740;&#x5F97;&#x5230;&#x8FD9;&#x5F20;&#x865A;&#x51FD;&#x6570;&#x8868;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x5176;&#x4E2D;&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x3002;<br><br><img src="http://liitlebean.qiniudn.com/2014/03/12/vTable.jpg" alt="&#x865A;&#x51FD;&#x6570;&#x8868;&#x4E0E;&#x5BF9;&#x8C61;&#x7684;&#x5173;&#x7CFB;"><br>###&#x4F8B;&#x5B50;<br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -213,10 +259,10 @@ output:
 <span class="keyword">class</span> A{
 	<span class="keyword">public</span>:
 		<span class="keyword">virtual</span> <span class="keyword">void</span> m1(){
-			<span class="built_in">cout</span>&lt;&lt;<span class="string">"m1"</span>&lt;&lt;endl;
+			<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;m1&quot;</span>&lt;&lt;endl;
 		}
 		<span class="keyword">virtual</span> <span class="keyword">void</span> m2(){
-			<span class="built_in">cout</span>&lt;&lt;<span class="string">"m2"</span>&lt;&lt;endl;	
+			<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;m2&quot;</span>&lt;&lt;endl;	
 		}
 		
 };
@@ -226,85 +272,31 @@ output:
 	Fun pfun;
 	A a;
 	
-	<span class="built_in">cout</span>&lt;&lt;<span class="string">"虚函数表地址："</span>&lt;&lt;(<span class="keyword">int</span>*)&a&lt;&lt;endl;
-	<span class="built_in">cout</span>&lt;&lt;<span class="string">"虚函数表第一个虚函数的地址："</span>&lt;&lt;(<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&a&lt;&lt;endl;
+	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;&#x865A;&#x51FD;&#x6570;&#x8868;&#x5730;&#x5740;&#xFF1A;&quot;</span>&lt;&lt;(<span class="keyword">int</span>*)&amp;a&lt;&lt;endl;
+	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;&#x865A;&#x51FD;&#x6570;&#x8868;&#x7B2C;&#x4E00;&#x4E2A;&#x865A;&#x51FD;&#x6570;&#x7684;&#x5730;&#x5740;&#xFF1A;&quot;</span>&lt;&lt;(<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&amp;a&lt;&lt;endl;
 	
-	pfun = (Fun)*((<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&a); 
-	pfun();<span class="comment">//调用第一个虚函数 </span>
-	pfun = (Fun)*(<span class="number">1</span>+(<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&a);
-	pfun();<span class="comment">//调用第二个虚函数 </span>
+	pfun = (Fun)*((<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&amp;a); 
+	pfun();<span class="comment">//&#x8C03;&#x7528;&#x7B2C;&#x4E00;&#x4E2A;&#x865A;&#x51FD;&#x6570; </span>
+	pfun = (Fun)*(<span class="number">1</span>+(<span class="keyword">int</span>*)*(<span class="keyword">int</span>*)&amp;a);
+	pfun();<span class="comment">//&#x8C03;&#x7528;&#x7B2C;&#x4E8C;&#x4E2A;&#x865A;&#x51FD;&#x6570; </span>
 	<span class="keyword">return</span> <span class="number">0</span>;
 }
 
 output:
-虚函数表地址：<span class="number">0x22ff20</span>
-虚函数表第一个虚函数的地址：<span class="number">0x443fe0</span>
+&#x865A;&#x51FD;&#x6570;&#x8868;&#x5730;&#x5740;&#xFF1A;<span class="number">0x22ff20</span>
+&#x865A;&#x51FD;&#x6570;&#x8868;&#x7B2C;&#x4E00;&#x4E2A;&#x865A;&#x51FD;&#x6570;&#x7684;&#x5730;&#x5740;&#xFF1A;<span class="number">0x443fe0</span>
 m1
 m2
 </pre></td></tr></table></figure>
 
-<p>参考：</br>
-<a herf="http://baike.baidu.com/link?url=3ahXhj5Xfiqgva5yftcsV-uHkzCdcQmBFDFV6stKVD5uOpTdNN490y4JqxsB3oWK"><a href="http://baike.baidu.com/link?url=3ahXhj5Xfiqgva5yftcsV-uHkzCdcQmBFDFV6stKVD5uOpTdNN490y4JqxsB3oWK">http://baike.baidu.com/link?url=3ahXhj5Xfiqgva5yftcsV-uHkzCdcQmBFDFV6stKVD5uOpTdNN490y4JqxsB3oWK</a></a></br>
-<a href="http://blog.csdn.net/haoel/article/details/1948051/" target="_blank"><a href="http://blog.csdn.net/haoel/article/details/1948051/">http://blog.csdn.net/haoel/article/details/1948051/</a></a></p>
+<p>&#x53C2;&#x8003;&#xFF1A;<br><br><a herf="http://baike.baidu.com/link?url=3ahXhj5Xfiqgva5yftcsV-uHkzCdcQmBFDFV6stKVD5uOpTdNN490y4JqxsB3oWK">http://baike.baidu.com/link?url=3ahXhj5Xfiqgva5yftcsV-uHkzCdcQmBFDFV6stKVD5uOpTdNN490y4JqxsB3oWK</a><br><br><a href="http://blog.csdn.net/haoel/article/details/1948051/" target="_blank" rel="external">http://blog.csdn.net/haoel/article/details/1948051/</a></p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>日子过的真快，研究生念的都还没有什么感觉就要找实习了，学校来了第一个找实习的公司---华为。投了中央研究院的一个C++研发岗，今天面试问了一些项目什么的，然后问道C++和JAVA的一些区别，就说了几个比较浅的区别，什么JAVA是纯面向对象的，C++是半结构化半面向对象的，支持多继承的一门语言什么的，面我的那位帅哥感觉还不足提示了一下在面向对象的3个特性（封装，继承，多态）来说一下，然后我就回答了最主要的区别是在多态的实现机制上的不同，JAVA是靠重载，C++是靠虚函数来实现的，然后就紧接着问，虚函数的怎么实现多态的，当时没有说用虚函数表什么的，就大概说了一下是用基类的指针绑定派生类的对象的，然后调用派生类中对基类虚函数实现的调用，感觉回答的好不专业，然后他就说用虚函数表就能简单的说明，下面我来总结一下虚函数和虚函数表的一些东西。
-]]></summary>
+    <summary type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x65E5;&#x5B50;&#x8FC7;&#x7684;&#x771F;&#x5FEB;&#xFF0C;&#x7814;&#x7A76;&#x751F;&#x5FF5;&#x7684;&#x90FD;&#x8FD8;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x611F;&#x89C9;&#x5C31;&#x8981;&#x627E;&#x5B9E;&#x4E60;&#x4E86;&#xFF0C;&#x5B66;&#x6821;&#x6765;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;&#x627E;&#x5B9E;&#x4E60;&#x7684;&#x516C;&#x53F8;&#x2014;-&#x534E;&#x4E3A;&#x3002;&#x6295;&#x4E86;&#x4E2D;&#x592E;&#x7814;&#x7A76;&#x9662;&#x7684;&#x4E00;&#x4E2A;C++&#x7814;&#x53D1;&#x5C97;&#xFF0C;&#x4ECA;&#x5929;&#x9762;&#x8BD5;&#x95EE;&#x4E86;&#x4E00;&#x4E9B;&#x9879;&#x76EE;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x95EE;&#x9053;C++&#x548C;JAVA&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;&#xFF0C;&#x5C31;&#x8BF4;&#x4E86;&#x51E0;&#x4E2A;&#x6BD4;&#x8F83;&#x6D45;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x4EC0;&#x4E48;JAVA&#x662F;&#x7EAF;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#xFF0C;C++&#x662F;&#x534A;&#x7ED3;&#x6784;&#x5316;&#x534A;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x7EE7;&#x627F;&#x7684;&#x4E00;&#x95E8;&#x8BED;&#x8A00;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x9762;&#x6211;&#x7684;&#x90A3;&#x4F4D;&#x5E05;&#x54E5;&#x611F;&#x89C9;&#x8FD8;&#x4E0D;&#x8DB3;&#x63D0;&#x793A;&#x4E86;&#x4E00;&#x4E0B;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;3&#x4E2A;&#x7279;&#x6027;&#xFF08;&#x5C01;&#x88C5;&#xFF0C;&#x7EE7;&#x627F;&#xFF0C;&#x591A;&#x6001;&#xFF09;&#x6765;&#x8BF4;&#x4E00;&#x4E0B;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x5C31;&#x56DE;&#x7B54;&#x4E86;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x533A;&#x522B;&#x662F;&#x5728;&#x591A;&#x6001;&#x7684;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#x4E0A;&#x7684;&#x4E0D;&#x540C;&#xFF0C;JAVA&#x662F;&#x9760;&#x91CD;&#x8F7D;&#xFF0C;C++&#x662F;&#x9760;&#x865A;&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x7D27;&#x63A5;&#x7740;&#x95EE;&#xFF0C;&#x865A;&#x51FD;&#x6570;&#x7684;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x591A;&#x6001;&#x7684;&#xFF0C;&#x5F53;&#x65F6;&#x6CA1;&#x6709;&#x8BF4;&#x7528;&#x865A;&#x51FD;&#x6570;&#x8868;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x5C31;&#x5927;&#x6982;&#x8BF4;&#x4E86;&#x4E00;&#x4E0B;&#x662F;&#x7528;&#x57FA;&#x7C7B;&#x7684;&#x6307;&#x9488;&#x7ED1;&#x5B9A;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x5BF9;&#x57FA;&#x7C7B;&#x865A;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x611F;&#x89C9;&#x56DE;&#x7B54;&#x7684;&#x597D;&#x4E0D;&#x4E13;&#x4E1A;&#xFF0C;&#x7136;&#x540E;&#x4ED6;&#x5C31;&#x8BF4;&#x7528;&#x865A;&#x51FD;&#x6570;&#x8868;&#x5C31;&#x80FD;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x660E;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x6765;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x865A;&#x51FD;&#x6570;&#x548C;&#x865A;&#x51FD;&#x6570;&#x8868;&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#x3002;<br>]]></summary>
     
       <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="C/C++" scheme="http://littlebean.github.io/categories/C/C++/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[STL实现的底层数据结构有哪些？]]></title>
-    <link href="http://littlebean.github.io/2014/03/06/stl%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/"/>
-    <id>http://littlebean.github.io/2014/03/06/stl实现的底层数据结构有哪些？/</id>
-    <published>2014-03-06T14:34:55.000Z</published>
-    <updated>2014-03-17T07:20:01.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="c-stl-">C++ STL各个容器底层由哪些数据结构实现的：</h2>
-<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
-<ol>
-<li>vector  底层数据结构为数组 ，支持快速随机访问</li>
-<li>list    底层数据结构为双向链表，支持快速增删</li>
-<li>deque   底层数据结构为一个中央控制器和多个缓冲区,支持首尾（中间不能）快速增删，也支持随机访问</li>
-<li>stack   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
-<li>queue   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
-<li>priority_queue 的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</li>
-</ol>
-<hr>
-<p><a id="more"></a></p>
-<ol>
-<li>set       底层数据结构为红黑树，有序，不重复</li>
-<li>multiset  底层数据结构为红黑树，有序，可重复 </li>
-<li>map      ﻿﻿﻿﻿底层数据结构为红黑树，有序，不重复</li>
-<li>multimap 底层数据结构为红黑树，有序，可重复</li>
-<li>hash_set ﻿﻿﻿﻿底层数据结构为hash表，无序，不重复</li>
-<li>hash_multiset 底层数据结构为hash表，无序，可重复 </li>
-<li>hash_map      ﻿﻿﻿﻿底层数据结构为hash表，无序，不重复</li>
-<li>hash_multimap 底层数据结构为hash表，无序，可重复</li>
-</ol>
-<p>参考：<a href ="http://blog.csdn.net/huangkq1989/article/details/7277282"><a href="http://blog.csdn.net/huangkq1989/article/details/7277282">http://blog.csdn.net/huangkq1989/article/details/7277282</a></a></p>
-]]></content>
-    <summary type="html"><![CDATA[<h2 id="c-stl-">C++ STL各个容器底层由哪些数据结构实现的：</h2>
-<p><img src="http://liitlebean.qiniudn.com/2014/03/07/STL.JPG" alt="STL"></p>
-<ol>
-<li>vector  底层数据结构为数组 ，支持快速随机访问</li>
-<li>list    底层数据结构为双向链表，支持快速增删</li>
-<li>deque   底层数据结构为一个中央控制器和多个缓冲区,支持首尾（中间不能）快速增删，也支持随机访问</li>
-<li>stack   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
-<li>queue   底层一般用23实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</li>
-<li>priority_queue 的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</li>
-</ol>
-<hr>
-<p>]]></summary>
-    
-      <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="STL" scheme="http://littlebean.github.io/categories/STL/"/>
-    
-      <category term="数据结构" scheme="http://littlebean.github.io/categories/STL/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="C/C++" scheme="http://littlebean.github.io/categories/CC++/"/>
     
   </entry>
   
@@ -314,42 +306,34 @@ m2
     <id>http://littlebean.github.io/2014/03/04/引用和指针的区别/</id>
     <published>2014-03-04T08:04:20.000Z</published>
     <updated>2014-03-07T12:24:35.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>这几天复习看了一下c++ primer的一些基础语法，发现引用和指针在C++中有很多相似之处，所以想写一篇文章对这两个东西来理一下。</p>
-<h2 id="-">什么是引用</h2>
-<p><strong>引用</strong>就是对象的另一个名字，引用主要用于函数的形式参数，引用是一种<strong>复合类型</strong>（通过其他类型定义的类型），通过在变量名前添加<code>&amp;</code>符号来定义。
-<a id="more"></a></p>
+    <content type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x8FD9;&#x51E0;&#x5929;&#x590D;&#x4E60;&#x770B;&#x4E86;&#x4E00;&#x4E0B;c++ primer&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x8BED;&#x6CD5;&#xFF0C;&#x53D1;&#x73B0;&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x5728;C++&#x4E2D;&#x6709;&#x5F88;&#x591A;&#x76F8;&#x4F3C;&#x4E4B;&#x5904;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x5BF9;&#x8FD9;&#x4E24;&#x4E2A;&#x4E1C;&#x897F;&#x6765;&#x7406;&#x4E00;&#x4E0B;&#x3002;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x5F15;&#x7528;">&#x4EC0;&#x4E48;&#x662F;&#x5F15;&#x7528;</h2>
+<p><strong>&#x5F15;&#x7528;</strong>&#x5C31;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x5F15;&#x7528;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x53C2;&#x6570;&#xFF0C;&#x5F15;&#x7528;&#x662F;&#x4E00;&#x79CD;<strong>&#x590D;&#x5408;&#x7C7B;&#x578B;</strong>&#xFF08;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x5728;&#x53D8;&#x91CF;&#x540D;&#x524D;&#x6DFB;&#x52A0;<code>&amp;</code>&#x7B26;&#x53F7;&#x6765;&#x5B9A;&#x4E49;&#x3002;<br><a id="more"></a></p>
 <ol>
-<li>每一种引用类型都“关联到”某以其他类型，但不能定义引用类型的引用。</li>
-<li><p>引用必须与该引用同类型的对象初始化。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<li>&#x6BCF;&#x4E00;&#x79CD;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x90FD;&#x201C;&#x5173;&#x8054;&#x5230;&#x201D;&#x67D0;&#x4EE5;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x5B9A;&#x4E49;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5F15;&#x7528;&#x3002;</li>
+<li>&#x5F15;&#x7528;&#x5FC5;&#x987B;&#x4E0E;&#x8BE5;&#x5F15;&#x7528;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x521D;&#x59CB;&#x5316;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 </pre></td><td class="code"><pre><span class="keyword">int</span> ival = <span class="number">1024</span>;
-<span class="keyword">int</span> &refVal = ival; <span class="comment">//ok,refVal refers to ival</span>
-<span class="keyword">int</span> &refVal2; <span class="comment">//error: a reference must be initialized</span>
-<span class="keyword">int</span> &refVal3 = <span class="number">10</span>; <span class="comment">//error:initializer must be an object</span>
-</pre></td></tr></table></figure>
-</li>
-<li><p>因为引用只是它绑定的对象的另一个名字，作用在引用上的所有操作事实上都是作用在该引用绑定的对象上。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<span class="keyword">int</span> &amp;refVal = ival; <span class="comment">//ok,refVal refers to ival</span>
+<span class="keyword">int</span> &amp;refVal2; <span class="comment">//error: a reference must be initialized</span>
+<span class="keyword">int</span> &amp;refVal3 = <span class="number">10</span>; <span class="comment">//error:initializer must be an object</span>
+</pre></td></tr></table></figure></li>
+<li>&#x56E0;&#x4E3A;&#x5F15;&#x7528;&#x53EA;&#x662F;&#x5B83;&#x7ED1;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x4F5C;&#x7528;&#x5728;&#x5F15;&#x7528;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x4E8B;&#x5B9E;&#x4E0A;&#x90FD;&#x662F;&#x4F5C;&#x7528;&#x5728;&#x8BE5;&#x5F15;&#x7528;&#x7ED1;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x4E0A;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 </pre></td><td class="code"><pre>cout&lt;&lt;ival&lt;&lt;endl; //<span class="keyword">now</span>,ival <span class="keyword">is</span> 1024 
 refVal = 5;
 cout&lt;&lt;ival&lt;&lt;endl; //<span class="keyword">now</span>,ival <span class="keyword">is</span> 5
-</pre></td></tr></table></figure>
-</li>
-<li><p>引用一旦初始化后，只要该引用存在，它就保持绑定到初始化时指向的对象，<strong>不可将其变更</strong>绑定到其它的对象上。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure></li>
+<li>&#x5F15;&#x7528;&#x4E00;&#x65E6;&#x521D;&#x59CB;&#x5316;&#x540E;&#xFF0C;&#x53EA;&#x8981;&#x8BE5;&#x5F15;&#x7528;&#x5B58;&#x5728;&#xFF0C;&#x5B83;&#x5C31;&#x4FDD;&#x6301;&#x7ED1;&#x5B9A;&#x5230;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;<strong>&#x4E0D;&#x53EF;&#x5C06;&#x5176;&#x53D8;&#x66F4;</strong>&#x7ED1;&#x5B9A;&#x5230;&#x5176;&#x5B83;&#x7684;&#x5BF9;&#x8C61;&#x4E0A;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="keyword">int</span> ival2 = <span class="number">5</span>;
-refVal = ival2; <span class="comment">//error:refVal already be initialized,can’t be changed</span>
-</pre></td></tr></table></figure>
-</li>
-<li><p>非const引用只能绑定到与该引用同类型的对象上，const引用则可以绑定到<strong>不同但相关的类型的对象</strong>上或者绑定到<strong>右值</strong>上。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+refVal = ival2; <span class="comment">//error:refVal already be initialized,can&#x2019;t be changed</span>
+</pre></td></tr></table></figure></li>
+<li>&#x975E;const&#x5F15;&#x7528;&#x53EA;&#x80FD;&#x7ED1;&#x5B9A;&#x5230;&#x4E0E;&#x8BE5;&#x5F15;&#x7528;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;const&#x5F15;&#x7528;&#x5219;&#x53EF;&#x4EE5;&#x7ED1;&#x5B9A;&#x5230;<strong>&#x4E0D;&#x540C;&#x4F46;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;</strong>&#x4E0A;&#x6216;&#x8005;&#x7ED1;&#x5B9A;&#x5230;<strong>&#x53F3;&#x503C;</strong>&#x4E0A;&#x3002;<br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -360,48 +344,36 @@ refVal = ival2; <span class="comment">//error:refVal already be initialized,can�
 </pre></td><td class="code"><pre><span class="keyword">const</span> <span class="keyword">int</span> ival3 = <span class="number">1024</span>;
 <span class="keyword">int</span> ival4 = <span class="number">5</span>;
 <span class="keyword">double</span> dval = <span class="number">3.14</span>;
-<span class="keyword">const</span> <span class="keyword">int</span> &refVal4 = ival3; <span class="comment">//ok:both reference and object are const</span>
-<span class="keyword">int</span> &refVal5 = ival3; <span class="comment">//error:noneconst reference to a const object</span>
+<span class="keyword">const</span> <span class="keyword">int</span> &amp;refVal4 = ival3; <span class="comment">//ok:both reference and object are const</span>
+<span class="keyword">int</span> &amp;refVal5 = ival3; <span class="comment">//error:noneconst reference to a const object</span>
 refVal4 = <span class="number">1024</span>; <span class="comment">// ok:const reference be initialized by rvalue ;</span>
 refVal4 = ival4; <span class="comment">//ok:const reference be initialized by different but related value;</span>
 refVal4 = dval; <span class="comment">//ok</span>
-</pre></td></tr></table></figure>
-
-</li>
+</pre></td></tr></table></figure><br>&#x89C2;&#x5BDF;&#x7B2C;5&#x70B9;&#x770B;&#x5230;</li>
 </ol>
-<p>观察第5点看到</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="keyword">double</span> dval = <span class="number">3.14</span>;
 refVal4 = dval; <span class="comment">//ok</span>
-</pre></td></tr></table></figure>
-
-<p>是正确的，其原因很微妙，编译器会把以上代码转换成如下形式的编码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure><br>&#x662F;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x5176;&#x539F;&#x56E0;&#x5F88;&#x5FAE;&#x5999;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x628A;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x6210;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;&#x7684;&#x7F16;&#x7801;&#xFF1A;<br><br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="attribute">int temp </span>=<span class="string"> dval;
 refVal4 = temp;</span>
-</pre></td></tr></table></figure>
-
-<p>如果refVal4是非const的，那么可以给refVal4赋一新值，这样做不会修改dval.</p>
-<h2 id="-">什么是指针</h2>
-<p>指针，它也是一种复合类型，是用于指向对象，与迭代器一样，指针提供对其所指对象的间接访问，只是指针结构更通用一点。与迭代器不同的是，指针用于指向单个对象，而迭代器只能用于访问容器内的元素。具体的讲，指针保存了另一个对象的地址而已。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure><br>&#x5982;&#x679C;refVal4&#x662F;&#x975E;const&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x7ED9;refVal4&#x8D4B;&#x4E00;&#x65B0;&#x503C;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;dval.<br><br>##&#x4EC0;&#x4E48;&#x662F;&#x6307;&#x9488;<br>&#x6307;&#x9488;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x590D;&#x5408;&#x7C7B;&#x578B;&#xFF0C;&#x662F;&#x7528;&#x4E8E;&#x6307;&#x5411;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0E;&#x8FED;&#x4EE3;&#x5668;&#x4E00;&#x6837;&#xFF0C;&#x6307;&#x9488;&#x63D0;&#x4F9B;&#x5BF9;&#x5176;&#x6240;&#x6307;&#x5BF9;&#x8C61;&#x7684;&#x95F4;&#x63A5;&#x8BBF;&#x95EE;&#xFF0C;&#x53EA;&#x662F;&#x6307;&#x9488;&#x7ED3;&#x6784;&#x66F4;&#x901A;&#x7528;&#x4E00;&#x70B9;&#x3002;&#x4E0E;&#x8FED;&#x4EE3;&#x5668;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x6307;&#x9488;&#x7528;&#x4E8E;&#x6307;&#x5411;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x8FED;&#x4EE3;&#x5668;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5177;&#x4F53;&#x7684;&#x8BB2;&#xFF0C;&#x6307;&#x9488;&#x4FDD;&#x5B58;&#x4E86;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x800C;&#x5DF2;&#x3002;<br><br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
-</pre></td><td class="code"><pre><span class="typename">string</span> s(<span class="string">"hello world"</span>);
-<span class="typename">string</span> *sp = &s;//get the address <span class="keyword">of</span> <span class="typename">string</span> s
+</pre></td><td class="code"><pre><span class="typename">string</span> s(<span class="string">&quot;hello world&quot;</span>);
+<span class="typename">string</span> *sp = &amp;s;//get the address <span class="keyword">of</span> <span class="typename">string</span> s
 </pre></td></tr></table></figure>
 
-<p><strong>取地址操作符</strong>（<code>&amp;</code>）：当此操作符用于一个对象上时，返回的是该对象的存储地址。取值操作只能用于左值，因为只有当变量用作左值时，才能取其地址。同样地，由于用于vector类型、string类型或者内置数组的下标操作和解引操作生成的左值，因此可对这两种操作的结果做取地址操作。</p>
+<p><strong>&#x53D6;&#x5730;&#x5740;&#x64CD;&#x4F5C;&#x7B26;</strong>&#xFF08;<code>&amp;</code>&#xFF09;&#xFF1A;&#x5F53;&#x6B64;&#x64CD;&#x4F5C;&#x7B26;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x5B58;&#x50A8;&#x5730;&#x5740;&#x3002;&#x53D6;&#x503C;&#x64CD;&#x4F5C;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x5DE6;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x6709;&#x5F53;&#x53D8;&#x91CF;&#x7528;&#x4F5C;&#x5DE6;&#x503C;&#x65F6;&#xFF0C;&#x624D;&#x80FD;&#x53D6;&#x5176;&#x5730;&#x5740;&#x3002;&#x540C;&#x6837;&#x5730;&#xFF0C;&#x7531;&#x4E8E;&#x7528;&#x4E8E;vector&#x7C7B;&#x578B;&#x3001;string&#x7C7B;&#x578B;&#x6216;&#x8005;&#x5185;&#x7F6E;&#x6570;&#x7EC4;&#x7684;&#x4E0B;&#x6807;&#x64CD;&#x4F5C;&#x548C;&#x89E3;&#x5F15;&#x64CD;&#x4F5C;&#x751F;&#x6210;&#x7684;&#x5DE6;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x5BF9;&#x8FD9;&#x4E24;&#x79CD;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x505A;&#x53D6;&#x5730;&#x5740;&#x64CD;&#x4F5C;&#x3002;</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="built_in">cout</span>&lt;&lt;*sp&lt;&lt;endl; <span class="comment">//prints hello world</span>
 </pre></td></tr></table></figure>
 
-<p><strong>解引用操作符</strong>（<code>*</code>）：与取地址操作符相对应，对指针进行解引用可访问指针所指的对象。</p>
+<p><strong>&#x89E3;&#x5F15;&#x7528;&#x64CD;&#x4F5C;&#x7B26;</strong>&#xFF08;<code>*</code>&#xFF09;&#xFF1A;&#x4E0E;&#x53D6;&#x5730;&#x5740;&#x64CD;&#x4F5C;&#x7B26;&#x76F8;&#x5BF9;&#x5E94;&#xFF0C;&#x5BF9;&#x6307;&#x9488;&#x8FDB;&#x884C;&#x89E3;&#x5F15;&#x7528;&#x53EF;&#x8BBF;&#x95EE;&#x6307;&#x9488;&#x6240;&#x6307;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
 <ol>
-<li>每个指针都有一个与之关联的数据类型。</li>
-<li><p>若指针为0值，表明它不指向任何对象,但只能赋值常量0值或者在编译时可获得0值的const变量。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<li>&#x6BCF;&#x4E2A;&#x6307;&#x9488;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</li>
+<li>&#x82E5;&#x6307;&#x9488;&#x4E3A;0&#x503C;&#xFF0C;&#x8868;&#x660E;&#x5B83;&#x4E0D;&#x6307;&#x5411;&#x4EFB;&#x4F55;&#x5BF9;&#x8C61;,&#x4F46;&#x53EA;&#x80FD;&#x8D4B;&#x503C;&#x5E38;&#x91CF;0&#x503C;&#x6216;&#x8005;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x53EF;&#x83B7;&#x5F97;0&#x503C;&#x7684;const&#x53D8;&#x91CF;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -411,23 +383,18 @@ const int c_zero = <span class="number">0</span>;
 int pi = zero; //error:pi assigned int value <span class="keyword">of</span> zero
 pi = c_zero;//ok:c_zero <span class="keyword">is</span> a const <span class="keyword">with</span> compile-<span class="typename">time</span> value <span class="keyword">of</span> <span class="number">0</span>
 pi = <span class="number">0</span>; //ok:directly initialize <span class="keyword">to</span> <span class="keyword">literal</span> <span class="keyword">constant</span> <span class="number">0</span>
-</pre></td></tr></table></figure>
-</li>
-<li><p>C++语言无法检测指针是否未被初始化，也无法区分有效地址和由指针分配到的存储空间中存放的二进制地址，所以在使用指针的时候，避免指针未初始化，可以初始化为0值，因为编译器识别0值的指针。</p>
-</li>
-<li><p>void*指针是C++提供的一种特殊的指针，它可以保存任何类型对象的地址.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure></li>
+<li>C++&#x8BED;&#x8A00;&#x65E0;&#x6CD5;&#x68C0;&#x6D4B;&#x6307;&#x9488;&#x662F;&#x5426;&#x672A;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E5F;&#x65E0;&#x6CD5;&#x533A;&#x5206;&#x6709;&#x6548;&#x5730;&#x5740;&#x548C;&#x7531;&#x6307;&#x9488;&#x5206;&#x914D;&#x5230;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E2D;&#x5B58;&#x653E;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5730;&#x5740;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x4F7F;&#x7528;&#x6307;&#x9488;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x907F;&#x514D;&#x6307;&#x9488;&#x672A;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x521D;&#x59CB;&#x5316;&#x4E3A;0&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x8BC6;&#x522B;0&#x503C;&#x7684;&#x6307;&#x9488;&#x3002;</li>
+<li>void*&#x6307;&#x9488;&#x662F;C++&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;.<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 </pre></td><td class="code"><pre><span class="keyword">double</span> obj = <span class="number">3.14</span>;
 <span class="keyword">int</span> obj2 = <span class="number">1024</span>;
-<span class="keyword">void</span> *pv = &obj; <span class="comment">//ok:void* can hold the address value of any data pointer type</span>
-pv = &obj2; <span class="comment">//ok</span>
-</pre></td></tr></table></figure>
-</li>
-<li><p>指针与const限定符，分为两种，一种是指向const对象的指针；另一种是const指针。前者是限定这个指针指向的对象是const，但指针本身不是const，所以这个指针可以修改指向别的同类型对象。后者限定的是指针本身就是const型的值，所以跟普通的const变量具有相同的性质，指针的内容（即地址值）不能修改。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<span class="keyword">void</span> *pv = &amp;obj; <span class="comment">//ok:void* can hold the address value of any data pointer type</span>
+pv = &amp;obj2; <span class="comment">//ok</span>
+</pre></td></tr></table></figure></li>
+<li>&#x6307;&#x9488;&#x4E0E;const&#x9650;&#x5B9A;&#x7B26;&#xFF0C;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x6307;&#x5411;const&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x9488;&#xFF1B;&#x53E6;&#x4E00;&#x79CD;&#x662F;const&#x6307;&#x9488;&#x3002;&#x524D;&#x8005;&#x662F;&#x9650;&#x5B9A;&#x8FD9;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#x662F;const&#xFF0C;&#x4F46;&#x6307;&#x9488;&#x672C;&#x8EAB;&#x4E0D;&#x662F;const&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x6307;&#x9488;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6307;&#x5411;&#x522B;&#x7684;&#x540C;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x3002;&#x540E;&#x8005;&#x9650;&#x5B9A;&#x7684;&#x662F;&#x6307;&#x9488;&#x672C;&#x8EAB;&#x5C31;&#x662F;const&#x578B;&#x7684;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x8DDF;&#x666E;&#x901A;&#x7684;const&#x53D8;&#x91CF;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x6027;&#x8D28;&#xFF0C;&#x6307;&#x9488;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x5373;&#x5730;&#x5740;&#x503C;&#xFF09;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="keyword">const</span> <span class="keyword">double</span> *cptr; <span class="comment">//cptr may point to a double that is const;</span>
 <span class="keyword">double</span> *<span class="keyword">const</span> *cptr2; <span class="comment">// cptr2 is a const pointer</span>
@@ -435,37 +402,33 @@ pv = &obj2; <span class="comment">//ok</span>
 
 </li>
 </ol>
-<h2 id="-">引用和指针的区别</h2>
-<p>虽然引用和指针都可以间接的访问另一个对象，但他们之间有两个重要的区别：</p>
+<h2 id="&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x7684;&#x533A;&#x522B;">&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x7684;&#x533A;&#x522B;</h2>
+<p>&#x867D;&#x7136;&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x90FD;&#x53EF;&#x4EE5;&#x95F4;&#x63A5;&#x7684;&#x8BBF;&#x95EE;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x6709;&#x4E24;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x533A;&#x522B;&#xFF1A;</p>
 <ol>
-<li>引用总是指向某个对象；定义时没有初始化时错误的。</li>
-<li>赋值行为的差别：给引用赋值修改的是该引用所关联的对象的值，并不是使引用与另一个对象关联。<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<li>&#x5F15;&#x7528;&#x603B;&#x662F;&#x6307;&#x5411;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#xFF1B;&#x5B9A;&#x4E49;&#x65F6;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x9519;&#x8BEF;&#x7684;&#x3002;</li>
+<li>&#x8D4B;&#x503C;&#x884C;&#x4E3A;&#x7684;&#x5DEE;&#x522B;&#xFF1A;&#x7ED9;&#x5F15;&#x7528;&#x8D4B;&#x503C;&#x4FEE;&#x6539;&#x7684;&#x662F;&#x8BE5;&#x5F15;&#x7528;&#x6240;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x4F7F;&#x5F15;&#x7528;&#x4E0E;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x3002;<br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 5
 6
 </pre></td><td class="code"><pre><span class="keyword">int</span> ival = <span class="number">1024</span>,ival2 = <span class="number">2048</span>;
-<span class="keyword">int</span> *pi = &ival,*pi2 = &ival2;
+<span class="keyword">int</span> *pi = &amp;ival,*pi2 = &amp;ival2;
 pi = pi2;<span class="comment">//pi now points to ival2;</span>
 
-<span class="keyword">int</span> &ri = ival,&ri2 = ival2;
+<span class="keyword">int</span> &amp;ri = ival,&amp;ri2 = ival2;
 ri = ri2; <span class="comment">// assign ival2 to ival</span>
-</pre></td></tr></table></figure>
-
-</li>
+</pre></td></tr></table></figure><br>&#x53C2;&#x8003;&#xFF1A;C++ Primer</li>
 </ol>
-<p>参考：C++ Primer</p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>这几天复习看了一下c++ primer的一些基础语法，发现引用和指针在C++中有很多相似之处，所以想写一篇文章对这两个东西来理一下。</p>
-<h2 id="-">什么是引用</h2>
-<p><strong>引用</strong>就是对象的另一个名字，引用主要用于函数的形式参数，引用是一种<strong>复合类型</strong>（通过其他类型定义的类型），通过在变量名前添加<code>&amp;</code>符号来定义。
-]]></summary>
+    <summary type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x8FD9;&#x51E0;&#x5929;&#x590D;&#x4E60;&#x770B;&#x4E86;&#x4E00;&#x4E0B;c++ primer&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x8BED;&#x6CD5;&#xFF0C;&#x53D1;&#x73B0;&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x5728;C++&#x4E2D;&#x6709;&#x5F88;&#x591A;&#x76F8;&#x4F3C;&#x4E4B;&#x5904;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x5BF9;&#x8FD9;&#x4E24;&#x4E2A;&#x4E1C;&#x897F;&#x6765;&#x7406;&#x4E00;&#x4E0B;&#x3002;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x5F15;&#x7528;">&#x4EC0;&#x4E48;&#x662F;&#x5F15;&#x7528;</h2>
+<p><strong>&#x5F15;&#x7528;</strong>&#x5C31;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x5F15;&#x7528;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x53C2;&#x6570;&#xFF0C;&#x5F15;&#x7528;&#x662F;&#x4E00;&#x79CD;<strong>&#x590D;&#x5408;&#x7C7B;&#x578B;</strong>&#xFF08;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x5728;&#x53D8;&#x91CF;&#x540D;&#x524D;&#x6DFB;&#x52A0;<code>&amp;</code>&#x7B26;&#x53F7;&#x6765;&#x5B9A;&#x4E49;&#x3002;<br>]]></summary>
     
-      <category term="C/C++" scheme="http://littlebean.github.io/tags/C/C++/"/>
+      <category term="C/C++" scheme="http://littlebean.github.io/tags/CC++/"/>
     
-      <category term="C/C++" scheme="http://littlebean.github.io/categories/C/C++/"/>
+      <category term="C/C++" scheme="http://littlebean.github.io/categories/CC++/"/>
     
   </entry>
   
@@ -475,44 +438,37 @@ ri = ri2; <span class="comment">// assign ival2 to ival</span>
     <id>http://littlebean.github.io/2014/02/27/b树/</id>
     <published>2014-02-27T04:27:24.000Z</published>
     <updated>2014-03-17T07:23:53.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>B树（B-tree）是一种树状数据结构，它能够存储数据、对其进行排序并允许以O(log n)的时间复杂度运行进行查找、顺序读取、插入和删除的数据结构。B树，概括来说是一个节点可以拥有多于2个子节点的二叉查找树。与自平衡二叉查找树不同，B-树为系统最优化大块数据的读和写操作。B-tree算法减少定位记录时所经历的中间过程，从而加快存取速度。普遍运用在数据库和文件系统。
-一棵M阶的B-Tree满足以下条件：</p>
+    <content type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>B&#x6811;&#xFF08;B-tree&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x6811;&#x72B6;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3001;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x5E76;&#x5141;&#x8BB8;&#x4EE5;O(log n)&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8FD0;&#x884C;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3001;&#x987A;&#x5E8F;&#x8BFB;&#x53D6;&#x3001;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;B&#x6811;&#xFF0C;&#x6982;&#x62EC;&#x6765;&#x8BF4;&#x662F;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x591A;&#x4E8E;2&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x3002;&#x4E0E;&#x81EA;&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x4E0D;&#x540C;&#xFF0C;B-&#x6811;&#x4E3A;&#x7CFB;&#x7EDF;&#x6700;&#x4F18;&#x5316;&#x5927;&#x5757;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x548C;&#x5199;&#x64CD;&#x4F5C;&#x3002;B-tree&#x7B97;&#x6CD5;&#x51CF;&#x5C11;&#x5B9A;&#x4F4D;&#x8BB0;&#x5F55;&#x65F6;&#x6240;&#x7ECF;&#x5386;&#x7684;&#x4E2D;&#x95F4;&#x8FC7;&#x7A0B;&#xFF0C;&#x4ECE;&#x800C;&#x52A0;&#x5FEB;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x3002;&#x666E;&#x904D;&#x8FD0;&#x7528;&#x5728;&#x6570;&#x636E;&#x5E93;&#x548C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;<br>&#x4E00;&#x68F5;M&#x9636;&#x7684;B-Tree&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x6761;&#x4EF6;&#xFF1A;</p>
 <ol>
-<li>每个结点至多有M个孩子；</li>
-<li>除根结点和叶结点外，其它每个结点至少有M/2个孩子；</li>
-<li>根结点至少有两个孩子（除非该树仅包含一个结点）；</li>
-<li>所有叶结点在同一层，叶结点不包含任何关键字信息；</li>
-<li>有K个关键字的非叶结点恰好包含K+1个孩子；<a id="more"></a>
+<li>&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x81F3;&#x591A;&#x6709;M&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;</li>
+<li>&#x9664;&#x6839;&#x7ED3;&#x70B9;&#x548C;&#x53F6;&#x7ED3;&#x70B9;&#x5916;&#xFF0C;&#x5176;&#x5B83;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x81F3;&#x5C11;&#x6709;M/2&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;</li>
+<li>&#x6839;&#x7ED3;&#x70B9;&#x81F3;&#x5C11;&#x6709;&#x4E24;&#x4E2A;&#x5B69;&#x5B50;&#xFF08;&#x9664;&#x975E;&#x8BE5;&#x6811;&#x4EC5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF09;&#xFF1B;</li>
+<li>&#x6240;&#x6709;&#x53F6;&#x7ED3;&#x70B9;&#x5728;&#x540C;&#x4E00;&#x5C42;&#xFF0C;&#x53F6;&#x7ED3;&#x70B9;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x5173;&#x952E;&#x5B57;&#x4FE1;&#x606F;&#xFF1B;</li>
+<li>&#x6709;K&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x7684;&#x975E;&#x53F6;&#x7ED3;&#x70B9;&#x6070;&#x597D;&#x5305;&#x542B;K+1&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;<a id="more"></a>
 
 
 </li>
 </ol>
-<p>另外，对于一个结点，其内部的关键字是从小到大排序的。以下是B-Tree（M=3）的样例:<br/>
-<img src="http://liitlebean.qiniudn.com/2014/2/27/b-.jpg" alt="B树"></p>
-<h2 id="b-">B树的插入和生成</h2>
-<p><strong>B树的插入</strong><br/>
-对高度为H的M阶B树，新结点一般插在H层。通过检索可以确定新添加的关键码应该插在哪个结点位置。然后分为两种情况</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x5176;&#x5185;&#x90E8;&#x7684;&#x5173;&#x952E;&#x5B57;&#x662F;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5E8F;&#x7684;&#x3002;&#x4EE5;&#x4E0B;&#x662F;B-Tree&#xFF08;M=3&#xFF09;&#x7684;&#x6837;&#x4F8B;:<br><br><img src="http://liitlebean.qiniudn.com/2014/2/27/b-.jpg" alt="B&#x6811;"></p>
+<h2 id="B&#x6811;&#x7684;&#x63D2;&#x5165;&#x548C;&#x751F;&#x6210;">B&#x6811;&#x7684;&#x63D2;&#x5165;&#x548C;&#x751F;&#x6210;</h2>
+<p><strong>B&#x6811;&#x7684;&#x63D2;&#x5165;</strong><br><br>&#x5BF9;&#x9AD8;&#x5EA6;&#x4E3A;H&#x7684;M&#x9636;B&#x6811;&#xFF0C;&#x65B0;&#x7ED3;&#x70B9;&#x4E00;&#x822C;&#x63D2;&#x5728;H&#x5C42;&#x3002;&#x901A;&#x8FC7;&#x68C0;&#x7D22;&#x53EF;&#x4EE5;&#x786E;&#x5B9A;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x5173;&#x952E;&#x7801;&#x5E94;&#x8BE5;&#x63D2;&#x5728;&#x54EA;&#x4E2A;&#x7ED3;&#x70B9;&#x4F4D;&#x7F6E;&#x3002;&#x7136;&#x540E;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x60C5;&#x51B5;</p>
 <ol>
-<li>若该结点的关键码个数小于M-1，则直接插入；</li>
-<li>若该结点中关键字等于M-1.则引起分裂，以中间关键码为界将结点一分为二，然后将中间关键码插入到父节点中；</li>
-<li>重复上述工作，最坏的情况是一直分裂到根结点，那么熟整个B树的高度+1；</li>
+<li>&#x82E5;&#x8BE5;&#x7ED3;&#x70B9;&#x7684;&#x5173;&#x952E;&#x7801;&#x4E2A;&#x6570;&#x5C0F;&#x4E8E;M-1&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#xFF1B;</li>
+<li>&#x82E5;&#x8BE5;&#x7ED3;&#x70B9;&#x4E2D;&#x5173;&#x952E;&#x5B57;&#x7B49;&#x4E8E;M-1.&#x5219;&#x5F15;&#x8D77;&#x5206;&#x88C2;&#xFF0C;&#x4EE5;&#x4E2D;&#x95F4;&#x5173;&#x952E;&#x7801;&#x4E3A;&#x754C;&#x5C06;&#x7ED3;&#x70B9;&#x4E00;&#x5206;&#x4E3A;&#x4E8C;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x4E2D;&#x95F4;&#x5173;&#x952E;&#x7801;&#x63D2;&#x5165;&#x5230;&#x7236;&#x8282;&#x70B9;&#x4E2D;&#xFF1B;</li>
+<li>&#x91CD;&#x590D;&#x4E0A;&#x8FF0;&#x5DE5;&#x4F5C;&#xFF0C;&#x6700;&#x574F;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x4E00;&#x76F4;&#x5206;&#x88C2;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#xFF0C;&#x90A3;&#x4E48;&#x719F;&#x6574;&#x4E2A;B&#x6811;&#x7684;&#x9AD8;&#x5EA6;+1&#xFF1B;</li>
 </ol>
-<p><strong>B树的生成</strong><br/>
-B树的生成其实就是B树从空的状态下，将结点一个一个插入的过程。</p>
-<p>参考：<br/>
-<a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html" target="_blank"><a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html">http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html</a></a><br/>
-<a href="http://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank"><a href="http://zh.wikipedia.org/wiki/B%E6%A0%91">http://zh.wikipedia.org/wiki/B%E6%A0%91</a></a></p>
+<p><strong>B&#x6811;&#x7684;&#x751F;&#x6210;</strong><br><br>B&#x6811;&#x7684;&#x751F;&#x6210;&#x5176;&#x5B9E;&#x5C31;&#x662F;B&#x6811;&#x4ECE;&#x7A7A;&#x7684;&#x72B6;&#x6001;&#x4E0B;&#xFF0C;&#x5C06;&#x7ED3;&#x70B9;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x63D2;&#x5165;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x53C2;&#x8003;&#xFF1A;<br><br><a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html" target="_blank" rel="external">http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html</a><br><br><a href="http://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank" rel="external">http://zh.wikipedia.org/wiki/B%E6%A0%91</a></p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>B树（B-tree）是一种树状数据结构，它能够存储数据、对其进行排序并允许以O(log n)的时间复杂度运行进行查找、顺序读取、插入和删除的数据结构。B树，概括来说是一个节点可以拥有多于2个子节点的二叉查找树。与自平衡二叉查找树不同，B-树为系统最优化大块数据的读和写操作。B-tree算法减少定位记录时所经历的中间过程，从而加快存取速度。普遍运用在数据库和文件系统。
-一棵M阶的B-Tree满足以下条件：</p>
+    <summary type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>B&#x6811;&#xFF08;B-tree&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x6811;&#x72B6;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3001;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x5E76;&#x5141;&#x8BB8;&#x4EE5;O(log n)&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8FD0;&#x884C;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3001;&#x987A;&#x5E8F;&#x8BFB;&#x53D6;&#x3001;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;B&#x6811;&#xFF0C;&#x6982;&#x62EC;&#x6765;&#x8BF4;&#x662F;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x591A;&#x4E8E;2&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x3002;&#x4E0E;&#x81EA;&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x4E0D;&#x540C;&#xFF0C;B-&#x6811;&#x4E3A;&#x7CFB;&#x7EDF;&#x6700;&#x4F18;&#x5316;&#x5927;&#x5757;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x548C;&#x5199;&#x64CD;&#x4F5C;&#x3002;B-tree&#x7B97;&#x6CD5;&#x51CF;&#x5C11;&#x5B9A;&#x4F4D;&#x8BB0;&#x5F55;&#x65F6;&#x6240;&#x7ECF;&#x5386;&#x7684;&#x4E2D;&#x95F4;&#x8FC7;&#x7A0B;&#xFF0C;&#x4ECE;&#x800C;&#x52A0;&#x5FEB;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x3002;&#x666E;&#x904D;&#x8FD0;&#x7528;&#x5728;&#x6570;&#x636E;&#x5E93;&#x548C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;<br>&#x4E00;&#x68F5;M&#x9636;&#x7684;B-Tree&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x6761;&#x4EF6;&#xFF1A;</p>
 <ol>
-<li>每个结点至多有M个孩子；</li>
-<li>除根结点和叶结点外，其它每个结点至少有M/2个孩子；</li>
-<li>根结点至少有两个孩子（除非该树仅包含一个结点）；</li>
-<li>所有叶结点在同一层，叶结点不包含任何关键字信息；</li>
-<li>有K个关键字的非叶结点恰好包含K+1个孩子；]]></summary>
+<li>&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x81F3;&#x591A;&#x6709;M&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;</li>
+<li>&#x9664;&#x6839;&#x7ED3;&#x70B9;&#x548C;&#x53F6;&#x7ED3;&#x70B9;&#x5916;&#xFF0C;&#x5176;&#x5B83;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x81F3;&#x5C11;&#x6709;M/2&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;</li>
+<li>&#x6839;&#x7ED3;&#x70B9;&#x81F3;&#x5C11;&#x6709;&#x4E24;&#x4E2A;&#x5B69;&#x5B50;&#xFF08;&#x9664;&#x975E;&#x8BE5;&#x6811;&#x4EC5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF09;&#xFF1B;</li>
+<li>&#x6240;&#x6709;&#x53F6;&#x7ED3;&#x70B9;&#x5728;&#x540C;&#x4E00;&#x5C42;&#xFF0C;&#x53F6;&#x7ED3;&#x70B9;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x5173;&#x952E;&#x5B57;&#x4FE1;&#x606F;&#xFF1B;</li>
+<li>&#x6709;K&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x7684;&#x975E;&#x53F6;&#x7ED3;&#x70B9;&#x6070;&#x597D;&#x5305;&#x542B;K+1&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;]]></summary>
     
       <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
@@ -526,61 +482,54 @@ B树的生成其实就是B树从空的状态下，将结点一个一个插入的
     <id>http://littlebean.github.io/2014/02/27/数据库的索引/</id>
     <published>2014-02-27T03:33:52.000Z</published>
     <updated>2014-03-17T07:24:39.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>为了找实习，听到试水同学的热乎乎的面筋后，需要了解数据库的知识，就去图书馆借了本“锋利的SQL”复习一下数据库知识，看到了索引这个东西，感觉需要深入的研究一下，于是在网上找了几片文章看看。</p>
-<h2 id="b-">B树</h2>
-<p>我们常见的数据库系统，其索引使用的数据结构多是B-Tree或者B+Tree。例如，MsSql使用的是B+Tree，Oracle及Sysbase使用的是B-Tree。简单地介绍一下<a href ="http://littlebean.github.io/2014/02/27/b%E6%A0%91/">B-Tree</a>。</p>
-<h2 id="-">数据库的索引</h2>
-<p>如果你的表数据日常更新比较少，应当使用索引技术，因为通过索引可以减少为返回查询结果集必须读取的数据量。如果你的表经常需要执行插入、删除、修改操作，过多的索引则会导致数据维护性能的减弱，因为在维护这些数据的同时，数据引擎还要维护这些索引。
-<a id="more"></a></p>
-<p>索引是一个单独的、物理数据存储结构，其中包含由表或者视图中的一列或者多列生成的键。这些键就像书籍的目录一样，可以通过这些索引来查找与之对应的数据。</p>
-<p><strong>索引的优点</strong>：<br></p>
+    <content type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x4E3A;&#x4E86;&#x627E;&#x5B9E;&#x4E60;&#xFF0C;&#x542C;&#x5230;&#x8BD5;&#x6C34;&#x540C;&#x5B66;&#x7684;&#x70ED;&#x4E4E;&#x4E4E;&#x7684;&#x9762;&#x7B4B;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x6570;&#x636E;&#x5E93;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x5C31;&#x53BB;&#x56FE;&#x4E66;&#x9986;&#x501F;&#x4E86;&#x672C;&#x201C;&#x950B;&#x5229;&#x7684;SQL&#x201D;&#x590D;&#x4E60;&#x4E00;&#x4E0B;&#x6570;&#x636E;&#x5E93;&#x77E5;&#x8BC6;&#xFF0C;&#x770B;&#x5230;&#x4E86;&#x7D22;&#x5F15;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#xFF0C;&#x611F;&#x89C9;&#x9700;&#x8981;&#x6DF1;&#x5165;&#x7684;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#xFF0C;&#x4E8E;&#x662F;&#x5728;&#x7F51;&#x4E0A;&#x627E;&#x4E86;&#x51E0;&#x7247;&#x6587;&#x7AE0;&#x770B;&#x770B;&#x3002;</p>
+<h2 id="B&#x6811;">B&#x6811;</h2>
+<p>&#x6211;&#x4EEC;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x7D22;&#x5F15;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x591A;&#x662F;B-Tree&#x6216;&#x8005;B+Tree&#x3002;&#x4F8B;&#x5982;&#xFF0C;MsSql&#x4F7F;&#x7528;&#x7684;&#x662F;B+Tree&#xFF0C;Oracle&#x53CA;Sysbase&#x4F7F;&#x7528;&#x7684;&#x662F;B-Tree&#x3002;&#x7B80;&#x5355;&#x5730;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;<a href="http://littlebean.github.io/2014/02/27/b%E6%A0%91/" target="_blank" rel="external">B-Tree</a>&#x3002;</p>
+<h2 id="&#x6570;&#x636E;&#x5E93;&#x7684;&#x7D22;&#x5F15;">&#x6570;&#x636E;&#x5E93;&#x7684;&#x7D22;&#x5F15;</h2>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x8868;&#x6570;&#x636E;&#x65E5;&#x5E38;&#x66F4;&#x65B0;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x5E94;&#x5F53;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x6280;&#x672F;&#xFF0C;&#x56E0;&#x4E3A;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x4E3A;&#x8FD4;&#x56DE;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x96C6;&#x5FC5;&#x987B;&#x8BFB;&#x53D6;&#x7684;&#x6570;&#x636E;&#x91CF;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x8868;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x6267;&#x884C;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x3001;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#xFF0C;&#x8FC7;&#x591A;&#x7684;&#x7D22;&#x5F15;&#x5219;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x7EF4;&#x62A4;&#x6027;&#x80FD;&#x7684;&#x51CF;&#x5F31;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x7EF4;&#x62A4;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5F15;&#x64CE;&#x8FD8;&#x8981;&#x7EF4;&#x62A4;&#x8FD9;&#x4E9B;&#x7D22;&#x5F15;&#x3002;<br><a id="more"></a></p>
+<p>&#x7D22;&#x5F15;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x3001;&#x7269;&#x7406;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7531;&#x8868;&#x6216;&#x8005;&#x89C6;&#x56FE;&#x4E2D;&#x7684;&#x4E00;&#x5217;&#x6216;&#x8005;&#x591A;&#x5217;&#x751F;&#x6210;&#x7684;&#x952E;&#x3002;&#x8FD9;&#x4E9B;&#x952E;&#x5C31;&#x50CF;&#x4E66;&#x7C4D;&#x7684;&#x76EE;&#x5F55;&#x4E00;&#x6837;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;&#x7D22;&#x5F15;&#x6765;&#x67E5;&#x627E;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>&#x7D22;&#x5F15;&#x7684;&#x4F18;&#x70B9;</strong>&#xFF1A;<br></p>
 <ol>
-<li>索引可以避免全表扫描。多数查询可以仅扫描少量索引页及数据页，而不是遍历所有数据页。</li>
-<li>对于非聚集索引，有些查询甚至可以不访问数据页。</li>
-<li>聚集索引可以避免数据插入操作集中于表的最后一个数据页。</li>
-<li>一些情况下，索引还可用于避免排序操作。</li>
+<li>&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5168;&#x8868;&#x626B;&#x63CF;&#x3002;&#x591A;&#x6570;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4EC5;&#x626B;&#x63CF;&#x5C11;&#x91CF;&#x7D22;&#x5F15;&#x9875;&#x53CA;&#x6570;&#x636E;&#x9875;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x904D;&#x5386;&#x6240;&#x6709;&#x6570;&#x636E;&#x9875;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#xFF0C;&#x6709;&#x4E9B;&#x67E5;&#x8BE2;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x9875;&#x3002;</li>
+<li>&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x6570;&#x636E;&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#x96C6;&#x4E2D;&#x4E8E;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x9875;&#x3002;</li>
+<li>&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7D22;&#x5F15;&#x8FD8;&#x53EF;&#x7528;&#x4E8E;&#x907F;&#x514D;&#x6392;&#x5E8F;&#x64CD;&#x4F5C;&#x3002;</li>
 </ol>
-<p><strong>索引的存储</strong>：<br/>
-一条索引记录中包含的基本信息包括：键值（即你定义索引时指定的所有字段的值）+逻辑指针（指向数据页或者另一索引页）</p>
-<p><img src="http://liitlebean.qiniudn.com/2014/2/27/index_store.png" alt="索引的存储"></p>
-<p>通常状况下，由于索引记录仅包含索引字段值（以及4-9字节的指针），索引实体比真实的数据行要小许多，索引页相较数据页来说要密集许多。一个索引页可以存储数量更多的索引记录，这意味着在索引中查找时在I/O上占很大的优势，理解这一点有助于从本质上了解使用索引的优势。</p>
-<p><strong>索引的类型</strong>：<br/>
-索引大致分为聚集索引、非聚集索引、    全文索引、XML索引和空间索引5种主要类型，下面仅介绍聚集索引和非聚集索引两种。</p>
-<p><em>聚集索引</em>：<br/>
-根据数据行的键值在表或者视图中排序顺序存储这些数据行，即表中的数据行的物理顺序与索引顺序一样，因为每个数据行本省只有一种顺序排序，所以每个表只能有一个聚集索引。如果一个表具有聚集索引，则称这个表为“聚集表”。</p>
-<p><img src="http://liitlebean.qiniudn.com/2014/2/27/jujisuoyin.png" alt="聚集索引"></p>
-<p><em>非聚集索引</em>：<br/>
-非聚集索引与聚集索引相比：<br/></p>
+<p><strong>&#x7D22;&#x5F15;&#x7684;&#x5B58;&#x50A8;</strong>&#xFF1A;<br><br>&#x4E00;&#x6761;&#x7D22;&#x5F15;&#x8BB0;&#x5F55;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x5305;&#x62EC;&#xFF1A;&#x952E;&#x503C;&#xFF08;&#x5373;&#x4F60;&#x5B9A;&#x4E49;&#x7D22;&#x5F15;&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#xFF09;+&#x903B;&#x8F91;&#x6307;&#x9488;&#xFF08;&#x6307;&#x5411;&#x6570;&#x636E;&#x9875;&#x6216;&#x8005;&#x53E6;&#x4E00;&#x7D22;&#x5F15;&#x9875;&#xFF09;</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/2/27/index_store.png" alt="&#x7D22;&#x5F15;&#x7684;&#x5B58;&#x50A8;"></p>
+<p>&#x901A;&#x5E38;&#x72B6;&#x51B5;&#x4E0B;&#xFF0C;&#x7531;&#x4E8E;&#x7D22;&#x5F15;&#x8BB0;&#x5F55;&#x4EC5;&#x5305;&#x542B;&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x503C;&#xFF08;&#x4EE5;&#x53CA;4-9&#x5B57;&#x8282;&#x7684;&#x6307;&#x9488;&#xFF09;&#xFF0C;&#x7D22;&#x5F15;&#x5B9E;&#x4F53;&#x6BD4;&#x771F;&#x5B9E;&#x7684;&#x6570;&#x636E;&#x884C;&#x8981;&#x5C0F;&#x8BB8;&#x591A;&#xFF0C;&#x7D22;&#x5F15;&#x9875;&#x76F8;&#x8F83;&#x6570;&#x636E;&#x9875;&#x6765;&#x8BF4;&#x8981;&#x5BC6;&#x96C6;&#x8BB8;&#x591A;&#x3002;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x9875;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x6570;&#x91CF;&#x66F4;&#x591A;&#x7684;&#x7D22;&#x5F15;&#x8BB0;&#x5F55;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5728;&#x7D22;&#x5F15;&#x4E2D;&#x67E5;&#x627E;&#x65F6;&#x5728;I/O&#x4E0A;&#x5360;&#x5F88;&#x5927;&#x7684;&#x4F18;&#x52BF;&#xFF0C;&#x7406;&#x89E3;&#x8FD9;&#x4E00;&#x70B9;&#x6709;&#x52A9;&#x4E8E;&#x4ECE;&#x672C;&#x8D28;&#x4E0A;&#x4E86;&#x89E3;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x7684;&#x4F18;&#x52BF;&#x3002;</p>
+<p><strong>&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;</strong>&#xFF1A;<br><br>&#x7D22;&#x5F15;&#x5927;&#x81F4;&#x5206;&#x4E3A;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x3001;&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x3001;    &#x5168;&#x6587;&#x7D22;&#x5F15;&#x3001;XML&#x7D22;&#x5F15;&#x548C;&#x7A7A;&#x95F4;&#x7D22;&#x5F15;5&#x79CD;&#x4E3B;&#x8981;&#x7C7B;&#x578B;&#xFF0C;&#x4E0B;&#x9762;&#x4EC5;&#x4ECB;&#x7ECD;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x548C;&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x4E24;&#x79CD;&#x3002;</p>
+<p><em>&#x805A;&#x96C6;&#x7D22;&#x5F15;</em>&#xFF1A;<br><br>&#x6839;&#x636E;&#x6570;&#x636E;&#x884C;&#x7684;&#x952E;&#x503C;&#x5728;&#x8868;&#x6216;&#x8005;&#x89C6;&#x56FE;&#x4E2D;&#x6392;&#x5E8F;&#x987A;&#x5E8F;&#x5B58;&#x50A8;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x884C;&#xFF0C;&#x5373;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x884C;&#x7684;&#x7269;&#x7406;&#x987A;&#x5E8F;&#x4E0E;&#x7D22;&#x5F15;&#x987A;&#x5E8F;&#x4E00;&#x6837;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x884C;&#x672C;&#x7701;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x4E2A;&#x8868;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8868;&#x5177;&#x6709;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#xFF0C;&#x5219;&#x79F0;&#x8FD9;&#x4E2A;&#x8868;&#x4E3A;&#x201C;&#x805A;&#x96C6;&#x8868;&#x201D;&#x3002;</p>
+<p><img src="http://liitlebean.qiniudn.com/2014/2/27/jujisuoyin.png" alt="&#x805A;&#x96C6;&#x7D22;&#x5F15;"></p>
+<p><em>&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;</em>&#xFF1A;<br><br>&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x4E0E;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x76F8;&#x6BD4;&#xFF1A;<br></p>
 <ol>
-<li>叶子结点并非数据结点</li>
-<li>叶子结点为每一真正的数据行存储一个“键-指针”对</li>
-<li>叶子结点中还存储了一个指针偏移量，根据页指针及指针偏移量可以定位到具体的数据行。</li>
-<li>类似的，在除叶结点外的其它索引结点，存储的也是类似的内容，只不过它是指向下一级的索引页的</li>
+<li>&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x5E76;&#x975E;&#x6570;&#x636E;&#x7ED3;&#x70B9;</li>
+<li>&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x4E3A;&#x6BCF;&#x4E00;&#x771F;&#x6B63;&#x7684;&#x6570;&#x636E;&#x884C;&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#x201C;&#x952E;-&#x6307;&#x9488;&#x201D;&#x5BF9;</li>
+<li>&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x4E2D;&#x8FD8;&#x5B58;&#x50A8;&#x4E86;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x6839;&#x636E;&#x9875;&#x6307;&#x9488;&#x53CA;&#x6307;&#x9488;&#x504F;&#x79FB;&#x91CF;&#x53EF;&#x4EE5;&#x5B9A;&#x4F4D;&#x5230;&#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;&#x884C;&#x3002;</li>
+<li>&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x5728;&#x9664;&#x53F6;&#x7ED3;&#x70B9;&#x5916;&#x7684;&#x5176;&#x5B83;&#x7D22;&#x5F15;&#x7ED3;&#x70B9;&#xFF0C;&#x5B58;&#x50A8;&#x7684;&#x4E5F;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5B83;&#x662F;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x7EA7;&#x7684;&#x7D22;&#x5F15;&#x9875;&#x7684;</li>
 </ol>
-<p>聚集索引是一种稀疏索引，数据页上一级的索引页存储的是页指针，而不是行指针。而对于非聚集索引，则是密集索引，在数据页的上一级索引页它为每一个数据行存储一条索引记录。</p>
-<p>对于根与中间级的索引记录，它的结构包括：<br/></p>
+<p>&#x805A;&#x96C6;&#x7D22;&#x5F15;&#x662F;&#x4E00;&#x79CD;&#x7A00;&#x758F;&#x7D22;&#x5F15;&#xFF0C;&#x6570;&#x636E;&#x9875;&#x4E0A;&#x4E00;&#x7EA7;&#x7684;&#x7D22;&#x5F15;&#x9875;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x9875;&#x6307;&#x9488;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x884C;&#x6307;&#x9488;&#x3002;&#x800C;&#x5BF9;&#x4E8E;&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#xFF0C;&#x5219;&#x662F;&#x5BC6;&#x96C6;&#x7D22;&#x5F15;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x9875;&#x7684;&#x4E0A;&#x4E00;&#x7EA7;&#x7D22;&#x5F15;&#x9875;&#x5B83;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x884C;&#x5B58;&#x50A8;&#x4E00;&#x6761;&#x7D22;&#x5F15;&#x8BB0;&#x5F55;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x6839;&#x4E0E;&#x4E2D;&#x95F4;&#x7EA7;&#x7684;&#x7D22;&#x5F15;&#x8BB0;&#x5F55;&#xFF0C;&#x5B83;&#x7684;&#x7ED3;&#x6784;&#x5305;&#x62EC;&#xFF1A;<br></p>
 <ol>
-<li>索引字段值</li>
-<li>RowId（即对应数据页的页指针+指针偏移量）。在高层的索引页中包含RowId是为了当索引允许重复值时，当更改数据时精确定位数据行。</li>
-<li>下一级索引页的指针</li>
+<li>&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x503C;</li>
+<li>RowId&#xFF08;&#x5373;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x9875;&#x7684;&#x9875;&#x6307;&#x9488;+&#x6307;&#x9488;&#x504F;&#x79FB;&#x91CF;&#xFF09;&#x3002;&#x5728;&#x9AD8;&#x5C42;&#x7684;&#x7D22;&#x5F15;&#x9875;&#x4E2D;&#x5305;&#x542B;RowId&#x662F;&#x4E3A;&#x4E86;&#x5F53;&#x7D22;&#x5F15;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x503C;&#x65F6;&#xFF0C;&#x5F53;&#x66F4;&#x6539;&#x6570;&#x636E;&#x65F6;&#x7CBE;&#x786E;&#x5B9A;&#x4F4D;&#x6570;&#x636E;&#x884C;&#x3002;</li>
+<li>&#x4E0B;&#x4E00;&#x7EA7;&#x7D22;&#x5F15;&#x9875;&#x7684;&#x6307;&#x9488;</li>
 </ol>
-<p>对于叶子层的索引对象，它的结构包括：<br/></p>
+<p>&#x5BF9;&#x4E8E;&#x53F6;&#x5B50;&#x5C42;&#x7684;&#x7D22;&#x5F15;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x7684;&#x7ED3;&#x6784;&#x5305;&#x62EC;&#xFF1A;<br></p>
 <ol>
-<li>索引字段值</li>
+<li>&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x503C;</li>
 <li>RowId</li>
 </ol>
-<p><img src="http://liitlebean.qiniudn.com/2014/2/27/feijujisuoyin.png" alt="非聚集索引"></p>
-<p>参考：<br/>
-<a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html" target="_blank"><a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html">http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html</a></a></p>
+<p><img src="http://liitlebean.qiniudn.com/2014/2/27/feijujisuoyin.png" alt="&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;"></p>
+<p>&#x53C2;&#x8003;&#xFF1A;<br><br><a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html" target="_blank" rel="external">http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html</a></p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id="-">引言</h2>
-<p>为了找实习，听到试水同学的热乎乎的面筋后，需要了解数据库的知识，就去图书馆借了本“锋利的SQL”复习一下数据库知识，看到了索引这个东西，感觉需要深入的研究一下，于是在网上找了几片文章看看。</p>
-<h2 id="b-">B树</h2>
-<p>我们常见的数据库系统，其索引使用的数据结构多是B-Tree或者B+Tree。例如，MsSql使用的是B+Tree，Oracle及Sysbase使用的是B-Tree。简单地介绍一下<a href ="http://littlebean.github.io/2014/02/27/b%E6%A0%91/">B-Tree</a>。</p>
-<h2 id="-">数据库的索引</h2>
-<p>如果你的表数据日常更新比较少，应当使用索引技术，因为通过索引可以减少为返回查询结果集必须读取的数据量。如果你的表经常需要执行插入、删除、修改操作，过多的索引则会导致数据维护性能的减弱，因为在维护这些数据的同时，数据引擎还要维护这些索引。
-]]></summary>
+    <summary type="html"><![CDATA[<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x4E3A;&#x4E86;&#x627E;&#x5B9E;&#x4E60;&#xFF0C;&#x542C;&#x5230;&#x8BD5;&#x6C34;&#x540C;&#x5B66;&#x7684;&#x70ED;&#x4E4E;&#x4E4E;&#x7684;&#x9762;&#x7B4B;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x6570;&#x636E;&#x5E93;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x5C31;&#x53BB;&#x56FE;&#x4E66;&#x9986;&#x501F;&#x4E86;&#x672C;&#x201C;&#x950B;&#x5229;&#x7684;SQL&#x201D;&#x590D;&#x4E60;&#x4E00;&#x4E0B;&#x6570;&#x636E;&#x5E93;&#x77E5;&#x8BC6;&#xFF0C;&#x770B;&#x5230;&#x4E86;&#x7D22;&#x5F15;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#xFF0C;&#x611F;&#x89C9;&#x9700;&#x8981;&#x6DF1;&#x5165;&#x7684;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#xFF0C;&#x4E8E;&#x662F;&#x5728;&#x7F51;&#x4E0A;&#x627E;&#x4E86;&#x51E0;&#x7247;&#x6587;&#x7AE0;&#x770B;&#x770B;&#x3002;</p>
+<h2 id="B&#x6811;">B&#x6811;</h2>
+<p>&#x6211;&#x4EEC;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x7D22;&#x5F15;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x591A;&#x662F;B-Tree&#x6216;&#x8005;B+Tree&#x3002;&#x4F8B;&#x5982;&#xFF0C;MsSql&#x4F7F;&#x7528;&#x7684;&#x662F;B+Tree&#xFF0C;Oracle&#x53CA;Sysbase&#x4F7F;&#x7528;&#x7684;&#x662F;B-Tree&#x3002;&#x7B80;&#x5355;&#x5730;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;<a href="http://littlebean.github.io/2014/02/27/b%E6%A0%91/" target="_blank" rel="external">B-Tree</a>&#x3002;</p>
+<h2 id="&#x6570;&#x636E;&#x5E93;&#x7684;&#x7D22;&#x5F15;">&#x6570;&#x636E;&#x5E93;&#x7684;&#x7D22;&#x5F15;</h2>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x8868;&#x6570;&#x636E;&#x65E5;&#x5E38;&#x66F4;&#x65B0;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x5E94;&#x5F53;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x6280;&#x672F;&#xFF0C;&#x56E0;&#x4E3A;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x4E3A;&#x8FD4;&#x56DE;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x96C6;&#x5FC5;&#x987B;&#x8BFB;&#x53D6;&#x7684;&#x6570;&#x636E;&#x91CF;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x8868;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x6267;&#x884C;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x3001;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#xFF0C;&#x8FC7;&#x591A;&#x7684;&#x7D22;&#x5F15;&#x5219;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x7EF4;&#x62A4;&#x6027;&#x80FD;&#x7684;&#x51CF;&#x5F31;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x7EF4;&#x62A4;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5F15;&#x64CE;&#x8FD8;&#x8981;&#x7EF4;&#x62A4;&#x8FD9;&#x4E9B;&#x7D22;&#x5F15;&#x3002;<br>]]></summary>
     
       <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
@@ -594,32 +543,27 @@ B树的生成其实就是B树从空的状态下，将结点一个一个插入的
     <id>http://littlebean.github.io/2014/02/23/c和c++头文件一些问题/</id>
     <published>2014-02-23T06:07:36.000Z</published>
     <updated>2014-03-17T07:24:23.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="c-c-">C和C++的一些区别</h2>
-<p>在讲C和C++头文件的一些问题之前，我们先看下C和C++的一些区别：</p>
+    <content type="html"><![CDATA[<h2 id="C&#x548C;C++&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;">C&#x548C;C++&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;</h2>
+<p>&#x5728;&#x8BB2;C&#x548C;C++&#x5934;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E0B;C&#x548C;C++&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;&#xFF1A;</p>
 <ul>
-<li>C语言是一个结构化语言，它的重点在于<strong>算法和数据结构</strong>。</li>
-<li>C++则是首要考虑的是如何构造一个对象模型，让这个模型能够处理对应的问题域。
-所以它们最大区别是解决问题的思想不一样，所以说C++比C更加先进，因为C++融入了<strong>设计</strong>这个概念。</li>
+<li>C&#x8BED;&#x8A00;&#x662F;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x5316;&#x8BED;&#x8A00;&#xFF0C;&#x5B83;&#x7684;&#x91CD;&#x70B9;&#x5728;&#x4E8E;<strong>&#x7B97;&#x6CD5;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;</strong>&#x3002;</li>
+<li>C++&#x5219;&#x662F;&#x9996;&#x8981;&#x8003;&#x8651;&#x7684;&#x662F;&#x5982;&#x4F55;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;&#x80FD;&#x591F;&#x5904;&#x7406;&#x5BF9;&#x5E94;&#x7684;&#x95EE;&#x9898;&#x57DF;&#x3002;<br>&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x6700;&#x5927;&#x533A;&#x522B;&#x662F;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x7684;&#x601D;&#x60F3;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x4EE5;&#x8BF4;C++&#x6BD4;C&#x66F4;&#x52A0;&#x5148;&#x8FDB;&#xFF0C;&#x56E0;&#x4E3A;C++&#x878D;&#x5165;&#x4E86;<strong>&#x8BBE;&#x8BA1;</strong>&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;</li>
 </ul>
-<p>对语言本身而言，C是C++的子集，那么是什么样的一个子集？从上文可以看出， C实现了C++中过程化控制及其它相关功能，而在C++中的C（我称它为“C+”），相对于原来的C还有所加强：</p>
+<p>&#x5BF9;&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x800C;&#x8A00;&#xFF0C;C&#x662F;C++&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x90A3;&#x4E48;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#xFF1F;&#x4ECE;&#x4E0A;&#x6587;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C; C&#x5B9E;&#x73B0;&#x4E86;C++&#x4E2D;&#x8FC7;&#x7A0B;&#x5316;&#x63A7;&#x5236;&#x53CA;&#x5176;&#x5B83;&#x76F8;&#x5173;&#x529F;&#x80FD;&#xFF0C;&#x800C;&#x5728;C++&#x4E2D;&#x7684;C&#xFF08;&#x6211;&#x79F0;&#x5B83;&#x4E3A;&#x201C;C+&#x201D;&#xFF09;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x539F;&#x6765;&#x7684;C&#x8FD8;&#x6709;&#x6240;&#x52A0;&#x5F3A;&#xFF1A;</p>
 <ul>
-<li>引入了重载、内联函数、异常处理等等。</li>
-<li>C++更是拓展了面向对象设计的内容，如类、继承、虚函数、模板和包容器类等等。 </li>
-<li>在C++中，数据封装、类型这些东东已不是什么新鲜事了，需要考虑的是诸如：对象粒度的选择、对象接口的设计和继承、组合与继承的使用等等问题。</li>
+<li>&#x5F15;&#x5165;&#x4E86;&#x91CD;&#x8F7D;&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7B49;&#x7B49;&#x3002;</li>
+<li>C++&#x66F4;&#x662F;&#x62D3;&#x5C55;&#x4E86;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BBE;&#x8BA1;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x7C7B;&#x3001;&#x7EE7;&#x627F;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x6A21;&#x677F;&#x548C;&#x5305;&#x5BB9;&#x5668;&#x7C7B;&#x7B49;&#x7B49;&#x3002; </li>
+<li>&#x5728;C++&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x5C01;&#x88C5;&#x3001;&#x7C7B;&#x578B;&#x8FD9;&#x4E9B;&#x4E1C;&#x4E1C;&#x5DF2;&#x4E0D;&#x662F;&#x4EC0;&#x4E48;&#x65B0;&#x9C9C;&#x4E8B;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x8003;&#x8651;&#x7684;&#x662F;&#x8BF8;&#x5982;&#xFF1A;&#x5BF9;&#x8C61;&#x7C92;&#x5EA6;&#x7684;&#x9009;&#x62E9;&#x3001;&#x5BF9;&#x8C61;&#x63A5;&#x53E3;&#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x7EE7;&#x627F;&#x3001;&#x7EC4;&#x5408;&#x4E0E;&#x7EE7;&#x627F;&#x7684;&#x4F7F;&#x7528;&#x7B49;&#x7B49;&#x95EE;&#x9898;&#x3002;</li>
 </ul>
-<p>所以相对于C，C++包含了更丰富的“设计”的概念，但<strong>C是C++的一个自洽子集</strong>，也具有强大的功能，同样值得学习。</p>
+<p>&#x6240;&#x4EE5;&#x76F8;&#x5BF9;&#x4E8E;C&#xFF0C;C++&#x5305;&#x542B;&#x4E86;&#x66F4;&#x4E30;&#x5BCC;&#x7684;&#x201C;&#x8BBE;&#x8BA1;&#x201D;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x4F46;<strong>C&#x662F;C++&#x7684;&#x4E00;&#x4E2A;&#x81EA;&#x6D3D;&#x5B50;&#x96C6;</strong>&#xFF0C;&#x4E5F;&#x5177;&#x6709;&#x5F3A;&#x5927;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x540C;&#x6837;&#x503C;&#x5F97;&#x5B66;&#x4E60;&#x3002;</p>
 <p><a id="more"></a></p>
-<h2 id="c-c-">C和C++头文件的一些区别</h2>
-<p>在C++中，<code>&lt;iostream&gt;</code>与<code>&lt;iostream.h&gt;</code>的区别，前者要使用更新的编译器（其实大部分编译器多比较前卫了，出了有些搞嵌入式的用变态的编译器）.原来<code>&lt;iostream&gt;</code>是C++的头文件，<code>&lt;iostream.h&gt;</code>是C的头文件，标准的C++头文件没有.h扩展名，将以前的C的头文件转化为C++的头文件后，有时加上c的前缀表示来自于c,<code>&lt;cmath&gt;</code>就是由<code>&lt;math.h&gt;</code>变来的。</br></p>
+<h2 id="C&#x548C;C++&#x5934;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;">C&#x548C;C++&#x5934;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;</h2>
+<p>&#x5728;C++&#x4E2D;&#xFF0C;<code>&lt;iostream&gt;</code>&#x4E0E;<code>&lt;iostream.h&gt;</code>&#x7684;&#x533A;&#x522B;&#xFF0C;&#x524D;&#x8005;&#x8981;&#x4F7F;&#x7528;&#x66F4;&#x65B0;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF08;&#x5176;&#x5B9E;&#x5927;&#x90E8;&#x5206;&#x7F16;&#x8BD1;&#x5668;&#x591A;&#x6BD4;&#x8F83;&#x524D;&#x536B;&#x4E86;&#xFF0C;&#x51FA;&#x4E86;&#x6709;&#x4E9B;&#x641E;&#x5D4C;&#x5165;&#x5F0F;&#x7684;&#x7528;&#x53D8;&#x6001;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF09;.&#x539F;&#x6765;<code>&lt;iostream&gt;</code>&#x662F;C++&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;<code>&lt;iostream.h&gt;</code>&#x662F;C&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x6807;&#x51C6;&#x7684;C++&#x5934;&#x6587;&#x4EF6;&#x6CA1;&#x6709;.h&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x5C06;&#x4EE5;&#x524D;&#x7684;C&#x7684;&#x5934;&#x6587;&#x4EF6;&#x8F6C;&#x5316;&#x4E3A;C++&#x7684;&#x5934;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x6709;&#x65F6;&#x52A0;&#x4E0A;c&#x7684;&#x524D;&#x7F00;&#x8868;&#x793A;&#x6765;&#x81EA;&#x4E8E;c,<code>&lt;cmath&gt;</code>&#x5C31;&#x662F;&#x7531;<code>&lt;math.h&gt;</code>&#x53D8;&#x6765;&#x7684;&#x3002;<br></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
-</pre></td><td class="code"><pre><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> <span class="comment">//使用名字空间（使用所有）</span>
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::<span class="built_in">cout</span><span class="comment">//只使用cout</span>
-</pre></td></tr></table></figure>
-
-<p>如不用using，则在代码前可以用sdt::cout表示使用的是std中的cout。</br></p>
-<p>例如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> <span class="comment">//&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#xFF08;&#x4F7F;&#x7528;&#x6240;&#x6709;&#xFF09;</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::<span class="built_in">cout</span><span class="comment">//&#x53EA;&#x4F7F;&#x7528;cout</span>
+</pre></td></tr></table></figure><br>&#x5982;&#x4E0D;&#x7528;using&#xFF0C;&#x5219;&#x5728;&#x4EE3;&#x7801;&#x524D;&#x53EF;&#x4EE5;&#x7528;sdt::cout&#x8868;&#x793A;&#x4F7F;&#x7528;&#x7684;&#x662F;std&#x4E2D;&#x7684;cout&#x3002;<br><br><br>&#x4F8B;&#x5982;&#xFF1A;<br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -634,27 +578,26 @@ B树的生成其实就是B树从空的状态下，将结点一个一个插入的
 13
 14
 15
-</pre></td><td class="code"><pre><span class="preprocessor">#include&lt;iostream.h&gt;<span class="comment">//必须要加上.h </span></span>
+</pre></td><td class="code"><pre><span class="preprocessor">#include&lt;iostream.h&gt;<span class="comment">//&#x5FC5;&#x987B;&#x8981;&#x52A0;&#x4E0A;.h </span></span>
 <span class="keyword">void</span> main() 
 { 
-	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Right?"</span>&lt;&lt;endl; 
+	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Right?&quot;</span>&lt;&lt;endl; 
 } 
 
 <span class="preprocessor">#include&lt;string&gt; </span>
-<span class="preprocessor">#include&lt;iostream&gt;<span class="comment">//此处必须去掉.h </span></span>
+<span class="preprocessor">#include&lt;iostream&gt;<span class="comment">//&#x6B64;&#x5904;&#x5FC5;&#x987B;&#x53BB;&#x6389;.h </span></span>
 usingnamespace <span class="built_in">std</span> ; 
 <span class="keyword">void</span> main() 
 { 
 	<span class="built_in">string</span> s; 
 	getline(<span class="built_in">cin</span>,s); 
-	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Right?"</span>&lt;&lt;endl; 
+	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Right?&quot;</span>&lt;&lt;endl; 
 }
 </pre></td></tr></table></figure>
 
-<p>相关解析：
-<code>&lt;iostream.h&gt;</code>里面定义的所有类以及对象都是在全局空间里，所以你可以直接用<code>cout</code>但在<code>&lt;iostream&gt;</code>里面，它所定义的东西都在名字空间std里面，所以你必须加上<code>using namespace std</code>才能使用<code>cout</code>一般一个C++的老的带“.h”扩展名的库文件，比如<code>&lt;iostream.h&gt;</code>，在新标准后的标准库中都有一个不带“.h”扩展名的相对应，区别除了后者的好多改进之外，还有一点就是后者的东东都塞进了<code>std</code>名字空间中。</br></p>
-<p>但<code>string</code>特别,问题在于C++要兼容C的标准库，而C的标准库里碰巧也已经有一个名字叫做<code>&lt;string.h&gt;</code>的头文件，包含一些常用的C字符串处理函数，比如楼主提到的<code>strcmp</code>。这个头文件跟C++的<code>string</code>类半点关系也没有，所以<code>&lt;string&gt;</code>并非<code>&lt;string.h&gt;</code>的“升级版本”，他们是毫无关系的两个头文件。要达到楼主的目的，比如同时：</br></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<p>&#x76F8;&#x5173;&#x89E3;&#x6790;&#xFF1A;<br><code>&lt;iostream.h&gt;</code>&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709;&#x7C7B;&#x4EE5;&#x53CA;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x5728;&#x5168;&#x5C40;&#x7A7A;&#x95F4;&#x91CC;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;<code>cout</code>&#x4F46;&#x5728;<code>&lt;iostream&gt;</code>&#x91CC;&#x9762;&#xFF0C;&#x5B83;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x4E1C;&#x897F;&#x90FD;&#x5728;&#x540D;&#x5B57;&#x7A7A;&#x95F4;std&#x91CC;&#x9762;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x5FC5;&#x987B;&#x52A0;&#x4E0A;<code>using namespace std</code>&#x624D;&#x80FD;&#x4F7F;&#x7528;<code>cout</code>&#x4E00;&#x822C;&#x4E00;&#x4E2A;C++&#x7684;&#x8001;&#x7684;&#x5E26;&#x201C;.h&#x201D;&#x6269;&#x5C55;&#x540D;&#x7684;&#x5E93;&#x6587;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;<code>&lt;iostream.h&gt;</code>&#xFF0C;&#x5728;&#x65B0;&#x6807;&#x51C6;&#x540E;&#x7684;&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E0D;&#x5E26;&#x201C;.h&#x201D;&#x6269;&#x5C55;&#x540D;&#x7684;&#x76F8;&#x5BF9;&#x5E94;&#xFF0C;&#x533A;&#x522B;&#x9664;&#x4E86;&#x540E;&#x8005;&#x7684;&#x597D;&#x591A;&#x6539;&#x8FDB;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#x5C31;&#x662F;&#x540E;&#x8005;&#x7684;&#x4E1C;&#x4E1C;&#x90FD;&#x585E;&#x8FDB;&#x4E86;<code>std</code>&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;<br></p>
+<p>&#x4F46;<code>string</code>&#x7279;&#x522B;,&#x95EE;&#x9898;&#x5728;&#x4E8E;C++&#x8981;&#x517C;&#x5BB9;C&#x7684;&#x6807;&#x51C6;&#x5E93;&#xFF0C;&#x800C;C&#x7684;&#x6807;&#x51C6;&#x5E93;&#x91CC;&#x78B0;&#x5DE7;&#x4E5F;&#x5DF2;&#x7ECF;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#x53EB;&#x505A;<code>&lt;string.h&gt;</code>&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;C&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x6BD4;&#x5982;&#x697C;&#x4E3B;&#x63D0;&#x5230;&#x7684;<code>strcmp</code>&#x3002;&#x8FD9;&#x4E2A;&#x5934;&#x6587;&#x4EF6;&#x8DDF;C++&#x7684;<code>string</code>&#x7C7B;&#x534A;&#x70B9;&#x5173;&#x7CFB;&#x4E5F;&#x6CA1;&#x6709;&#xFF0C;&#x6240;&#x4EE5;<code>&lt;string&gt;</code>&#x5E76;&#x975E;<code>&lt;string.h&gt;</code>&#x7684;&#x201C;&#x5347;&#x7EA7;&#x7248;&#x672C;&#x201D;&#xFF0C;&#x4ED6;&#x4EEC;&#x662F;&#x6BEB;&#x65E0;&#x5173;&#x7CFB;&#x7684;&#x4E24;&#x4E2A;&#x5934;&#x6587;&#x4EF6;&#x3002;&#x8981;&#x8FBE;&#x5230;&#x697C;&#x4E3B;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x540C;&#x65F6;&#xFF1A;<br></p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -663,38 +606,35 @@ usingnamespace <span class="built_in">std</span> ;
 </pre></td><td class="code"><pre><span class="preprocessor">#include &lt;string.h&gt; </span>
 <span class="preprocessor">#include &lt;string&gt; </span>
 <span class="keyword">using</span> name space <span class="built_in">std</span>; 
-或者 
+&#x6216;&#x8005; 
 <span class="preprocessor">#include &lt;cstring&gt; </span>
 <span class="preprocessor">#include &lt;string&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>其中<code>&lt;cstring&gt;</code>是与C标准库的<code>&lt;string.h&gt;</code>相对应，但裹有std名字空间的版本。</br></p>
+</pre></td></tr></table></figure><br>&#x5176;&#x4E2D;<code>&lt;cstring&gt;</code>&#x662F;&#x4E0E;C&#x6807;&#x51C6;&#x5E93;&#x7684;<code>&lt;string.h&gt;</code>&#x76F8;&#x5BF9;&#x5E94;&#xFF0C;&#x4F46;&#x88F9;&#x6709;std&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x7684;&#x7248;&#x672C;&#x3002;<br></p>
 <ul>
-<li><code>&lt;string&gt;</code>是c++ 的头文件，其内包含了一个<code>string</code>类，<code>string s1</code>就是建立一个<code>string</code>类的对象 </li>
-<li><code>&lt;string.h&gt;</code>的c语言的东西 并无类，所以不能 <code>string s1</code> </li>
-<li><code>&lt;cstring&gt;</code>文件实际上只是在一个命名空间<code>std</code>中<code>include</code>了 <code>&lt;string.h&gt;</code></li>
+<li><code>&lt;string&gt;</code>&#x662F;c++ &#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x5185;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;<code>string</code>&#x7C7B;&#xFF0C;<code>string s1</code>&#x5C31;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;<code>string</code>&#x7C7B;&#x7684;&#x5BF9;&#x8C61; </li>
+<li><code>&lt;string.h&gt;</code>&#x7684;c&#x8BED;&#x8A00;&#x7684;&#x4E1C;&#x897F; &#x5E76;&#x65E0;&#x7C7B;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD; <code>string s1</code> </li>
+<li><code>&lt;cstring&gt;</code>&#x6587;&#x4EF6;&#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;<code>std</code>&#x4E2D;<code>include</code>&#x4E86; <code>&lt;string.h&gt;</code></li>
 </ul>
-<p>参考：<a href="http://www.cnblogs.com/Cmpl/archive/2012/01/01/2309710.html" target="_blank"><a href="http://www.cnblogs.com/Cmpl/archive/2012/01/01/2309710.html">http://www.cnblogs.com/Cmpl/archive/2012/01/01/2309710.html</a></a></p>
+<p>&#x53C2;&#x8003;&#xFF1A;<a href="http://www.cnblogs.com/Cmpl/archive/2012/01/01/2309710.html" target="_blank" rel="external">http://www.cnblogs.com/Cmpl/archive/2012/01/01/2309710.html</a></p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id="c-c-">C和C++的一些区别</h2>
-<p>在讲C和C++头文件的一些问题之前，我们先看下C和C++的一些区别：</p>
+    <summary type="html"><![CDATA[<h2 id="C&#x548C;C++&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;">C&#x548C;C++&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;</h2>
+<p>&#x5728;&#x8BB2;C&#x548C;C++&#x5934;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E0B;C&#x548C;C++&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x522B;&#xFF1A;</p>
 <ul>
-<li>C语言是一个结构化语言，它的重点在于<strong>算法和数据结构</strong>。</li>
-<li>C++则是首要考虑的是如何构造一个对象模型，让这个模型能够处理对应的问题域。
-所以它们最大区别是解决问题的思想不一样，所以说C++比C更加先进，因为C++融入了<strong>设计</strong>这个概念。</li>
+<li>C&#x8BED;&#x8A00;&#x662F;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x5316;&#x8BED;&#x8A00;&#xFF0C;&#x5B83;&#x7684;&#x91CD;&#x70B9;&#x5728;&#x4E8E;<strong>&#x7B97;&#x6CD5;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;</strong>&#x3002;</li>
+<li>C++&#x5219;&#x662F;&#x9996;&#x8981;&#x8003;&#x8651;&#x7684;&#x662F;&#x5982;&#x4F55;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;&#x80FD;&#x591F;&#x5904;&#x7406;&#x5BF9;&#x5E94;&#x7684;&#x95EE;&#x9898;&#x57DF;&#x3002;<br>&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x6700;&#x5927;&#x533A;&#x522B;&#x662F;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x7684;&#x601D;&#x60F3;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x4EE5;&#x8BF4;C++&#x6BD4;C&#x66F4;&#x52A0;&#x5148;&#x8FDB;&#xFF0C;&#x56E0;&#x4E3A;C++&#x878D;&#x5165;&#x4E86;<strong>&#x8BBE;&#x8BA1;</strong>&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;</li>
 </ul>
-<p>对语言本身而言，C是C++的子集，那么是什么样的一个子集？从上文可以看出， C实现了C++中过程化控制及其它相关功能，而在C++中的C（我称它为“C+”），相对于原来的C还有所加强：</p>
+<p>&#x5BF9;&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x800C;&#x8A00;&#xFF0C;C&#x662F;C++&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x90A3;&#x4E48;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#xFF1F;&#x4ECE;&#x4E0A;&#x6587;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C; C&#x5B9E;&#x73B0;&#x4E86;C++&#x4E2D;&#x8FC7;&#x7A0B;&#x5316;&#x63A7;&#x5236;&#x53CA;&#x5176;&#x5B83;&#x76F8;&#x5173;&#x529F;&#x80FD;&#xFF0C;&#x800C;&#x5728;C++&#x4E2D;&#x7684;C&#xFF08;&#x6211;&#x79F0;&#x5B83;&#x4E3A;&#x201C;C+&#x201D;&#xFF09;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x539F;&#x6765;&#x7684;C&#x8FD8;&#x6709;&#x6240;&#x52A0;&#x5F3A;&#xFF1A;</p>
 <ul>
-<li>引入了重载、内联函数、异常处理等等。</li>
-<li>C++更是拓展了面向对象设计的内容，如类、继承、虚函数、模板和包容器类等等。 </li>
-<li>在C++中，数据封装、类型这些东东已不是什么新鲜事了，需要考虑的是诸如：对象粒度的选择、对象接口的设计和继承、组合与继承的使用等等问题。</li>
+<li>&#x5F15;&#x5165;&#x4E86;&#x91CD;&#x8F7D;&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7B49;&#x7B49;&#x3002;</li>
+<li>C++&#x66F4;&#x662F;&#x62D3;&#x5C55;&#x4E86;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BBE;&#x8BA1;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x7C7B;&#x3001;&#x7EE7;&#x627F;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x6A21;&#x677F;&#x548C;&#x5305;&#x5BB9;&#x5668;&#x7C7B;&#x7B49;&#x7B49;&#x3002; </li>
+<li>&#x5728;C++&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x5C01;&#x88C5;&#x3001;&#x7C7B;&#x578B;&#x8FD9;&#x4E9B;&#x4E1C;&#x4E1C;&#x5DF2;&#x4E0D;&#x662F;&#x4EC0;&#x4E48;&#x65B0;&#x9C9C;&#x4E8B;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x8003;&#x8651;&#x7684;&#x662F;&#x8BF8;&#x5982;&#xFF1A;&#x5BF9;&#x8C61;&#x7C92;&#x5EA6;&#x7684;&#x9009;&#x62E9;&#x3001;&#x5BF9;&#x8C61;&#x63A5;&#x53E3;&#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x7EE7;&#x627F;&#x3001;&#x7EC4;&#x5408;&#x4E0E;&#x7EE7;&#x627F;&#x7684;&#x4F7F;&#x7528;&#x7B49;&#x7B49;&#x95EE;&#x9898;&#x3002;</li>
 </ul>
-<p>所以相对于C，C++包含了更丰富的“设计”的概念，但<strong>C是C++的一个自洽子集</strong>，也具有强大的功能，同样值得学习。</p>
+<p>&#x6240;&#x4EE5;&#x76F8;&#x5BF9;&#x4E8E;C&#xFF0C;C++&#x5305;&#x542B;&#x4E86;&#x66F4;&#x4E30;&#x5BCC;&#x7684;&#x201C;&#x8BBE;&#x8BA1;&#x201D;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x4F46;<strong>C&#x662F;C++&#x7684;&#x4E00;&#x4E2A;&#x81EA;&#x6D3D;&#x5B50;&#x96C6;</strong>&#xFF0C;&#x4E5F;&#x5177;&#x6709;&#x5F3A;&#x5927;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x540C;&#x6837;&#x503C;&#x5F97;&#x5B66;&#x4E60;&#x3002;</p>
 <p>]]></summary>
     
       <category term="编程技术" scheme="http://littlebean.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="C/C++" scheme="http://littlebean.github.io/categories/C/C++/"/>
+      <category term="C/C++" scheme="http://littlebean.github.io/categories/CC++/"/>
     
   </entry>
   
@@ -704,20 +644,15 @@ usingnamespace <span class="built_in">std</span> ;
     <id>http://littlebean.github.io/2014/01/31/goto-2014-from-2013/</id>
     <published>2014-01-31T15:35:16.000Z</published>
     <updated>2014-03-17T07:23:04.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="-2013">回顾2013</h2>
-<p>辞去的2013年中，1月初，经过了让我上升一个战斗值的--考研，考完到出分的时候肯定都是潇洒阶段，出分后，由于一直拖后腿的英语，差两分调剂到了浙大软件学院，但是还是要准备复试和浙大的PAT机试。由于总分稍微高点，复试和机试都是水过，现在成为了一名名义上的浙大人。在这里非常感谢那些陪我一起走完考研这条路的松妞妞、王大锤同学和本科班上的各位美女和帅哥们。<br/>
-就这样有浑浑噩噩的耍了几个月，7月份就去学校报到了，直到9月份，在这两个月期间，学习传说中的SSH框架，做了一个个人理财平台，也算是真正意义上的第一次项目经验。9月份正式开学，也在开学不久跟一位舍友<a href="http://xidianpanpei.github.io" target="_blank">P大神</a>进入了一个高大上的领域-云计算。我们研究的是目前比较火的OpenStack,开始的我听老师的安排，一个人负责了用Puppet自动部署的OpenStack平台。从无到自己慢慢摸索搞清楚了Puppet的一些大概机制。倒是缺乏OpenStack的部署实践经验，后来放了，接着为了学习OpenStack的更深入的东西，就进入OpenStack的网络组，开始了OpenStack的真正学习，由于基础不扎实，在其间碰到了好多问题，但也学到了好多东西。<br/></p>
-<h2 id="-2014">展望2014</h2>
-<p>经过了一个学期的研究生生涯，发现了自己的许多不足，有好多东西要学，那么这一年的目标很明确就是找一份理想的实习工作，在这里我要感谢我的父母对我的学业支持、我身边的好兄弟们和大金融的小伙伴们的帮助，希望大家在新的一年能够身体健康、万事如意、找到自己心仪的实习工作。<br/>
-<a id="more"></a>
-<img src="/img/2014/01/31/xueba.jpg" alt="我要当学霸"></p>
+    <content type="html"><![CDATA[<h2 id="&#x56DE;&#x987E;2013">&#x56DE;&#x987E;2013</h2>
+<p>&#x8F9E;&#x53BB;&#x7684;2013&#x5E74;&#x4E2D;&#xFF0C;1&#x6708;&#x521D;&#xFF0C;&#x7ECF;&#x8FC7;&#x4E86;&#x8BA9;&#x6211;&#x4E0A;&#x5347;&#x4E00;&#x4E2A;&#x6218;&#x6597;&#x503C;&#x7684;&#x2014;&#x8003;&#x7814;&#xFF0C;&#x8003;&#x5B8C;&#x5230;&#x51FA;&#x5206;&#x7684;&#x65F6;&#x5019;&#x80AF;&#x5B9A;&#x90FD;&#x662F;&#x6F47;&#x6D12;&#x9636;&#x6BB5;&#xFF0C;&#x51FA;&#x5206;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x4E00;&#x76F4;&#x62D6;&#x540E;&#x817F;&#x7684;&#x82F1;&#x8BED;&#xFF0C;&#x5DEE;&#x4E24;&#x5206;&#x8C03;&#x5242;&#x5230;&#x4E86;&#x6D59;&#x5927;&#x8F6F;&#x4EF6;&#x5B66;&#x9662;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x8981;&#x51C6;&#x5907;&#x590D;&#x8BD5;&#x548C;&#x6D59;&#x5927;&#x7684;PAT&#x673A;&#x8BD5;&#x3002;&#x7531;&#x4E8E;&#x603B;&#x5206;&#x7A0D;&#x5FAE;&#x9AD8;&#x70B9;&#xFF0C;&#x590D;&#x8BD5;&#x548C;&#x673A;&#x8BD5;&#x90FD;&#x662F;&#x6C34;&#x8FC7;&#xFF0C;&#x73B0;&#x5728;&#x6210;&#x4E3A;&#x4E86;&#x4E00;&#x540D;&#x540D;&#x4E49;&#x4E0A;&#x7684;&#x6D59;&#x5927;&#x4EBA;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x975E;&#x5E38;&#x611F;&#x8C22;&#x90A3;&#x4E9B;&#x966A;&#x6211;&#x4E00;&#x8D77;&#x8D70;&#x5B8C;&#x8003;&#x7814;&#x8FD9;&#x6761;&#x8DEF;&#x7684;&#x677E;&#x599E;&#x599E;&#x3001;&#x738B;&#x5927;&#x9524;&#x540C;&#x5B66;&#x548C;&#x672C;&#x79D1;&#x73ED;&#x4E0A;&#x7684;&#x5404;&#x4F4D;&#x7F8E;&#x5973;&#x548C;&#x5E05;&#x54E5;&#x4EEC;&#x3002;<br><br>&#x5C31;&#x8FD9;&#x6837;&#x6709;&#x6D51;&#x6D51;&#x5669;&#x5669;&#x7684;&#x800D;&#x4E86;&#x51E0;&#x4E2A;&#x6708;&#xFF0C;7&#x6708;&#x4EFD;&#x5C31;&#x53BB;&#x5B66;&#x6821;&#x62A5;&#x5230;&#x4E86;&#xFF0C;&#x76F4;&#x5230;9&#x6708;&#x4EFD;&#xFF0C;&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x6708;&#x671F;&#x95F4;&#xFF0C;&#x5B66;&#x4E60;&#x4F20;&#x8BF4;&#x4E2D;&#x7684;SSH&#x6846;&#x67B6;&#xFF0C;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x7406;&#x8D22;&#x5E73;&#x53F0;&#xFF0C;&#x4E5F;&#x7B97;&#x662F;&#x771F;&#x6B63;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x7B2C;&#x4E00;&#x6B21;&#x9879;&#x76EE;&#x7ECF;&#x9A8C;&#x3002;9&#x6708;&#x4EFD;&#x6B63;&#x5F0F;&#x5F00;&#x5B66;&#xFF0C;&#x4E5F;&#x5728;&#x5F00;&#x5B66;&#x4E0D;&#x4E45;&#x8DDF;&#x4E00;&#x4F4D;&#x820D;&#x53CB;<a href="http://xidianpanpei.github.io" target="_blank" rel="external">P&#x5927;&#x795E;</a>&#x8FDB;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x9AD8;&#x5927;&#x4E0A;&#x7684;&#x9886;&#x57DF;-&#x4E91;&#x8BA1;&#x7B97;&#x3002;&#x6211;&#x4EEC;&#x7814;&#x7A76;&#x7684;&#x662F;&#x76EE;&#x524D;&#x6BD4;&#x8F83;&#x706B;&#x7684;OpenStack,&#x5F00;&#x59CB;&#x7684;&#x6211;&#x542C;&#x8001;&#x5E08;&#x7684;&#x5B89;&#x6392;&#xFF0C;&#x4E00;&#x4E2A;&#x4EBA;&#x8D1F;&#x8D23;&#x4E86;&#x7528;Puppet&#x81EA;&#x52A8;&#x90E8;&#x7F72;&#x7684;OpenStack&#x5E73;&#x53F0;&#x3002;&#x4ECE;&#x65E0;&#x5230;&#x81EA;&#x5DF1;&#x6162;&#x6162;&#x6478;&#x7D22;&#x641E;&#x6E05;&#x695A;&#x4E86;Puppet&#x7684;&#x4E00;&#x4E9B;&#x5927;&#x6982;&#x673A;&#x5236;&#x3002;&#x5012;&#x662F;&#x7F3A;&#x4E4F;OpenStack&#x7684;&#x90E8;&#x7F72;&#x5B9E;&#x8DF5;&#x7ECF;&#x9A8C;&#xFF0C;&#x540E;&#x6765;&#x653E;&#x4E86;&#xFF0C;&#x63A5;&#x7740;&#x4E3A;&#x4E86;&#x5B66;&#x4E60;OpenStack&#x7684;&#x66F4;&#x6DF1;&#x5165;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5C31;&#x8FDB;&#x5165;OpenStack&#x7684;&#x7F51;&#x7EDC;&#x7EC4;&#xFF0C;&#x5F00;&#x59CB;&#x4E86;OpenStack&#x7684;&#x771F;&#x6B63;&#x5B66;&#x4E60;&#xFF0C;&#x7531;&#x4E8E;&#x57FA;&#x7840;&#x4E0D;&#x624E;&#x5B9E;&#xFF0C;&#x5728;&#x5176;&#x95F4;&#x78B0;&#x5230;&#x4E86;&#x597D;&#x591A;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x4E5F;&#x5B66;&#x5230;&#x4E86;&#x597D;&#x591A;&#x4E1C;&#x897F;&#x3002;<br></p>
+<h2 id="&#x5C55;&#x671B;2014">&#x5C55;&#x671B;2014</h2>
+<p>&#x7ECF;&#x8FC7;&#x4E86;&#x4E00;&#x4E2A;&#x5B66;&#x671F;&#x7684;&#x7814;&#x7A76;&#x751F;&#x751F;&#x6DAF;&#xFF0C;&#x53D1;&#x73B0;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x8BB8;&#x591A;&#x4E0D;&#x8DB3;&#xFF0C;&#x6709;&#x597D;&#x591A;&#x4E1C;&#x897F;&#x8981;&#x5B66;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E00;&#x5E74;&#x7684;&#x76EE;&#x6807;&#x5F88;&#x660E;&#x786E;&#x5C31;&#x662F;&#x627E;&#x4E00;&#x4EFD;&#x7406;&#x60F3;&#x7684;&#x5B9E;&#x4E60;&#x5DE5;&#x4F5C;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x8981;&#x611F;&#x8C22;&#x6211;&#x7684;&#x7236;&#x6BCD;&#x5BF9;&#x6211;&#x7684;&#x5B66;&#x4E1A;&#x652F;&#x6301;&#x3001;&#x6211;&#x8EAB;&#x8FB9;&#x7684;&#x597D;&#x5144;&#x5F1F;&#x4EEC;&#x548C;&#x5927;&#x91D1;&#x878D;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x4EEC;&#x7684;&#x5E2E;&#x52A9;&#xFF0C;&#x5E0C;&#x671B;&#x5927;&#x5BB6;&#x5728;&#x65B0;&#x7684;&#x4E00;&#x5E74;&#x80FD;&#x591F;&#x8EAB;&#x4F53;&#x5065;&#x5EB7;&#x3001;&#x4E07;&#x4E8B;&#x5982;&#x610F;&#x3001;&#x627E;&#x5230;&#x81EA;&#x5DF1;&#x5FC3;&#x4EEA;&#x7684;&#x5B9E;&#x4E60;&#x5DE5;&#x4F5C;&#x3002;<br><br><a id="more"></a><br><img src="/img/2014/01/31/xueba.jpg" alt="&#x6211;&#x8981;&#x5F53;&#x5B66;&#x9738;"></p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id="-2013">回顾2013</h2>
-<p>辞去的2013年中，1月初，经过了让我上升一个战斗值的--考研，考完到出分的时候肯定都是潇洒阶段，出分后，由于一直拖后腿的英语，差两分调剂到了浙大软件学院，但是还是要准备复试和浙大的PAT机试。由于总分稍微高点，复试和机试都是水过，现在成为了一名名义上的浙大人。在这里非常感谢那些陪我一起走完考研这条路的松妞妞、王大锤同学和本科班上的各位美女和帅哥们。<br/>
-就这样有浑浑噩噩的耍了几个月，7月份就去学校报到了，直到9月份，在这两个月期间，学习传说中的SSH框架，做了一个个人理财平台，也算是真正意义上的第一次项目经验。9月份正式开学，也在开学不久跟一位舍友<a href="http://xidianpanpei.github.io" target="_blank">P大神</a>进入了一个高大上的领域-云计算。我们研究的是目前比较火的OpenStack,开始的我听老师的安排，一个人负责了用Puppet自动部署的OpenStack平台。从无到自己慢慢摸索搞清楚了Puppet的一些大概机制。倒是缺乏OpenStack的部署实践经验，后来放了，接着为了学习OpenStack的更深入的东西，就进入OpenStack的网络组，开始了OpenStack的真正学习，由于基础不扎实，在其间碰到了好多问题，但也学到了好多东西。<br/></p>
-<h2 id="-2014">展望2014</h2>
-<p>经过了一个学期的研究生生涯，发现了自己的许多不足，有好多东西要学，那么这一年的目标很明确就是找一份理想的实习工作，在这里我要感谢我的父母对我的学业支持、我身边的好兄弟们和大金融的小伙伴们的帮助，希望大家在新的一年能够身体健康、万事如意、找到自己心仪的实习工作。<br/>
-]]></summary>
+    <summary type="html"><![CDATA[<h2 id="&#x56DE;&#x987E;2013">&#x56DE;&#x987E;2013</h2>
+<p>&#x8F9E;&#x53BB;&#x7684;2013&#x5E74;&#x4E2D;&#xFF0C;1&#x6708;&#x521D;&#xFF0C;&#x7ECF;&#x8FC7;&#x4E86;&#x8BA9;&#x6211;&#x4E0A;&#x5347;&#x4E00;&#x4E2A;&#x6218;&#x6597;&#x503C;&#x7684;&#x2014;&#x8003;&#x7814;&#xFF0C;&#x8003;&#x5B8C;&#x5230;&#x51FA;&#x5206;&#x7684;&#x65F6;&#x5019;&#x80AF;&#x5B9A;&#x90FD;&#x662F;&#x6F47;&#x6D12;&#x9636;&#x6BB5;&#xFF0C;&#x51FA;&#x5206;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x4E00;&#x76F4;&#x62D6;&#x540E;&#x817F;&#x7684;&#x82F1;&#x8BED;&#xFF0C;&#x5DEE;&#x4E24;&#x5206;&#x8C03;&#x5242;&#x5230;&#x4E86;&#x6D59;&#x5927;&#x8F6F;&#x4EF6;&#x5B66;&#x9662;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x8981;&#x51C6;&#x5907;&#x590D;&#x8BD5;&#x548C;&#x6D59;&#x5927;&#x7684;PAT&#x673A;&#x8BD5;&#x3002;&#x7531;&#x4E8E;&#x603B;&#x5206;&#x7A0D;&#x5FAE;&#x9AD8;&#x70B9;&#xFF0C;&#x590D;&#x8BD5;&#x548C;&#x673A;&#x8BD5;&#x90FD;&#x662F;&#x6C34;&#x8FC7;&#xFF0C;&#x73B0;&#x5728;&#x6210;&#x4E3A;&#x4E86;&#x4E00;&#x540D;&#x540D;&#x4E49;&#x4E0A;&#x7684;&#x6D59;&#x5927;&#x4EBA;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x975E;&#x5E38;&#x611F;&#x8C22;&#x90A3;&#x4E9B;&#x966A;&#x6211;&#x4E00;&#x8D77;&#x8D70;&#x5B8C;&#x8003;&#x7814;&#x8FD9;&#x6761;&#x8DEF;&#x7684;&#x677E;&#x599E;&#x599E;&#x3001;&#x738B;&#x5927;&#x9524;&#x540C;&#x5B66;&#x548C;&#x672C;&#x79D1;&#x73ED;&#x4E0A;&#x7684;&#x5404;&#x4F4D;&#x7F8E;&#x5973;&#x548C;&#x5E05;&#x54E5;&#x4EEC;&#x3002;<br><br>&#x5C31;&#x8FD9;&#x6837;&#x6709;&#x6D51;&#x6D51;&#x5669;&#x5669;&#x7684;&#x800D;&#x4E86;&#x51E0;&#x4E2A;&#x6708;&#xFF0C;7&#x6708;&#x4EFD;&#x5C31;&#x53BB;&#x5B66;&#x6821;&#x62A5;&#x5230;&#x4E86;&#xFF0C;&#x76F4;&#x5230;9&#x6708;&#x4EFD;&#xFF0C;&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x6708;&#x671F;&#x95F4;&#xFF0C;&#x5B66;&#x4E60;&#x4F20;&#x8BF4;&#x4E2D;&#x7684;SSH&#x6846;&#x67B6;&#xFF0C;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x7406;&#x8D22;&#x5E73;&#x53F0;&#xFF0C;&#x4E5F;&#x7B97;&#x662F;&#x771F;&#x6B63;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x7B2C;&#x4E00;&#x6B21;&#x9879;&#x76EE;&#x7ECF;&#x9A8C;&#x3002;9&#x6708;&#x4EFD;&#x6B63;&#x5F0F;&#x5F00;&#x5B66;&#xFF0C;&#x4E5F;&#x5728;&#x5F00;&#x5B66;&#x4E0D;&#x4E45;&#x8DDF;&#x4E00;&#x4F4D;&#x820D;&#x53CB;<a href="http://xidianpanpei.github.io" target="_blank" rel="external">P&#x5927;&#x795E;</a>&#x8FDB;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x9AD8;&#x5927;&#x4E0A;&#x7684;&#x9886;&#x57DF;-&#x4E91;&#x8BA1;&#x7B97;&#x3002;&#x6211;&#x4EEC;&#x7814;&#x7A76;&#x7684;&#x662F;&#x76EE;&#x524D;&#x6BD4;&#x8F83;&#x706B;&#x7684;OpenStack,&#x5F00;&#x59CB;&#x7684;&#x6211;&#x542C;&#x8001;&#x5E08;&#x7684;&#x5B89;&#x6392;&#xFF0C;&#x4E00;&#x4E2A;&#x4EBA;&#x8D1F;&#x8D23;&#x4E86;&#x7528;Puppet&#x81EA;&#x52A8;&#x90E8;&#x7F72;&#x7684;OpenStack&#x5E73;&#x53F0;&#x3002;&#x4ECE;&#x65E0;&#x5230;&#x81EA;&#x5DF1;&#x6162;&#x6162;&#x6478;&#x7D22;&#x641E;&#x6E05;&#x695A;&#x4E86;Puppet&#x7684;&#x4E00;&#x4E9B;&#x5927;&#x6982;&#x673A;&#x5236;&#x3002;&#x5012;&#x662F;&#x7F3A;&#x4E4F;OpenStack&#x7684;&#x90E8;&#x7F72;&#x5B9E;&#x8DF5;&#x7ECF;&#x9A8C;&#xFF0C;&#x540E;&#x6765;&#x653E;&#x4E86;&#xFF0C;&#x63A5;&#x7740;&#x4E3A;&#x4E86;&#x5B66;&#x4E60;OpenStack&#x7684;&#x66F4;&#x6DF1;&#x5165;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5C31;&#x8FDB;&#x5165;OpenStack&#x7684;&#x7F51;&#x7EDC;&#x7EC4;&#xFF0C;&#x5F00;&#x59CB;&#x4E86;OpenStack&#x7684;&#x771F;&#x6B63;&#x5B66;&#x4E60;&#xFF0C;&#x7531;&#x4E8E;&#x57FA;&#x7840;&#x4E0D;&#x624E;&#x5B9E;&#xFF0C;&#x5728;&#x5176;&#x95F4;&#x78B0;&#x5230;&#x4E86;&#x597D;&#x591A;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x4E5F;&#x5B66;&#x5230;&#x4E86;&#x597D;&#x591A;&#x4E1C;&#x897F;&#x3002;<br></p>
+<h2 id="&#x5C55;&#x671B;2014">&#x5C55;&#x671B;2014</h2>
+<p>&#x7ECF;&#x8FC7;&#x4E86;&#x4E00;&#x4E2A;&#x5B66;&#x671F;&#x7684;&#x7814;&#x7A76;&#x751F;&#x751F;&#x6DAF;&#xFF0C;&#x53D1;&#x73B0;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x8BB8;&#x591A;&#x4E0D;&#x8DB3;&#xFF0C;&#x6709;&#x597D;&#x591A;&#x4E1C;&#x897F;&#x8981;&#x5B66;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E00;&#x5E74;&#x7684;&#x76EE;&#x6807;&#x5F88;&#x660E;&#x786E;&#x5C31;&#x662F;&#x627E;&#x4E00;&#x4EFD;&#x7406;&#x60F3;&#x7684;&#x5B9E;&#x4E60;&#x5DE5;&#x4F5C;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x8981;&#x611F;&#x8C22;&#x6211;&#x7684;&#x7236;&#x6BCD;&#x5BF9;&#x6211;&#x7684;&#x5B66;&#x4E1A;&#x652F;&#x6301;&#x3001;&#x6211;&#x8EAB;&#x8FB9;&#x7684;&#x597D;&#x5144;&#x5F1F;&#x4EEC;&#x548C;&#x5927;&#x91D1;&#x878D;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x4EEC;&#x7684;&#x5E2E;&#x52A9;&#xFF0C;&#x5E0C;&#x671B;&#x5927;&#x5BB6;&#x5728;&#x65B0;&#x7684;&#x4E00;&#x5E74;&#x80FD;&#x591F;&#x8EAB;&#x4F53;&#x5065;&#x5EB7;&#x3001;&#x4E07;&#x4E8B;&#x5982;&#x610F;&#x3001;&#x627E;&#x5230;&#x81EA;&#x5DF1;&#x5FC3;&#x4EEA;&#x7684;&#x5B9E;&#x4E60;&#x5DE5;&#x4F5C;&#x3002;<br><br>]]></summary>
     
       <category term="生活点滴" scheme="http://littlebean.github.io/tags/%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/"/>
     
@@ -731,21 +666,15 @@ usingnamespace <span class="built_in">std</span> ;
     <id>http://littlebean.github.io/2013/08/19/win7远程连接全屏/</id>
     <published>2013-08-18T18:58:49.000Z</published>
     <updated>2014-03-17T07:22:34.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="-">问题：</h2>
-<p><br/>
-Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与远程桌面一样大小或者比桌面小【最大化之后还是没有全屏】，而不是全屏；但“最大化”按钮显示窗口已处于最大化状态。如果您单击“最大化”按钮，窗口不能正常进入全屏模式，而是还原为比远程桌面略小。  </p>
-<h2 id="-">解决办法：</h2>
-<p><br/>
-<strong>打开mstsc--选项--显示--显示配置--把滑动按钮滑动到最右边即全屏。</strong>
-<a id="more"></a></p>
+    <content type="html"><![CDATA[<h2 id="&#x95EE;&#x9898;&#xFF1A;">&#x95EE;&#x9898;&#xFF1A;</h2>
+<p><br><br>Windows7&#x4E0B;Mstsc&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x78B0;&#x5230;&#x8FDE;&#x63A5;&#x5BA2;&#x6237;&#x7AEF;&#x65F6;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x7A97;&#x53E3;&#x4E0E;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#x4E00;&#x6837;&#x5927;&#x5C0F;&#x6216;&#x8005;&#x6BD4;&#x684C;&#x9762;&#x5C0F;&#x3010;&#x6700;&#x5927;&#x5316;&#x4E4B;&#x540E;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x5168;&#x5C4F;&#x3011;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5168;&#x5C4F;&#xFF1B;&#x4F46;&#x201C;&#x6700;&#x5927;&#x5316;&#x201D;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7A97;&#x53E3;&#x5DF2;&#x5904;&#x4E8E;&#x6700;&#x5927;&#x5316;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5355;&#x51FB;&#x201C;&#x6700;&#x5927;&#x5316;&#x201D;&#x6309;&#x94AE;&#xFF0C;&#x7A97;&#x53E3;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x8FDB;&#x5165;&#x5168;&#x5C4F;&#x6A21;&#x5F0F;&#xFF0C;&#x800C;&#x662F;&#x8FD8;&#x539F;&#x4E3A;&#x6BD4;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#x7565;&#x5C0F;&#x3002;  </p>
+<h2 id="&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;">&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;</h2>
+<p><br><br><strong>&#x6253;&#x5F00;mstsc&#x2014;&#x9009;&#x9879;&#x2014;&#x663E;&#x793A;&#x2014;&#x663E;&#x793A;&#x914D;&#x7F6E;&#x2014;&#x628A;&#x6ED1;&#x52A8;&#x6309;&#x94AE;&#x6ED1;&#x52A8;&#x5230;&#x6700;&#x53F3;&#x8FB9;&#x5373;&#x5168;&#x5C4F;&#x3002;</strong><br><a id="more"></a></p>
 ]]></content>
-    <summary type="html"><![CDATA[<h2 id="-">问题：</h2>
-<p><br/>
-Windows7下Mstsc使用的时候会碰到连接客户端时，会发现窗口与远程桌面一样大小或者比桌面小【最大化之后还是没有全屏】，而不是全屏；但“最大化”按钮显示窗口已处于最大化状态。如果您单击“最大化”按钮，窗口不能正常进入全屏模式，而是还原为比远程桌面略小。  </p>
-<h2 id="-">解决办法：</h2>
-<p><br/>
-<strong>打开mstsc--选项--显示--显示配置--把滑动按钮滑动到最右边即全屏。</strong>
-]]></summary>
+    <summary type="html"><![CDATA[<h2 id="&#x95EE;&#x9898;&#xFF1A;">&#x95EE;&#x9898;&#xFF1A;</h2>
+<p><br><br>Windows7&#x4E0B;Mstsc&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x78B0;&#x5230;&#x8FDE;&#x63A5;&#x5BA2;&#x6237;&#x7AEF;&#x65F6;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x7A97;&#x53E3;&#x4E0E;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#x4E00;&#x6837;&#x5927;&#x5C0F;&#x6216;&#x8005;&#x6BD4;&#x684C;&#x9762;&#x5C0F;&#x3010;&#x6700;&#x5927;&#x5316;&#x4E4B;&#x540E;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x5168;&#x5C4F;&#x3011;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5168;&#x5C4F;&#xFF1B;&#x4F46;&#x201C;&#x6700;&#x5927;&#x5316;&#x201D;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7A97;&#x53E3;&#x5DF2;&#x5904;&#x4E8E;&#x6700;&#x5927;&#x5316;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5355;&#x51FB;&#x201C;&#x6700;&#x5927;&#x5316;&#x201D;&#x6309;&#x94AE;&#xFF0C;&#x7A97;&#x53E3;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x8FDB;&#x5165;&#x5168;&#x5C4F;&#x6A21;&#x5F0F;&#xFF0C;&#x800C;&#x662F;&#x8FD8;&#x539F;&#x4E3A;&#x6BD4;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#x7565;&#x5C0F;&#x3002;  </p>
+<h2 id="&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;">&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;</h2>
+<p><br><br><strong>&#x6253;&#x5F00;mstsc&#x2014;&#x9009;&#x9879;&#x2014;&#x663E;&#x793A;&#x2014;&#x663E;&#x793A;&#x914D;&#x7F6E;&#x2014;&#x628A;&#x6ED1;&#x52A8;&#x6309;&#x94AE;&#x6ED1;&#x52A8;&#x5230;&#x6700;&#x53F3;&#x8FB9;&#x5373;&#x5168;&#x5C4F;&#x3002;</strong><br>]]></summary>
     
       <category term="日常问题" scheme="http://littlebean.github.io/tags/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/"/>
     

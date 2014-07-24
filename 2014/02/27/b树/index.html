@@ -106,34 +106,28 @@
 
     <div class="entry">
       
-        <h2 id="-">引言</h2>
-<p>B树（B-tree）是一种树状数据结构，它能够存储数据、对其进行排序并允许以O(log n)的时间复杂度运行进行查找、顺序读取、插入和删除的数据结构。B树，概括来说是一个节点可以拥有多于2个子节点的二叉查找树。与自平衡二叉查找树不同，B-树为系统最优化大块数据的读和写操作。B-tree算法减少定位记录时所经历的中间过程，从而加快存取速度。普遍运用在数据库和文件系统。
-一棵M阶的B-Tree满足以下条件：</p>
+        <h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>B&#x6811;&#xFF08;B-tree&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x6811;&#x72B6;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3001;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x5E76;&#x5141;&#x8BB8;&#x4EE5;O(log n)&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8FD0;&#x884C;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3001;&#x987A;&#x5E8F;&#x8BFB;&#x53D6;&#x3001;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;B&#x6811;&#xFF0C;&#x6982;&#x62EC;&#x6765;&#x8BF4;&#x662F;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x591A;&#x4E8E;2&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x3002;&#x4E0E;&#x81EA;&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x4E0D;&#x540C;&#xFF0C;B-&#x6811;&#x4E3A;&#x7CFB;&#x7EDF;&#x6700;&#x4F18;&#x5316;&#x5927;&#x5757;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x548C;&#x5199;&#x64CD;&#x4F5C;&#x3002;B-tree&#x7B97;&#x6CD5;&#x51CF;&#x5C11;&#x5B9A;&#x4F4D;&#x8BB0;&#x5F55;&#x65F6;&#x6240;&#x7ECF;&#x5386;&#x7684;&#x4E2D;&#x95F4;&#x8FC7;&#x7A0B;&#xFF0C;&#x4ECE;&#x800C;&#x52A0;&#x5FEB;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x3002;&#x666E;&#x904D;&#x8FD0;&#x7528;&#x5728;&#x6570;&#x636E;&#x5E93;&#x548C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;<br>&#x4E00;&#x68F5;M&#x9636;&#x7684;B-Tree&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x6761;&#x4EF6;&#xFF1A;</p>
 <ol>
-<li>每个结点至多有M个孩子；</li>
-<li>除根结点和叶结点外，其它每个结点至少有M/2个孩子；</li>
-<li>根结点至少有两个孩子（除非该树仅包含一个结点）；</li>
-<li>所有叶结点在同一层，叶结点不包含任何关键字信息；</li>
-<li>有K个关键字的非叶结点恰好包含K+1个孩子；<a id="more"></a>
+<li>&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x81F3;&#x591A;&#x6709;M&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;</li>
+<li>&#x9664;&#x6839;&#x7ED3;&#x70B9;&#x548C;&#x53F6;&#x7ED3;&#x70B9;&#x5916;&#xFF0C;&#x5176;&#x5B83;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x81F3;&#x5C11;&#x6709;M/2&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;</li>
+<li>&#x6839;&#x7ED3;&#x70B9;&#x81F3;&#x5C11;&#x6709;&#x4E24;&#x4E2A;&#x5B69;&#x5B50;&#xFF08;&#x9664;&#x975E;&#x8BE5;&#x6811;&#x4EC5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF09;&#xFF1B;</li>
+<li>&#x6240;&#x6709;&#x53F6;&#x7ED3;&#x70B9;&#x5728;&#x540C;&#x4E00;&#x5C42;&#xFF0C;&#x53F6;&#x7ED3;&#x70B9;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x5173;&#x952E;&#x5B57;&#x4FE1;&#x606F;&#xFF1B;</li>
+<li>&#x6709;K&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x7684;&#x975E;&#x53F6;&#x7ED3;&#x70B9;&#x6070;&#x597D;&#x5305;&#x542B;K+1&#x4E2A;&#x5B69;&#x5B50;&#xFF1B;<a id="more"></a>
 
 
 </li>
 </ol>
-<p>另外，对于一个结点，其内部的关键字是从小到大排序的。以下是B-Tree（M=3）的样例:<br/>
-<img src="http://liitlebean.qiniudn.com/2014/2/27/b-.jpg" alt="B树"></p>
-<h2 id="b-">B树的插入和生成</h2>
-<p><strong>B树的插入</strong><br/>
-对高度为H的M阶B树，新结点一般插在H层。通过检索可以确定新添加的关键码应该插在哪个结点位置。然后分为两种情况</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x5176;&#x5185;&#x90E8;&#x7684;&#x5173;&#x952E;&#x5B57;&#x662F;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5E8F;&#x7684;&#x3002;&#x4EE5;&#x4E0B;&#x662F;B-Tree&#xFF08;M=3&#xFF09;&#x7684;&#x6837;&#x4F8B;:<br><br><img src="http://liitlebean.qiniudn.com/2014/2/27/b-.jpg" alt="B&#x6811;"></p>
+<h2 id="B&#x6811;&#x7684;&#x63D2;&#x5165;&#x548C;&#x751F;&#x6210;">B&#x6811;&#x7684;&#x63D2;&#x5165;&#x548C;&#x751F;&#x6210;</h2>
+<p><strong>B&#x6811;&#x7684;&#x63D2;&#x5165;</strong><br><br>&#x5BF9;&#x9AD8;&#x5EA6;&#x4E3A;H&#x7684;M&#x9636;B&#x6811;&#xFF0C;&#x65B0;&#x7ED3;&#x70B9;&#x4E00;&#x822C;&#x63D2;&#x5728;H&#x5C42;&#x3002;&#x901A;&#x8FC7;&#x68C0;&#x7D22;&#x53EF;&#x4EE5;&#x786E;&#x5B9A;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x5173;&#x952E;&#x7801;&#x5E94;&#x8BE5;&#x63D2;&#x5728;&#x54EA;&#x4E2A;&#x7ED3;&#x70B9;&#x4F4D;&#x7F6E;&#x3002;&#x7136;&#x540E;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x60C5;&#x51B5;</p>
 <ol>
-<li>若该结点的关键码个数小于M-1，则直接插入；</li>
-<li>若该结点中关键字等于M-1.则引起分裂，以中间关键码为界将结点一分为二，然后将中间关键码插入到父节点中；</li>
-<li>重复上述工作，最坏的情况是一直分裂到根结点，那么熟整个B树的高度+1；</li>
+<li>&#x82E5;&#x8BE5;&#x7ED3;&#x70B9;&#x7684;&#x5173;&#x952E;&#x7801;&#x4E2A;&#x6570;&#x5C0F;&#x4E8E;M-1&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#xFF1B;</li>
+<li>&#x82E5;&#x8BE5;&#x7ED3;&#x70B9;&#x4E2D;&#x5173;&#x952E;&#x5B57;&#x7B49;&#x4E8E;M-1.&#x5219;&#x5F15;&#x8D77;&#x5206;&#x88C2;&#xFF0C;&#x4EE5;&#x4E2D;&#x95F4;&#x5173;&#x952E;&#x7801;&#x4E3A;&#x754C;&#x5C06;&#x7ED3;&#x70B9;&#x4E00;&#x5206;&#x4E3A;&#x4E8C;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x4E2D;&#x95F4;&#x5173;&#x952E;&#x7801;&#x63D2;&#x5165;&#x5230;&#x7236;&#x8282;&#x70B9;&#x4E2D;&#xFF1B;</li>
+<li>&#x91CD;&#x590D;&#x4E0A;&#x8FF0;&#x5DE5;&#x4F5C;&#xFF0C;&#x6700;&#x574F;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x4E00;&#x76F4;&#x5206;&#x88C2;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#xFF0C;&#x90A3;&#x4E48;&#x719F;&#x6574;&#x4E2A;B&#x6811;&#x7684;&#x9AD8;&#x5EA6;+1&#xFF1B;</li>
 </ol>
-<p><strong>B树的生成</strong><br/>
-B树的生成其实就是B树从空的状态下，将结点一个一个插入的过程。</p>
-<p>参考：<br/>
-<a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html" target="_blank"><a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html">http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html</a></a><br/>
-<a href="http://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank"><a href="http://zh.wikipedia.org/wiki/B%E6%A0%91">http://zh.wikipedia.org/wiki/B%E6%A0%91</a></a></p>
+<p><strong>B&#x6811;&#x7684;&#x751F;&#x6210;</strong><br><br>B&#x6811;&#x7684;&#x751F;&#x6210;&#x5176;&#x5B9E;&#x5C31;&#x662F;B&#x6811;&#x4ECE;&#x7A7A;&#x7684;&#x72B6;&#x6001;&#x4E0B;&#xFF0C;&#x5C06;&#x7ED3;&#x70B9;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x63D2;&#x5165;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x53C2;&#x8003;&#xFF1A;<br><br><a href="http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html" target="_blank" rel="external">http://www.cnblogs.com/kissknife/archive/2009/03/30/1425534.html</a><br><br><a href="http://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank" rel="external">http://zh.wikipedia.org/wiki/B%E6%A0%91</a></p>
 
       
     </div>
@@ -184,11 +178,11 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
       </li>
     
       <li>
-        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+        <a href="/2014/03/15/stl实现的底层数据结构有哪些？/"></a>
       </li>
     
       <li>
-        <a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
       </li>
     
       <li>
@@ -243,17 +237,15 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
+    <li><a href="/categories/CC++/">C/C++</a><small>3</small></li>
   
-    <li><a href="/categories/STL/">STL</a><small>2</small></li>
+    <li><a href="/categories/STL/">STL</a><small>1</small></li>
   
     <li><a href="/categories/总结/">总结</a><small>1</small></li>
   
     <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
   
     <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
-  
-    <li><a href="/categories/STL/数据结构/">数据结构</a><small>1</small></li>
   
     <li><a href="/categories/电脑常识/">电脑常识</a><small>1</small></li>
   
@@ -269,13 +261,13 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/C/C++/">C/C++</a><small>1</small></li>
+    <li><a href="/tags/CC++/">C/C++</a><small>1</small></li>
   
     <li><a href="/tags/日常问题/">日常问题</a><small>1</small></li>
   
     <li><a href="/tags/生活点滴/">生活点滴</a><small>1</small></li>
   
-    <li><a href="/tags/编程技术/">编程技术</a><small>6</small></li>
+    <li><a href="/tags/编程技术/">编程技术</a><small>5</small></li>
   
   </ul>
 </div>

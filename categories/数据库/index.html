@@ -115,13 +115,12 @@
 
     <div class="entry">
       
-        <h2 id="-">引言</h2>
-<p>为了找实习，听到试水同学的热乎乎的面筋后，需要了解数据库的知识，就去图书馆借了本“锋利的SQL”复习一下数据库知识，看到了索引这个东西，感觉需要深入的研究一下，于是在网上找了几片文章看看。</p>
-<h2 id="b-">B树</h2>
-<p>我们常见的数据库系统，其索引使用的数据结构多是B-Tree或者B+Tree。例如，MsSql使用的是B+Tree，Oracle及Sysbase使用的是B-Tree。简单地介绍一下<a href ="http://littlebean.github.io/2014/02/27/b%E6%A0%91/">B-Tree</a>。</p>
-<h2 id="-">数据库的索引</h2>
-<p>如果你的表数据日常更新比较少，应当使用索引技术，因为通过索引可以减少为返回查询结果集必须读取的数据量。如果你的表经常需要执行插入、删除、修改操作，过多的索引则会导致数据维护性能的减弱，因为在维护这些数据的同时，数据引擎还要维护这些索引。
-
+        <h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x4E3A;&#x4E86;&#x627E;&#x5B9E;&#x4E60;&#xFF0C;&#x542C;&#x5230;&#x8BD5;&#x6C34;&#x540C;&#x5B66;&#x7684;&#x70ED;&#x4E4E;&#x4E4E;&#x7684;&#x9762;&#x7B4B;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x6570;&#x636E;&#x5E93;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x5C31;&#x53BB;&#x56FE;&#x4E66;&#x9986;&#x501F;&#x4E86;&#x672C;&#x201C;&#x950B;&#x5229;&#x7684;SQL&#x201D;&#x590D;&#x4E60;&#x4E00;&#x4E0B;&#x6570;&#x636E;&#x5E93;&#x77E5;&#x8BC6;&#xFF0C;&#x770B;&#x5230;&#x4E86;&#x7D22;&#x5F15;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#xFF0C;&#x611F;&#x89C9;&#x9700;&#x8981;&#x6DF1;&#x5165;&#x7684;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#xFF0C;&#x4E8E;&#x662F;&#x5728;&#x7F51;&#x4E0A;&#x627E;&#x4E86;&#x51E0;&#x7247;&#x6587;&#x7AE0;&#x770B;&#x770B;&#x3002;</p>
+<h2 id="B&#x6811;">B&#x6811;</h2>
+<p>&#x6211;&#x4EEC;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x7D22;&#x5F15;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x591A;&#x662F;B-Tree&#x6216;&#x8005;B+Tree&#x3002;&#x4F8B;&#x5982;&#xFF0C;MsSql&#x4F7F;&#x7528;&#x7684;&#x662F;B+Tree&#xFF0C;Oracle&#x53CA;Sysbase&#x4F7F;&#x7528;&#x7684;&#x662F;B-Tree&#x3002;&#x7B80;&#x5355;&#x5730;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;<a href="http://littlebean.github.io/2014/02/27/b%E6%A0%91/" target="_blank" rel="external">B-Tree</a>&#x3002;</p>
+<h2 id="&#x6570;&#x636E;&#x5E93;&#x7684;&#x7D22;&#x5F15;">&#x6570;&#x636E;&#x5E93;&#x7684;&#x7D22;&#x5F15;</h2>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x8868;&#x6570;&#x636E;&#x65E5;&#x5E38;&#x66F4;&#x65B0;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x5E94;&#x5F53;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x6280;&#x672F;&#xFF0C;&#x56E0;&#x4E3A;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x4E3A;&#x8FD4;&#x56DE;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x96C6;&#x5FC5;&#x987B;&#x8BFB;&#x53D6;&#x7684;&#x6570;&#x636E;&#x91CF;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x8868;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x6267;&#x884C;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x3001;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#xFF0C;&#x8FC7;&#x591A;&#x7684;&#x7D22;&#x5F15;&#x5219;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x7EF4;&#x62A4;&#x6027;&#x80FD;&#x7684;&#x51CF;&#x5F31;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x7EF4;&#x62A4;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5F15;&#x64CE;&#x8FD8;&#x8981;&#x7EF4;&#x62A4;&#x8FD9;&#x4E9B;&#x7D22;&#x5F15;&#x3002;<br>
       
     </div>
 
@@ -163,11 +162,11 @@
       </li>
     
       <li>
-        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+        <a href="/2014/03/15/stl实现的底层数据结构有哪些？/"></a>
       </li>
     
       <li>
-        <a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
       </li>
     
       <li>
@@ -222,17 +221,15 @@
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
+    <li><a href="/categories/CC++/">C/C++</a><small>3</small></li>
   
-    <li><a href="/categories/STL/">STL</a><small>2</small></li>
+    <li><a href="/categories/STL/">STL</a><small>1</small></li>
   
     <li><a href="/categories/总结/">总结</a><small>1</small></li>
   
     <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
   
     <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
-  
-    <li><a href="/categories/STL/数据结构/">数据结构</a><small>1</small></li>
   
     <li><a href="/categories/电脑常识/">电脑常识</a><small>1</small></li>
   
@@ -248,13 +245,13 @@
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/C/C++/">C/C++</a><small>1</small></li>
+    <li><a href="/tags/CC++/">C/C++</a><small>1</small></li>
   
     <li><a href="/tags/日常问题/">日常问题</a><small>1</small></li>
   
     <li><a href="/tags/生活点滴/">生活点滴</a><small>1</small></li>
   
-    <li><a href="/tags/编程技术/">编程技术</a><small>6</small></li>
+    <li><a href="/tags/编程技术/">编程技术</a><small>5</small></li>
   
   </ul>
 </div>

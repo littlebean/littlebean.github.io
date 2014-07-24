@@ -106,42 +106,34 @@
 
     <div class="entry">
       
-        <h2 id="-">引言</h2>
-<p>这几天复习看了一下c++ primer的一些基础语法，发现引用和指针在C++中有很多相似之处，所以想写一篇文章对这两个东西来理一下。</p>
-<h2 id="-">什么是引用</h2>
-<p><strong>引用</strong>就是对象的另一个名字，引用主要用于函数的形式参数，引用是一种<strong>复合类型</strong>（通过其他类型定义的类型），通过在变量名前添加<code>&amp;</code>符号来定义。
-<a id="more"></a></p>
+        <h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>&#x8FD9;&#x51E0;&#x5929;&#x590D;&#x4E60;&#x770B;&#x4E86;&#x4E00;&#x4E0B;c++ primer&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x8BED;&#x6CD5;&#xFF0C;&#x53D1;&#x73B0;&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x5728;C++&#x4E2D;&#x6709;&#x5F88;&#x591A;&#x76F8;&#x4F3C;&#x4E4B;&#x5904;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x5BF9;&#x8FD9;&#x4E24;&#x4E2A;&#x4E1C;&#x897F;&#x6765;&#x7406;&#x4E00;&#x4E0B;&#x3002;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x5F15;&#x7528;">&#x4EC0;&#x4E48;&#x662F;&#x5F15;&#x7528;</h2>
+<p><strong>&#x5F15;&#x7528;</strong>&#x5C31;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x5F15;&#x7528;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x53C2;&#x6570;&#xFF0C;&#x5F15;&#x7528;&#x662F;&#x4E00;&#x79CD;<strong>&#x590D;&#x5408;&#x7C7B;&#x578B;</strong>&#xFF08;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x5728;&#x53D8;&#x91CF;&#x540D;&#x524D;&#x6DFB;&#x52A0;<code>&amp;</code>&#x7B26;&#x53F7;&#x6765;&#x5B9A;&#x4E49;&#x3002;<br><a id="more"></a></p>
 <ol>
-<li>每一种引用类型都“关联到”某以其他类型，但不能定义引用类型的引用。</li>
-<li><p>引用必须与该引用同类型的对象初始化。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<li>&#x6BCF;&#x4E00;&#x79CD;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x90FD;&#x201C;&#x5173;&#x8054;&#x5230;&#x201D;&#x67D0;&#x4EE5;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x5B9A;&#x4E49;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5F15;&#x7528;&#x3002;</li>
+<li>&#x5F15;&#x7528;&#x5FC5;&#x987B;&#x4E0E;&#x8BE5;&#x5F15;&#x7528;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x521D;&#x59CB;&#x5316;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 </pre></td><td class="code"><pre><span class="keyword">int</span> ival = <span class="number">1024</span>;
-<span class="keyword">int</span> &refVal = ival; <span class="comment">//ok,refVal refers to ival</span>
-<span class="keyword">int</span> &refVal2; <span class="comment">//error: a reference must be initialized</span>
-<span class="keyword">int</span> &refVal3 = <span class="number">10</span>; <span class="comment">//error:initializer must be an object</span>
-</pre></td></tr></table></figure>
-</li>
-<li><p>因为引用只是它绑定的对象的另一个名字，作用在引用上的所有操作事实上都是作用在该引用绑定的对象上。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<span class="keyword">int</span> &amp;refVal = ival; <span class="comment">//ok,refVal refers to ival</span>
+<span class="keyword">int</span> &amp;refVal2; <span class="comment">//error: a reference must be initialized</span>
+<span class="keyword">int</span> &amp;refVal3 = <span class="number">10</span>; <span class="comment">//error:initializer must be an object</span>
+</pre></td></tr></table></figure></li>
+<li>&#x56E0;&#x4E3A;&#x5F15;&#x7528;&#x53EA;&#x662F;&#x5B83;&#x7ED1;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x4F5C;&#x7528;&#x5728;&#x5F15;&#x7528;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x4E8B;&#x5B9E;&#x4E0A;&#x90FD;&#x662F;&#x4F5C;&#x7528;&#x5728;&#x8BE5;&#x5F15;&#x7528;&#x7ED1;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x4E0A;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 </pre></td><td class="code"><pre>cout&lt;&lt;ival&lt;&lt;endl; //<span class="keyword">now</span>,ival <span class="keyword">is</span> 1024 
 refVal = 5;
 cout&lt;&lt;ival&lt;&lt;endl; //<span class="keyword">now</span>,ival <span class="keyword">is</span> 5
-</pre></td></tr></table></figure>
-</li>
-<li><p>引用一旦初始化后，只要该引用存在，它就保持绑定到初始化时指向的对象，<strong>不可将其变更</strong>绑定到其它的对象上。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure></li>
+<li>&#x5F15;&#x7528;&#x4E00;&#x65E6;&#x521D;&#x59CB;&#x5316;&#x540E;&#xFF0C;&#x53EA;&#x8981;&#x8BE5;&#x5F15;&#x7528;&#x5B58;&#x5728;&#xFF0C;&#x5B83;&#x5C31;&#x4FDD;&#x6301;&#x7ED1;&#x5B9A;&#x5230;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;<strong>&#x4E0D;&#x53EF;&#x5C06;&#x5176;&#x53D8;&#x66F4;</strong>&#x7ED1;&#x5B9A;&#x5230;&#x5176;&#x5B83;&#x7684;&#x5BF9;&#x8C61;&#x4E0A;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="keyword">int</span> ival2 = <span class="number">5</span>;
-refVal = ival2; <span class="comment">//error:refVal already be initialized,can’t be changed</span>
-</pre></td></tr></table></figure>
-</li>
-<li><p>非const引用只能绑定到与该引用同类型的对象上，const引用则可以绑定到<strong>不同但相关的类型的对象</strong>上或者绑定到<strong>右值</strong>上。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+refVal = ival2; <span class="comment">//error:refVal already be initialized,can&#x2019;t be changed</span>
+</pre></td></tr></table></figure></li>
+<li>&#x975E;const&#x5F15;&#x7528;&#x53EA;&#x80FD;&#x7ED1;&#x5B9A;&#x5230;&#x4E0E;&#x8BE5;&#x5F15;&#x7528;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;const&#x5F15;&#x7528;&#x5219;&#x53EF;&#x4EE5;&#x7ED1;&#x5B9A;&#x5230;<strong>&#x4E0D;&#x540C;&#x4F46;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;</strong>&#x4E0A;&#x6216;&#x8005;&#x7ED1;&#x5B9A;&#x5230;<strong>&#x53F3;&#x503C;</strong>&#x4E0A;&#x3002;<br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -152,48 +144,36 @@ refVal = ival2; <span class="comment">//error:refVal already be initialized,can�
 </pre></td><td class="code"><pre><span class="keyword">const</span> <span class="keyword">int</span> ival3 = <span class="number">1024</span>;
 <span class="keyword">int</span> ival4 = <span class="number">5</span>;
 <span class="keyword">double</span> dval = <span class="number">3.14</span>;
-<span class="keyword">const</span> <span class="keyword">int</span> &refVal4 = ival3; <span class="comment">//ok:both reference and object are const</span>
-<span class="keyword">int</span> &refVal5 = ival3; <span class="comment">//error:noneconst reference to a const object</span>
+<span class="keyword">const</span> <span class="keyword">int</span> &amp;refVal4 = ival3; <span class="comment">//ok:both reference and object are const</span>
+<span class="keyword">int</span> &amp;refVal5 = ival3; <span class="comment">//error:noneconst reference to a const object</span>
 refVal4 = <span class="number">1024</span>; <span class="comment">// ok:const reference be initialized by rvalue ;</span>
 refVal4 = ival4; <span class="comment">//ok:const reference be initialized by different but related value;</span>
 refVal4 = dval; <span class="comment">//ok</span>
-</pre></td></tr></table></figure>
-
-</li>
+</pre></td></tr></table></figure><br>&#x89C2;&#x5BDF;&#x7B2C;5&#x70B9;&#x770B;&#x5230;</li>
 </ol>
-<p>观察第5点看到</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="keyword">double</span> dval = <span class="number">3.14</span>;
 refVal4 = dval; <span class="comment">//ok</span>
-</pre></td></tr></table></figure>
-
-<p>是正确的，其原因很微妙，编译器会把以上代码转换成如下形式的编码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure><br>&#x662F;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x5176;&#x539F;&#x56E0;&#x5F88;&#x5FAE;&#x5999;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x628A;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x6210;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;&#x7684;&#x7F16;&#x7801;&#xFF1A;<br><br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="attribute">int temp </span>=<span class="string"> dval;
 refVal4 = temp;</span>
-</pre></td></tr></table></figure>
-
-<p>如果refVal4是非const的，那么可以给refVal4赋一新值，这样做不会修改dval.</p>
-<h2 id="-">什么是指针</h2>
-<p>指针，它也是一种复合类型，是用于指向对象，与迭代器一样，指针提供对其所指对象的间接访问，只是指针结构更通用一点。与迭代器不同的是，指针用于指向单个对象，而迭代器只能用于访问容器内的元素。具体的讲，指针保存了另一个对象的地址而已。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure><br>&#x5982;&#x679C;refVal4&#x662F;&#x975E;const&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x7ED9;refVal4&#x8D4B;&#x4E00;&#x65B0;&#x503C;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;dval.<br><br>##&#x4EC0;&#x4E48;&#x662F;&#x6307;&#x9488;<br>&#x6307;&#x9488;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x590D;&#x5408;&#x7C7B;&#x578B;&#xFF0C;&#x662F;&#x7528;&#x4E8E;&#x6307;&#x5411;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0E;&#x8FED;&#x4EE3;&#x5668;&#x4E00;&#x6837;&#xFF0C;&#x6307;&#x9488;&#x63D0;&#x4F9B;&#x5BF9;&#x5176;&#x6240;&#x6307;&#x5BF9;&#x8C61;&#x7684;&#x95F4;&#x63A5;&#x8BBF;&#x95EE;&#xFF0C;&#x53EA;&#x662F;&#x6307;&#x9488;&#x7ED3;&#x6784;&#x66F4;&#x901A;&#x7528;&#x4E00;&#x70B9;&#x3002;&#x4E0E;&#x8FED;&#x4EE3;&#x5668;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x6307;&#x9488;&#x7528;&#x4E8E;&#x6307;&#x5411;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x8FED;&#x4EE3;&#x5668;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5177;&#x4F53;&#x7684;&#x8BB2;&#xFF0C;&#x6307;&#x9488;&#x4FDD;&#x5B58;&#x4E86;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x800C;&#x5DF2;&#x3002;<br><br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
-</pre></td><td class="code"><pre><span class="typename">string</span> s(<span class="string">"hello world"</span>);
-<span class="typename">string</span> *sp = &s;//get the address <span class="keyword">of</span> <span class="typename">string</span> s
+</pre></td><td class="code"><pre><span class="typename">string</span> s(<span class="string">&quot;hello world&quot;</span>);
+<span class="typename">string</span> *sp = &amp;s;//get the address <span class="keyword">of</span> <span class="typename">string</span> s
 </pre></td></tr></table></figure>
 
-<p><strong>取地址操作符</strong>（<code>&amp;</code>）：当此操作符用于一个对象上时，返回的是该对象的存储地址。取值操作只能用于左值，因为只有当变量用作左值时，才能取其地址。同样地，由于用于vector类型、string类型或者内置数组的下标操作和解引操作生成的左值，因此可对这两种操作的结果做取地址操作。</p>
+<p><strong>&#x53D6;&#x5730;&#x5740;&#x64CD;&#x4F5C;&#x7B26;</strong>&#xFF08;<code>&amp;</code>&#xFF09;&#xFF1A;&#x5F53;&#x6B64;&#x64CD;&#x4F5C;&#x7B26;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x5B58;&#x50A8;&#x5730;&#x5740;&#x3002;&#x53D6;&#x503C;&#x64CD;&#x4F5C;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x5DE6;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x6709;&#x5F53;&#x53D8;&#x91CF;&#x7528;&#x4F5C;&#x5DE6;&#x503C;&#x65F6;&#xFF0C;&#x624D;&#x80FD;&#x53D6;&#x5176;&#x5730;&#x5740;&#x3002;&#x540C;&#x6837;&#x5730;&#xFF0C;&#x7531;&#x4E8E;&#x7528;&#x4E8E;vector&#x7C7B;&#x578B;&#x3001;string&#x7C7B;&#x578B;&#x6216;&#x8005;&#x5185;&#x7F6E;&#x6570;&#x7EC4;&#x7684;&#x4E0B;&#x6807;&#x64CD;&#x4F5C;&#x548C;&#x89E3;&#x5F15;&#x64CD;&#x4F5C;&#x751F;&#x6210;&#x7684;&#x5DE6;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x5BF9;&#x8FD9;&#x4E24;&#x79CD;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x505A;&#x53D6;&#x5730;&#x5740;&#x64CD;&#x4F5C;&#x3002;</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="built_in">cout</span>&lt;&lt;*sp&lt;&lt;endl; <span class="comment">//prints hello world</span>
 </pre></td></tr></table></figure>
 
-<p><strong>解引用操作符</strong>（<code>*</code>）：与取地址操作符相对应，对指针进行解引用可访问指针所指的对象。</p>
+<p><strong>&#x89E3;&#x5F15;&#x7528;&#x64CD;&#x4F5C;&#x7B26;</strong>&#xFF08;<code>*</code>&#xFF09;&#xFF1A;&#x4E0E;&#x53D6;&#x5730;&#x5740;&#x64CD;&#x4F5C;&#x7B26;&#x76F8;&#x5BF9;&#x5E94;&#xFF0C;&#x5BF9;&#x6307;&#x9488;&#x8FDB;&#x884C;&#x89E3;&#x5F15;&#x7528;&#x53EF;&#x8BBF;&#x95EE;&#x6307;&#x9488;&#x6240;&#x6307;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
 <ol>
-<li>每个指针都有一个与之关联的数据类型。</li>
-<li><p>若指针为0值，表明它不指向任何对象,但只能赋值常量0值或者在编译时可获得0值的const变量。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<li>&#x6BCF;&#x4E2A;&#x6307;&#x9488;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</li>
+<li>&#x82E5;&#x6307;&#x9488;&#x4E3A;0&#x503C;&#xFF0C;&#x8868;&#x660E;&#x5B83;&#x4E0D;&#x6307;&#x5411;&#x4EFB;&#x4F55;&#x5BF9;&#x8C61;,&#x4F46;&#x53EA;&#x80FD;&#x8D4B;&#x503C;&#x5E38;&#x91CF;0&#x503C;&#x6216;&#x8005;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x53EF;&#x83B7;&#x5F97;0&#x503C;&#x7684;const&#x53D8;&#x91CF;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -203,23 +183,18 @@ const int c_zero = <span class="number">0</span>;
 int pi = zero; //error:pi assigned int value <span class="keyword">of</span> zero
 pi = c_zero;//ok:c_zero <span class="keyword">is</span> a const <span class="keyword">with</span> compile-<span class="typename">time</span> value <span class="keyword">of</span> <span class="number">0</span>
 pi = <span class="number">0</span>; //ok:directly initialize <span class="keyword">to</span> <span class="keyword">literal</span> <span class="keyword">constant</span> <span class="number">0</span>
-</pre></td></tr></table></figure>
-</li>
-<li><p>C++语言无法检测指针是否未被初始化，也无法区分有效地址和由指针分配到的存储空间中存放的二进制地址，所以在使用指针的时候，避免指针未初始化，可以初始化为0值，因为编译器识别0值的指针。</p>
-</li>
-<li><p>void*指针是C++提供的一种特殊的指针，它可以保存任何类型对象的地址.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure></li>
+<li>C++&#x8BED;&#x8A00;&#x65E0;&#x6CD5;&#x68C0;&#x6D4B;&#x6307;&#x9488;&#x662F;&#x5426;&#x672A;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E5F;&#x65E0;&#x6CD5;&#x533A;&#x5206;&#x6709;&#x6548;&#x5730;&#x5740;&#x548C;&#x7531;&#x6307;&#x9488;&#x5206;&#x914D;&#x5230;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E2D;&#x5B58;&#x653E;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5730;&#x5740;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x4F7F;&#x7528;&#x6307;&#x9488;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x907F;&#x514D;&#x6307;&#x9488;&#x672A;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x521D;&#x59CB;&#x5316;&#x4E3A;0&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x8BC6;&#x522B;0&#x503C;&#x7684;&#x6307;&#x9488;&#x3002;</li>
+<li>void*&#x6307;&#x9488;&#x662F;C++&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;.<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 </pre></td><td class="code"><pre><span class="keyword">double</span> obj = <span class="number">3.14</span>;
 <span class="keyword">int</span> obj2 = <span class="number">1024</span>;
-<span class="keyword">void</span> *pv = &obj; <span class="comment">//ok:void* can hold the address value of any data pointer type</span>
-pv = &obj2; <span class="comment">//ok</span>
-</pre></td></tr></table></figure>
-</li>
-<li><p>指针与const限定符，分为两种，一种是指向const对象的指针；另一种是const指针。前者是限定这个指针指向的对象是const，但指针本身不是const，所以这个指针可以修改指向别的同类型对象。后者限定的是指针本身就是const型的值，所以跟普通的const变量具有相同的性质，指针的内容（即地址值）不能修改。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<span class="keyword">void</span> *pv = &amp;obj; <span class="comment">//ok:void* can hold the address value of any data pointer type</span>
+pv = &amp;obj2; <span class="comment">//ok</span>
+</pre></td></tr></table></figure></li>
+<li>&#x6307;&#x9488;&#x4E0E;const&#x9650;&#x5B9A;&#x7B26;&#xFF0C;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x6307;&#x5411;const&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x9488;&#xFF1B;&#x53E6;&#x4E00;&#x79CD;&#x662F;const&#x6307;&#x9488;&#x3002;&#x524D;&#x8005;&#x662F;&#x9650;&#x5B9A;&#x8FD9;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#x662F;const&#xFF0C;&#x4F46;&#x6307;&#x9488;&#x672C;&#x8EAB;&#x4E0D;&#x662F;const&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x6307;&#x9488;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6307;&#x5411;&#x522B;&#x7684;&#x540C;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x3002;&#x540E;&#x8005;&#x9650;&#x5B9A;&#x7684;&#x662F;&#x6307;&#x9488;&#x672C;&#x8EAB;&#x5C31;&#x662F;const&#x578B;&#x7684;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x8DDF;&#x666E;&#x901A;&#x7684;const&#x53D8;&#x91CF;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x6027;&#x8D28;&#xFF0C;&#x6307;&#x9488;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x5373;&#x5730;&#x5740;&#x503C;&#xFF09;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#x3002;<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="keyword">const</span> <span class="keyword">double</span> *cptr; <span class="comment">//cptr may point to a double that is const;</span>
 <span class="keyword">double</span> *<span class="keyword">const</span> *cptr2; <span class="comment">// cptr2 is a const pointer</span>
@@ -227,27 +202,24 @@ pv = &obj2; <span class="comment">//ok</span>
 
 </li>
 </ol>
-<h2 id="-">引用和指针的区别</h2>
-<p>虽然引用和指针都可以间接的访问另一个对象，但他们之间有两个重要的区别：</p>
+<h2 id="&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x7684;&#x533A;&#x522B;">&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x7684;&#x533A;&#x522B;</h2>
+<p>&#x867D;&#x7136;&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x90FD;&#x53EF;&#x4EE5;&#x95F4;&#x63A5;&#x7684;&#x8BBF;&#x95EE;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x6709;&#x4E24;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x533A;&#x522B;&#xFF1A;</p>
 <ol>
-<li>引用总是指向某个对象；定义时没有初始化时错误的。</li>
-<li>赋值行为的差别：给引用赋值修改的是该引用所关联的对象的值，并不是使引用与另一个对象关联。<figure class="highlight c++"><table><tr><td class="gutter"><pre>1
+<li>&#x5F15;&#x7528;&#x603B;&#x662F;&#x6307;&#x5411;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#xFF1B;&#x5B9A;&#x4E49;&#x65F6;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x9519;&#x8BEF;&#x7684;&#x3002;</li>
+<li>&#x8D4B;&#x503C;&#x884C;&#x4E3A;&#x7684;&#x5DEE;&#x522B;&#xFF1A;&#x7ED9;&#x5F15;&#x7528;&#x8D4B;&#x503C;&#x4FEE;&#x6539;&#x7684;&#x662F;&#x8BE5;&#x5F15;&#x7528;&#x6240;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x4F7F;&#x5F15;&#x7528;&#x4E0E;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5173;&#x8054;&#x3002;<br><figure class="highlight c++"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 5
 6
 </pre></td><td class="code"><pre><span class="keyword">int</span> ival = <span class="number">1024</span>,ival2 = <span class="number">2048</span>;
-<span class="keyword">int</span> *pi = &ival,*pi2 = &ival2;
+<span class="keyword">int</span> *pi = &amp;ival,*pi2 = &amp;ival2;
 pi = pi2;<span class="comment">//pi now points to ival2;</span>
 
-<span class="keyword">int</span> &ri = ival,&ri2 = ival2;
+<span class="keyword">int</span> &amp;ri = ival,&amp;ri2 = ival2;
 ri = ri2; <span class="comment">// assign ival2 to ival</span>
-</pre></td></tr></table></figure>
-
-</li>
+</pre></td></tr></table></figure><br>&#x53C2;&#x8003;&#xFF1A;C++ Primer</li>
 </ol>
-<p>参考：C++ Primer</p>
 
       
     </div>
@@ -298,11 +270,11 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
       </li>
     
       <li>
-        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
+        <a href="/2014/03/15/stl实现的底层数据结构有哪些？/"></a>
       </li>
     
       <li>
-        <a href="/2014/03/06/stl实现的底层数据结构有哪些？/">STL实现的底层数据结构有哪些？</a>
+        <a href="/2014/03/12/对虚函数的一些理解/">对虚函数的一些理解</a>
       </li>
     
       <li>
@@ -357,17 +329,15 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/C/C++/">C/C++</a><small>3</small></li>
+    <li><a href="/categories/CC++/">C/C++</a><small>3</small></li>
   
-    <li><a href="/categories/STL/">STL</a><small>2</small></li>
+    <li><a href="/categories/STL/">STL</a><small>1</small></li>
   
     <li><a href="/categories/总结/">总结</a><small>1</small></li>
   
     <li><a href="/categories/数据库/">数据库</a><small>1</small></li>
   
     <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
-  
-    <li><a href="/categories/STL/数据结构/">数据结构</a><small>1</small></li>
   
     <li><a href="/categories/电脑常识/">电脑常识</a><small>1</small></li>
   
@@ -383,13 +353,13 @@ var duoshuoQuery = {short_name:"xuxiaolong"};
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/C/C++/">C/C++</a><small>1</small></li>
+    <li><a href="/tags/CC++/">C/C++</a><small>1</small></li>
   
     <li><a href="/tags/日常问题/">日常问题</a><small>1</small></li>
   
     <li><a href="/tags/生活点滴/">生活点滴</a><small>1</small></li>
   
-    <li><a href="/tags/编程技术/">编程技术</a><small>6</small></li>
+    <li><a href="/tags/编程技术/">编程技术</a><small>5</small></li>
   
   </ul>
 </div>
