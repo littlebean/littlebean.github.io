@@ -4,7 +4,7 @@
   <subtitle><![CDATA[水滴石穿]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://littlebean.github.io/"/>
-  <updated>2014-07-24T15:01:28.442Z</updated>
+  <updated>2014-07-24T15:15:58.712Z</updated>
   <id>http://littlebean.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[mysql的高可用]]></title>
+    <title><![CDATA[mysql高可用]]></title>
     <link href="http://littlebean.github.io/2014/07/24/mysql%E7%9A%84%E9%AB%98%E5%8F%AF%E7%94%A8/"/>
     <id>http://littlebean.github.io/2014/07/24/mysql的高可用/</id>
     <published>2014-07-24T13:18:28.000Z</published>
-    <updated>2014-07-24T14:54:28.000Z</updated>
+    <updated>2014-07-24T15:15:26.000Z</updated>
     <content type="html"><![CDATA[<h3 id="&#x4E00;&#x3001;&#x5F15;&#x8A00;">&#x4E00;&#x3001;&#x5F15;&#x8A00;</h3>
 <p>&#x9AD8;&#x53EF;&#x7528;&#xFF08;High Availability&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x8BA9;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x6301;&#x7EED;&#x66F4;&#x957F;&#x65F6;&#x95F4;&#xFF0C;&#x5C31;&#x7B97;&#x5B95;&#x673A;&#x4E5F;&#x80FD;&#x7ACB;&#x5373;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x53F0;&#x4ECE;&#x673A;&#x5668;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7684;&#x4E00;&#x9879;&#x6280;&#x672F;&#xFF0C;&#x672C;&#x6587;&#x4EE5;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;mysql&#x7684;&#x4E00;&#x79CD;&#x9AD8;&#x53EF;&#x7528;&#x65B9;&#x6848;&#x3002;</p>
 <h3 id="&#x4E8C;&#x3001;&#x65B9;&#x6848;">&#x4E8C;&#x3001;&#x65B9;&#x6848;</h3>
@@ -28,29 +28,37 @@
 <thead>
 <tr>
 <th></th>
+<th></th>
 <th>&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4E3B;&#xFF09;</th>
+<th></th>
 <th>&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4ECE;&#xFF09;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>IP&#x5730;&#x5740;</td>
+<td></td>
 <td>eth0:10.0.0.9</td>
+<td></td>
 <td>eth0:10.0.0.10</td>
 </tr>
 <tr>
 <td>hostname</td>
+<td></td>
 <td>mysql</td>
+<td></td>
 <td>mysql-slave</td>
 </tr>
 <tr>
 <td>&#x865A;&#x62DF;&#x6D6E;&#x52A8;IP</td>
+<td></td>
 <td>10.0.0.5</td>
+<td></td>
 <td>10.0.0.5</td>
 </tr>
 </tbody>
 </table>
-<p>&#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4E3B;&#xFF09;&#x4EE5;10.0.0.5&#x662F;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;mysql&#x670D;&#x52A1;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E3B;&#x8282;&#x70B9;&#x5B95;&#x673A;&#x7684;&#x8BDD;&#xFF0C;&#x6D6E;&#x52A8;IP&#x4F1A;&#x81EA;&#x52A8;&#x6F02;&#x79FB;&#x5230;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4ECE;&#xFF09;&#x4E0A;&#xFF0C;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x8FBE;&#x5230;&#x4E86;&#x9AD8;&#x53EF;&#x7528;&#x3002;</p>
+<p>&#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4E3B;&#xFF09;&#x4EE5;10.0.0.5&#x662F;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;mysql&#x670D;&#x52A1;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E3B;&#x8282;&#x70B9;&#x5B95;&#x673A;&#x7684;&#x8BDD;&#xFF0C;&#x6D6E;&#x52A8;IP&#x4F1A;&#x81EA;&#x52A8;&#x6F02;&#x79FB;&#x5230;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4ECE;&#xFF09;&#x4E0A;&#xFF0C;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x8FBE;&#x5230;&#x4E86;&#x9AD8;&#x53EF;&#x7528;&#x3002;<br><a id="more"></a></p>
 <h3 id="&#x4E09;&#x3001;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;">&#x4E09;&#x3001;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;</h3>
 <p>(1) &#x914D;&#x7F6E;mysql&#x4E3B;&#x4ECE;</p>
 <ol>
@@ -160,7 +168,45 @@ respawn hacluster /usr/lib/heartbeat/ipfail
 </pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<h3 id="&#x4E00;&#x3001;&#x5F15;&#x8A00;">&#x4E00;&#x3001;&#x5F15;&#x8A00;</h3>
+<p>&#x9AD8;&#x53EF;&#x7528;&#xFF08;High Availability&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x8BA9;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x6301;&#x7EED;&#x66F4;&#x957F;&#x65F6;&#x95F4;&#xFF0C;&#x5C31;&#x7B97;&#x5B95;&#x673A;&#x4E5F;&#x80FD;&#x7ACB;&#x5373;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x53F0;&#x4ECE;&#x673A;&#x5668;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7684;&#x4E00;&#x9879;&#x6280;&#x672F;&#xFF0C;&#x672C;&#x6587;&#x4EE5;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;mysql&#x7684;&#x4E00;&#x79CD;&#x9AD8;&#x53EF;&#x7528;&#x65B9;&#x6848;&#x3002;</p>
+<h3 id="&#x4E8C;&#x3001;&#x65B9;&#x6848;">&#x4E8C;&#x3001;&#x65B9;&#x6848;</h3>
+<p>&#x91C7;&#x7528;mysql&#x7684;master+slave&#x3001;ha+heartbeat&#x7684;&#x65B9;&#x6848;,&#x7528;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5206;&#x522B;&#x4E3A;mysql,mysql-slave&#x4E0A;&#x9762;&#x90FD;&#x5B89;&#x88C5;&#x4E86;mysql&#x670D;&#x52A1;&#x6846;&#x67B6;&#x4FE1;&#x606F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4E3B;&#xFF09;</th>
+<th></th>
+<th>&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4ECE;&#xFF09;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP&#x5730;&#x5740;</td>
+<td></td>
+<td>eth0:10.0.0.9</td>
+<td></td>
+<td>eth0:10.0.0.10</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td></td>
+<td>mysql</td>
+<td></td>
+<td>mysql-slave</td>
+</tr>
+<tr>
+<td>&#x865A;&#x62DF;&#x6D6E;&#x52A8;IP</td>
+<td></td>
+<td>10.0.0.5</td>
+<td></td>
+<td>10.0.0.5</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4E3B;&#xFF09;&#x4EE5;10.0.0.5&#x662F;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;mysql&#x670D;&#x52A1;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E3B;&#x8282;&#x70B9;&#x5B95;&#x673A;&#x7684;&#x8BDD;&#xFF0C;&#x6D6E;&#x52A8;IP&#x4F1A;&#x81EA;&#x52A8;&#x6F02;&#x79FB;&#x5230;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;&#x4ECE;&#xFF09;&#x4E0A;&#xFF0C;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x8FBE;&#x5230;&#x4E86;&#x9AD8;&#x53EF;&#x7528;&#x3002;<br>]]></summary>
     
       <category term="mysql" scheme="http://littlebean.github.io/tags/mysql/"/>
     
